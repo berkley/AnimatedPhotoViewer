@@ -22,7 +22,9 @@
 		screenHeight = LANDSCAPESCREENHEIGHT;
 	}
 	
-	return screenHeight / PHOTOHEIGHT;
+	int numrows = screenHeight / PHOTOHEIGHT;
+	NSLog(@"!!!!!!!!!!!!!Returning number of rows: %i", numrows);
+	return numrows;
 }
 
 + (int)getNumberOfColumns
@@ -36,7 +38,9 @@
 		screenHeight = LANDSCAPESCREENHEIGHT;
 	}
 	
-	return screenHeight / PHOTOWIDTH;
+	int numcols = screenWidth / PHOTOWIDTH;
+	NSLog(@"!!!!!!!!!!!!!Returning number of columns: %i", numcols);
+	return numcols;
 }
 
 + (int)getScreenWidth
@@ -48,6 +52,7 @@
 		screenWidth = LANDSCAPESCREENWIDTH;
 	}
 	
+	NSLog(@"returning screen width: %i", screenWidth);
 	return screenWidth;
 }
 
@@ -59,7 +64,8 @@
 	{
 		screenHeight = LANDSCAPESCREENHEIGHT;
 	}
-	
+
+	NSLog(@"returning screen height: %i", screenHeight);
 	return screenHeight;
 }
 

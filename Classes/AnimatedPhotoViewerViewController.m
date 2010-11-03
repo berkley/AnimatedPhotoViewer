@@ -32,9 +32,13 @@ NSArray *photoGridCols;
 		for(int j=0; j<cols; j++)
 		{
 			NSLog(@"adding photo %@", [photoArr objectAtIndex:photoArrIndex]);
-			PhotoGridElement *gridElement = [[PhotoGridElement alloc] initWithRow:i column:j photoWidth:PHOTOWIDTH photoHeight:PHOTOHEIGHT photoName:[photoArr objectAtIndex:photoArrIndex]];
-			NSLog(@"adding gridElement %@ at onScreenPosition (%f, %f)", gridElement.photoName, gridElement.onScreenPosition.origin.x, gridElement.onScreenPosition.origin.y);
-			NSLog(@"adding gridElement %@ at offScreenPosition (%f, %f)", gridElement.photoName, gridElement.offScreenPosition.origin.x, gridElement.offScreenPosition.origin.y);
+			PhotoGridElement *gridElement = [[PhotoGridElement alloc] initWithRow:i column:j 
+											photoWidth:PHOTOWIDTH photoHeight:PHOTOHEIGHT 
+											photoName:[photoArr objectAtIndex:photoArrIndex]];
+			NSLog(@"adding gridElement %@ at onScreenPosition (%f, %f)", gridElement.photoName, 
+				  gridElement.onScreenPosition.origin.x, gridElement.onScreenPosition.origin.y);
+			NSLog(@"adding gridElement %@ at offScreenPosition (%f, %f)", gridElement.photoName, 
+				  gridElement.offScreenPosition.origin.x, gridElement.offScreenPosition.origin.y);
 			[colArr addObject:gridElement];
 			photoArrIndex++;
 			if(photoArrIndex == [photoArr count])

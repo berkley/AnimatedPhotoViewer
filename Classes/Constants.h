@@ -8,8 +8,12 @@
 
 
 #define ANIMATIONDURATION      1
+
+//helps if this is a power of 2 since the ipad screen is a power of two on both dimensions
 #define PHOTOWIDTH			   256
+//helps if this is a power of 2
 #define PHOTOHEIGHT			   256
+
 #define OFFSCREENPOSOFFSET     512
 #define OFFSCREENNEGOFFSET     -512
 #define PORTRAITSCREENWIDTH    768

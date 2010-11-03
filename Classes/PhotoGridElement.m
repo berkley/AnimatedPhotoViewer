@@ -104,13 +104,10 @@
 {
 	if(self = [super initWithImage:[UIImage imageNamed:name]])
     {
-		int screenWidth = [CalculationUtil getScreenWidth];
-		int screenHeight = [CalculationUtil getScreenHeight];
-		
 		self.column = col;
 		self.row = r;
-		self.numColumns = screenWidth / pWidth;
-		self.numRows = screenHeight / pHeight;
+		self.numColumns = [CalculationUtil getNumberOfColumns];
+		self.numRows = [CalculationUtil getNumberOfRows];
 		self.photoName = name;
 		[self performOffScreenCalculations];
 		[self performOnScreenCalculations];
