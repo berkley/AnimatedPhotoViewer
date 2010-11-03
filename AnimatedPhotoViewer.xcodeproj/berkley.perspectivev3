@@ -293,12 +293,14 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
+								<string>7E20D3F012811D4A005477A5</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>10</integer>
+									<integer>7</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -339,7 +341,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>7E20D3E612811AF3005477A5</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CalculationUtil.m</string>
+								<string>PhotoGridElement.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -347,33 +349,38 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7E20D3E712811AF3005477A5</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CalculationUtil.m</string>
+										<string>PhotoGridElement.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7E20D71B1281F758005477A5</string>
+										<string>7E20D7D712820576005477A5</string>
 										<key>history</key>
 										<array>
-											<string>7E20D49912812B4D005477A5</string>
-											<string>7E20D49A12812B4D005477A5</string>
-											<string>7E20D49B12812B4D005477A5</string>
-											<string>7E20D49C12812B4D005477A5</string>
-											<string>7E20D49D12812B4D005477A5</string>
-											<string>7E20D49E12812B4D005477A5</string>
-											<string>7E20D49F12812B4D005477A5</string>
-											<string>7E20D4A012812B4D005477A5</string>
-											<string>7E20D4A112812B4D005477A5</string>
-											<string>7E20D4A212812B4D005477A5</string>
-											<string>7E20D4A312812B4D005477A5</string>
-											<string>7E20D4A412812B4D005477A5</string>
 											<string>7E20D5721281BB14005477A5</string>
 											<string>7E20D6251281C9FA005477A5</string>
 											<string>7E20D6271281C9FA005477A5</string>
-											<string>7E20D6E51281F45C005477A5</string>
-											<string>7E20D6EE1281F59B005477A5</string>
-											<string>7E20D70E1281F715005477A5</string>
-											<string>7E20D70F1281F715005477A5</string>
-											<string>7E20D71A1281F756005477A5</string>
+											<string>7E20D71E1281F931005477A5</string>
+											<string>7E20D72A1281F975005477A5</string>
+											<string>7E20D7961282037C005477A5</string>
+											<string>7E20D79B1282037C005477A5</string>
+											<string>7E20D79C1282037C005477A5</string>
+											<string>7E20D79D1282037C005477A5</string>
+											<string>7E20D79E1282037C005477A5</string>
+											<string>7E20D79F1282037C005477A5</string>
+											<string>7E20D7A01282037C005477A5</string>
+											<string>7E20D7A11282037C005477A5</string>
+											<string>7E20D7A21282037C005477A5</string>
+											<string>7E20D7A31282037C005477A5</string>
+											<string>7E20D7A41282037C005477A5</string>
+											<string>7E20D7A51282037C005477A5</string>
+											<string>7E20D7A61282037C005477A5</string>
+											<string>7E20D7A71282037C005477A5</string>
+											<string>7E20D7B41282042B005477A5</string>
+											<string>7E20D7B51282042B005477A5</string>
+											<string>7E20D7B61282042B005477A5</string>
+											<string>7E20D7B71282042B005477A5</string>
+											<string>7E20D7D112820568005477A5</string>
+											<string>7E20D7D212820568005477A5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -429,8 +436,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1326, 151}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 59 1680 969 0 0 1680 1028 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -469,6 +474,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1326, 151}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 59 1680 969 0 0 1680 1028 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -672,7 +679,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>310507352.10764599</real>
+	<real>310510966.10511702</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -689,7 +696,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>7E20D7171281F735005477A5</string>
+		<string>7E20D7D812820576005477A5</string>
 		<string>7E20D43F12812347005477A5</string>
 		<string>7E20D44012812347005477A5</string>
 		<string>/Users/berkley/project/iphone/AnimatedPhotoViewer/AnimatedPhotoViewer.xcodeproj</string>

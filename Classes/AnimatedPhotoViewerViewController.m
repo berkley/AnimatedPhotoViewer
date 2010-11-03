@@ -88,6 +88,12 @@ NSArray *photoGridCols;
 			[UIView commitAnimations];
 		}
 	}
+	if(exploded)
+		exploded = NO;
+	else 
+		exploded = YES;
+	
+
 }
 
 - (void)initViews
@@ -112,6 +118,7 @@ NSArray *photoGridCols;
 			[UIView commitAnimations];
 		}
 	}
+	exploded = NO;
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -134,6 +141,47 @@ NSArray *photoGridCols;
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return YES;
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{	
+	if(!exploded)
+	{
+		[self changeViews];
+	}
+	[self performSelector:@selector(changeOrientation:) withObject:self afterDelay:1];
+}
+
+/*- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+	int count = [self.view.subviews count];
+	for(int i=0; i<count; i++)
+	{
+		NSLog(@"view: %i", i);
+		UIView *subview = [self.view.subviews objectAtIndex:0];
+		if([subview isKindOfClass:[PhotoGridElement class]])
+		{
+			[subview removeFromSuperview];
+			[subview release];
+		}
+	}
+	[self initViews];
+}*/
+
+- (void)changeOrientation:(id)caller
+{
+	int count = [self.view.subviews count];
+	for(int i=0; i<count; i++)
+	{
+		NSLog(@"view: %i", i);
+		UIView *subview = [self.view.subviews objectAtIndex:0];
+		if([subview isKindOfClass:[PhotoGridElement class]])
+		{
+			[subview removeFromSuperview];
+			[subview release];
+		}
+	}
+	[self initViews];	
 }
 
 - (void)didReceiveMemoryWarning {

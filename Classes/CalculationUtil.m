@@ -23,7 +23,7 @@
 	}
 	
 	int numrows = screenHeight / PHOTOHEIGHT;
-	NSLog(@"!!!!!!!!!!!!!Returning number of rows: %i", numrows);
+	NSLog(@"Returning number of rows: %i", numrows);
 	return numrows;
 }
 
@@ -39,7 +39,7 @@
 	}
 	
 	int numcols = screenWidth / PHOTOWIDTH;
-	NSLog(@"!!!!!!!!!!!!!Returning number of columns: %i", numcols);
+	NSLog(@"Returning number of columns: %i", numcols);
 	return numcols;
 }
 

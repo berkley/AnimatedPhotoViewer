@@ -7,7 +7,7 @@
 //
 
 
-#define ANIMATIONDURATION      1
+#define ANIMATIONDURATION      .5
 
 //helps if this is a power of 2 since the ipad screen is a power of two on both dimensions
 #define PHOTOWIDTH			   256

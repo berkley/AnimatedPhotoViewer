@@ -30,6 +30,10 @@
 		7E20D49412812A11005477A5 /* IMG_1876.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E20D49312812A11005477A5 /* IMG_1876.jpg */; };
 		7E20D5351281ABE6005477A5 /* PhotoGridElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E20D5341281ABE6005477A5 /* PhotoGridElement.m */; };
 		7E20D6121281C86E005477A5 /* CalculationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E20D6111281C86E005477A5 /* CalculationUtil.m */; };
+		7E20D7901282032D005477A5 /* IMG_2273.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E20D78C1282032D005477A5 /* IMG_2273.jpg */; };
+		7E20D7911282032D005477A5 /* IMG_2223.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E20D78D1282032D005477A5 /* IMG_2223.jpg */; };
+		7E20D7921282032D005477A5 /* IMG_2213.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E20D78E1282032D005477A5 /* IMG_2213.jpg */; };
+		7E20D7931282032D005477A5 /* IMG_2163.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E20D78F1282032D005477A5 /* IMG_2163.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +67,10 @@
 		7E20D60B1281C818005477A5 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		7E20D6101281C86E005477A5 /* CalculationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculationUtil.h; sourceTree = "<group>"; };
 		7E20D6111281C86E005477A5 /* CalculationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculationUtil.m; sourceTree = "<group>"; };
+		7E20D78C1282032D005477A5 /* IMG_2273.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2273.jpg; sourceTree = "<group>"; };
+		7E20D78D1282032D005477A5 /* IMG_2223.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2223.jpg; sourceTree = "<group>"; };
+		7E20D78E1282032D005477A5 /* IMG_2213.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2213.jpg; sourceTree = "<group>"; };
+		7E20D78F1282032D005477A5 /* IMG_2163.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2163.jpg; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* AnimatedPhotoViewer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AnimatedPhotoViewer-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +157,10 @@
 		7E20D3F012811D4A005477A5 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				7E20D78C1282032D005477A5 /* IMG_2273.jpg */,
+				7E20D78D1282032D005477A5 /* IMG_2223.jpg */,
+				7E20D78E1282032D005477A5 /* IMG_2213.jpg */,
+				7E20D78F1282032D005477A5 /* IMG_2163.jpg */,
 				7E20D49312812A11005477A5 /* IMG_1876.jpg */,
 				7E20D48912812997005477A5 /* IMG_2073.jpg */,
 				7E20D48712812982005477A5 /* IMG_2145.jpg */,
@@ -230,6 +242,10 @@
 				7E20D48812812982005477A5 /* IMG_2145.jpg in Resources */,
 				7E20D48A12812997005477A5 /* IMG_2073.jpg in Resources */,
 				7E20D49412812A11005477A5 /* IMG_1876.jpg in Resources */,
+				7E20D7901282032D005477A5 /* IMG_2273.jpg in Resources */,
+				7E20D7911282032D005477A5 /* IMG_2223.jpg in Resources */,
+				7E20D7921282032D005477A5 /* IMG_2213.jpg in Resources */,
+				7E20D7931282032D005477A5 /* IMG_2163.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

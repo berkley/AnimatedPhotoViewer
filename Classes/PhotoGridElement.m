@@ -67,7 +67,7 @@
 	NSLog(@"=======================================");
 	NSLog(@"row: %i, col: %i", self.row, self.column);
 	NSLog(@"col: %i numColumns/2: %f", self.column, colsOver2);
-	if(self.column > colsOver2)
+	if(self.column >= colsOver2)
 	{
 		offScreenColPos = screenHeight + OFFSCREENPOSOFFSET;
 	}
@@ -120,10 +120,14 @@
 	if(self.frame.origin.x == self.onScreenPosition.origin.x &&
 	   self.frame.origin.y == self.onScreenPosition.origin.y)
 	{
+		[self performOffScreenCalculations];
+		[self performOnScreenCalculations];
 		self.frame = self.offScreenPosition;
 	}
 	else 
 	{
+		[self performOffScreenCalculations];
+		[self performOnScreenCalculations];
 		self.frame = self.onScreenPosition;
 	}
 }
