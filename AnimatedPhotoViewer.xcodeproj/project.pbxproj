@@ -34,6 +34,12 @@
 		7E20D7911282032D005477A5 /* IMG_2223.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E20D78D1282032D005477A5 /* IMG_2223.jpg */; };
 		7E20D7921282032D005477A5 /* IMG_2213.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E20D78E1282032D005477A5 /* IMG_2213.jpg */; };
 		7E20D7931282032D005477A5 /* IMG_2163.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E20D78F1282032D005477A5 /* IMG_2163.jpg */; };
+		7E20D7E712820DD7005477A5 /* lib3DAR_v4_0_6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E20D7E212820DD7005477A5 /* lib3DAR_v4_0_6.a */; };
+		7E20D7E812820DD7005477A5 /* 3dar.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E20D7E312820DD7005477A5 /* 3dar.plist */; };
+		7E20D7E912820DD7005477A5 /* 3dar_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E20D7E412820DD7005477A5 /* 3dar_logo.png */; };
+		7E20D7EA12820DD7005477A5 /* SM3DAR_keys.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7E20D7E612820DD7005477A5 /* SM3DAR_keys.txt */; };
+		7E20D7F412820EB7005477A5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E20D7F312820EB7005477A5 /* CoreLocation.framework */; };
+		7E20D7F712820EDF005477A5 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E20D7F612820EDF005477A5 /* Session.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +77,14 @@
 		7E20D78D1282032D005477A5 /* IMG_2223.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2223.jpg; sourceTree = "<group>"; };
 		7E20D78E1282032D005477A5 /* IMG_2213.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2213.jpg; sourceTree = "<group>"; };
 		7E20D78F1282032D005477A5 /* IMG_2163.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2163.jpg; sourceTree = "<group>"; };
+		7E20D7E212820DD7005477A5 /* lib3DAR_v4_0_6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = lib3DAR_v4_0_6.a; sourceTree = "<group>"; };
+		7E20D7E312820DD7005477A5 /* 3dar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 3dar.plist; sourceTree = "<group>"; };
+		7E20D7E412820DD7005477A5 /* 3dar_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3dar_logo.png; sourceTree = "<group>"; };
+		7E20D7E512820DD7005477A5 /* SM3DAR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SM3DAR.h; sourceTree = "<group>"; };
+		7E20D7E612820DD7005477A5 /* SM3DAR_keys.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SM3DAR_keys.txt; sourceTree = "<group>"; };
+		7E20D7F312820EB7005477A5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7E20D7F512820EDF005477A5 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		7E20D7F612820EDF005477A5 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* AnimatedPhotoViewer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AnimatedPhotoViewer-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +96,8 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				7E20D7E712820DD7005477A5 /* lib3DAR_v4_0_6.a in Frameworks */,
+				7E20D7F412820EB7005477A5 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +116,8 @@
 				7E20D60B1281C818005477A5 /* Constants.h */,
 				7E20D6101281C86E005477A5 /* CalculationUtil.h */,
 				7E20D6111281C86E005477A5 /* CalculationUtil.m */,
+				7E20D7F512820EDF005477A5 /* Session.h */,
+				7E20D7F612820EDF005477A5 /* Session.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -115,6 +133,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				7E20D7E112820DD7005477A5 /* 3DAR */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -150,6 +169,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+				7E20D7F312820EB7005477A5 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,6 +196,18 @@
 				7E20D40512811DB1005477A5 /* photos.txt */,
 			);
 			name = Photos;
+			sourceTree = "<group>";
+		};
+		7E20D7E112820DD7005477A5 /* 3DAR */ = {
+			isa = PBXGroup;
+			children = (
+				7E20D7E212820DD7005477A5 /* lib3DAR_v4_0_6.a */,
+				7E20D7E312820DD7005477A5 /* 3dar.plist */,
+				7E20D7E412820DD7005477A5 /* 3dar_logo.png */,
+				7E20D7E512820DD7005477A5 /* SM3DAR.h */,
+				7E20D7E612820DD7005477A5 /* SM3DAR_keys.txt */,
+			);
+			path = 3DAR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +278,9 @@
 				7E20D7911282032D005477A5 /* IMG_2223.jpg in Resources */,
 				7E20D7921282032D005477A5 /* IMG_2213.jpg in Resources */,
 				7E20D7931282032D005477A5 /* IMG_2163.jpg in Resources */,
+				7E20D7E812820DD7005477A5 /* 3dar.plist in Resources */,
+				7E20D7E912820DD7005477A5 /* 3dar_logo.png in Resources */,
+				7E20D7EA12820DD7005477A5 /* SM3DAR_keys.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +296,7 @@
 				28D7ACF80DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m in Sources */,
 				7E20D5351281ABE6005477A5 /* PhotoGridElement.m in Sources */,
 				7E20D6121281C86E005477A5 /* CalculationUtil.m in Sources */,
+				7E20D7F712820EDF005477A5 /* Session.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +313,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AnimatedPhotoViewer_Prefix.pch;
 				INFOPLIST_FILE = "AnimatedPhotoViewer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/3DAR\"",
+				);
 				PRODUCT_NAME = AnimatedPhotoViewer;
 			};
 			name = Debug;
@@ -289,6 +330,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AnimatedPhotoViewer_Prefix.pch;
 				INFOPLIST_FILE = "AnimatedPhotoViewer-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/3DAR\"",
+				);
 				PRODUCT_NAME = AnimatedPhotoViewer;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -303,7 +348,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos4.1;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;

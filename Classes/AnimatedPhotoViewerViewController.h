@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AnimatedPhotoViewerViewController : UIViewController {
+@interface AnimatedPhotoViewerViewController : UIViewController <UIGestureRecognizerDelegate> {
 
 }
 

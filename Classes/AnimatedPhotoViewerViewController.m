@@ -16,7 +16,7 @@
 BOOL exploded = NO;
 NSArray *photoGridCols;
 
-//CMMotionManager *motionManager;
+
 
 //create a 2d grid of PhotoGridElements with start positions for each photo
 - (NSArray*)createGridWithPhotos:(NSArray*)photoArr
@@ -32,9 +32,15 @@ NSArray *photoGridCols;
 		for(int j=0; j<cols; j++)
 		{
 			NSLog(@"adding photo %@", [photoArr objectAtIndex:photoArrIndex]);
+			NSString *line = [photoArr objectAtIndex:photoArrIndex];
+			NSArray *photoProps = [line componentsSeparatedByString:@","];
+			NSString *name = [photoProps objectAtIndex:0];
+			NSString *lat = [photoProps objectAtIndex:1];
+			NSString *lon = [photoProps objectAtIndex:2];
+			NSLog(@"photo info: %@, %@, %@", name, lat, lon);
 			PhotoGridElement *gridElement = [[PhotoGridElement alloc] initWithRow:i column:j 
 											photoWidth:PHOTOWIDTH photoHeight:PHOTOHEIGHT 
-											photoName:[photoArr objectAtIndex:photoArrIndex]];
+											photoName:name lat:[lat floatValue] lon:[lon floatValue]];
 			NSLog(@"adding gridElement %@ at onScreenPosition (%f, %f)", gridElement.photoName, 
 				  gridElement.onScreenPosition.origin.x, gridElement.onScreenPosition.origin.y);
 			NSLog(@"adding gridElement %@ at offScreenPosition (%f, %f)", gridElement.photoName, 
@@ -128,14 +134,29 @@ NSArray *photoGridCols;
 	
 	//motionManager = [CMMotionManager alloc
 	NSLog(@"View did load");	
+	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+	UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+	
+	swipeRecognizer.delegate = self;
+	[self.view addGestureRecognizer:swipeRecognizer];
+	[swipeRecognizer release];
+	
+	tapRecognizer.delegate = self;
+	[self.view addGestureRecognizer:tapRecognizer];
+	[tapRecognizer release];
 	
 	[self initViews];
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)handleTap:(id)caller
 {
-	NSLog(@"touches began");
+	NSLog(@"tap");
 	[self changeViews];
+}
+
+- (void)handleSwipe:(id)caller
+{
+	NSLog(@"swipe");
 }
 
 // Override to allow orientations other than the default portrait orientation.

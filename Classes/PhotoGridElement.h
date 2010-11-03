@@ -17,6 +17,8 @@
 	NSInteger numColumns;
 	NSInteger numRows;
 	NSString *photoName;
+	CGFloat latitude;
+	CGFloat longitude;
 }
 
 @property (nonatomic, assign) CGRect offScreenPosition;
@@ -26,8 +28,11 @@
 @property (nonatomic, assign) NSInteger numColumns;
 @property (nonatomic, assign) NSInteger numRows;
 @property (nonatomic, retain) NSString *photoName;
+@property (nonatomic, assign) CGFloat latitude;
+@property (nonatomic, assign) CGFloat longitude;
 
-- (id)initWithRow:(NSInteger)r column:(NSInteger)col photoWidth:(NSInteger)pWidth photoHeight:(NSInteger)pHeight photoName:(NSString*)name;
+- (id)initWithRow:(NSInteger)r column:(NSInteger)col photoWidth:(NSInteger)pWidth 
+	  photoHeight:(NSInteger)pHeight photoName:(NSString*)name lat:(CGFloat)lat lon:(CGFloat)lon;
 - (void)swapFrames;
 
 @end

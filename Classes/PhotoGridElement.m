@@ -12,7 +12,7 @@
 
 @implementation PhotoGridElement
 
-@synthesize offScreenPosition, onScreenPosition, photoName, column, row, numColumns, numRows;
+@synthesize offScreenPosition, onScreenPosition, photoName, column, row, numColumns, numRows, latitude, longitude;
 
 
 /*- (void)performOffScreenCalculations
@@ -64,21 +64,21 @@
 	int offScreenRowPos = OFFSCREENNEGOFFSET;
 	
 	float colsOver2 = self.numColumns / 2;
-	NSLog(@"=======================================");
-	NSLog(@"row: %i, col: %i", self.row, self.column);
-	NSLog(@"col: %i numColumns/2: %f", self.column, colsOver2);
+	//NSLog(@"=======================================");
+	//NSLog(@"row: %i, col: %i", self.row, self.column);
+	//NSLog(@"col: %i numColumns/2: %f", self.column, colsOver2);
 	if(self.column >= colsOver2)
 	{
 		offScreenColPos = screenHeight + OFFSCREENPOSOFFSET;
 	}
 	float rowsOver2 = self.numRows / 2;
-	NSLog(@"numRows: %i numRows/2: %f", self.numRows, rowsOver2);
+	//NSLog(@"numRows: %i numRows/2: %f", self.numRows, rowsOver2);
 	if(self.row + 1 > rowsOver2)
 	{
 		offScreenRowPos = screenWidth + OFFSCREENPOSOFFSET;
 	}
 	
-	NSLog(@"OffScreenPos: %i, %i", offScreenRowPos, offScreenColPos);
+	//NSLog(@"OffScreenPos: %i, %i", offScreenRowPos, offScreenColPos);
 	
 	int x = (screenWidth / self.numColumns) * self.column + offScreenColPos;
 	int y = (screenHeight / self.numRows) * self.row + offScreenRowPos;
@@ -87,20 +87,13 @@
 
 - (void)performOnScreenCalculations
 {
-	int screenWidth = [CalculationUtil getScreenWidth];
-	int screenHeight = [CalculationUtil getScreenHeight];
-
-	NSLog(@"screenWidth: %i, numColumns: %i", screenWidth, numColumns);
-	NSLog(@"screenHeight: %i, numRows: %i", screenHeight, numRows);
-	//int cellWidth = screenWidth / numColumns;
-	//int cellHeight = screenHeight / numRows;
 	int cellWidth = PHOTOWIDTH;
 	int cellHeight = PHOTOHEIGHT;
-	NSLog(@"cellWidth: %i  cellHeight: %i", cellWidth, cellHeight);
 	self.onScreenPosition = CGRectMake(column * cellWidth, row * cellHeight, PHOTOWIDTH, PHOTOHEIGHT);
 }
 
-- (id)initWithRow:(NSInteger)r column:(NSInteger)col photoWidth:(NSInteger)pWidth photoHeight:(NSInteger)pHeight photoName:(NSString*)name;
+- (id)initWithRow:(NSInteger)r column:(NSInteger)col photoWidth:(NSInteger)pWidth 
+	  photoHeight:(NSInteger)pHeight photoName:(NSString*)name lat:(CGFloat)lat lon:(CGFloat)lon
 {
 	if(self = [super initWithImage:[UIImage imageNamed:name]])
     {
@@ -109,6 +102,8 @@
 		self.numColumns = [CalculationUtil getNumberOfColumns];
 		self.numRows = [CalculationUtil getNumberOfRows];
 		self.photoName = name;
+		self.latitude = lat;
+		self.longitude = lon;
 		[self performOffScreenCalculations];
 		[self performOnScreenCalculations];
 	}
