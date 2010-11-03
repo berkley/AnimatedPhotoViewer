@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3darAutofocusPoi</key>
+	<true/>
+	<key>3darOverridePoiAltitude</key>
+	<false/>
+	<key>3darLookMode</key>
+	<string>free</string>
+	<key>3darEnableMap</key>
+	<false/>
+	<key>3darDrawGroundplaneGrid</key>
+	<false/>
+	<key>3darDisableLocationServices</key>
+	<true/>
+	<key>3darDisableGyro</key>
+	<false/>
+</dict>
+</plist>
