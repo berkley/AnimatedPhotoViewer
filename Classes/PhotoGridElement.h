@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface PhotoGridElement : NSObject {
+@interface PhotoGridElement : UIImageView {
 	CGRect offScreenPosition;
 	CGRect onScreenPosition;
 	NSInteger column;
@@ -17,7 +17,6 @@
 	NSInteger numColumns;
 	NSInteger numRows;
 	NSString *photoName;
-
 }
 
 @property (nonatomic, assign) CGRect offScreenPosition;
@@ -29,5 +28,6 @@
 @property (nonatomic, retain) NSString *photoName;
 
 - (id)initWithRow:(NSInteger)r column:(NSInteger)col photoWidth:(NSInteger)pWidth photoHeight:(NSInteger)pHeight photoName:(NSString*)name;
+- (void)swapFrames;
 
 @end
