@@ -8,6 +8,8 @@
 
 #import "AnimatedPhotoViewerViewController.h"
 #import "PhotoGridElement.h"
+#import "Constants.h"
+#import "CalculationUtil.h"
 
 @implementation AnimatedPhotoViewerViewController
 
@@ -30,37 +32,42 @@
 */
 
 //create a 2d grid of PhotoGridElements with start positions for each photo
-- (NSArray*)createGridWithPhotos:(NSArray*)photoArr rows:(NSInteger)rows cols:(NSInteger)cols
+- (NSArray*)createGridWithPhotos:(NSArray*)photoArr
 {
+	int rows = [CalculationUtil getNumberOfRows];
+	int cols = [CalculationUtil getNumberOfColumns];
 	NSMutableArray *rowArr = [[NSMutableArray alloc] initWithCapacity:rows];
+	BOOL done = NO;
+	int photoArrIndex = 0;
 	for(int i=0; i<rows; i++)
 	{
 		NSMutableArray *colArr = [[NSMutableArray alloc] initWithCapacity:cols];
-		int photoArrIndex = 0;
 		for(int j=0; j<cols; j++)
 		{
-			PhotoGridElement *gridElement = [[PhotoGridElement alloc] initWithRow:i column:j numRows:rows numCols:cols];
+			NSLog(@"adding photo %@", [photoArr objectAtIndex:photoArrIndex]);
+			PhotoGridElement *gridElement = [[PhotoGridElement alloc] initWithRow:i column:j photoWidth:PHOTOWIDTH photoHeight:PHOTOHEIGHT photoName:[photoArr objectAtIndex:photoArrIndex]];
+			NSLog(@"adding gridElement %@ at onScreenPosition (%f, %f)", gridElement.photoName, gridElement.onScreenPosition.origin.x, gridElement.onScreenPosition.origin.y);
+			NSLog(@"adding gridElement %@ at offScreenPosition (%f, %f)", gridElement.photoName, gridElement.offScreenPosition.origin.x, gridElement.offScreenPosition.origin.y);
 			[colArr addObject:gridElement];
 			photoArrIndex++;
 			if(photoArrIndex == [photoArr count])
 			{ //if we get to the end of the photos, stop and return
+				done = YES;
 				break;
 			}
 		}
 		[rowArr addObject:colArr];
+		if(done)
+		{
+			break;
+		}
 	}
 	
 	return rowArr;
 }
 
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad 
+- (NSArray*) getPhotoArray
 {
-    [super viewDidLoad];
-	
-	//motionManager = [CMMotionManager alloc
-	
 	NSError *error;
 	NSString *filename = @"photos.txt";
 	NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -69,11 +76,41 @@
 	NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:filename];
 	NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:filename];
 	[fileManager copyItemAtPath:defaultDBPath toPath:dataPath error:&error];
-	
 	NSString *photos = [NSString stringWithContentsOfFile:dataPath encoding:NSUTF8StringEncoding error:&error];
 	NSArray *photoArr = [photos componentsSeparatedByString:@"\n"];
-	NSLog(@"View did load");
-	int rowcount = 0;
+	return photoArr;
+}
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad 
+{
+    [super viewDidLoad];
+	
+	//motionManager = [CMMotionManager alloc
+	NSLog(@"View did load");	
+	NSArray *photoArr = [self getPhotoArray];
+	NSArray *photoGridCols = [self createGridWithPhotos:photoArr];
+	
+	NSLog(@"photoGridCols count: %i", [photoGridCols count]);
+	for(int i=0; i<[photoGridCols count]; i++)
+	{
+		NSArray *photoGridRows = (NSArray*)[photoGridCols objectAtIndex:i];
+		for(int j=0; j<[photoGridRows count]; j++)
+		{
+			PhotoGridElement *photoElement = (PhotoGridElement*)[photoGridRows objectAtIndex:j];
+			NSLog(@"image %i, %i: %@", i, j, photoElement.photoName);
+			UIImageView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:photoElement.photoName]];
+			view.frame = photoElement.offScreenPosition;
+			[UIView beginAnimations:nil context:nil];
+			[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+			[UIView setAnimationDuration:ANIMATIONDURATION];
+			[self.view addSubview:view];
+			view.frame = photoElement.onScreenPosition;
+			[UIView commitAnimations];
+		}
+	}
+	
+	/*int rowcount = 0;
 	for(int i=0; i<[photoArr count]; i++)
 	{
 		//[self createAndLayoutViewForPhoto:[photoArr objectAtIndex:i] withNumberOfPhotos:[photoArr count]];
@@ -136,7 +173,7 @@
 		{
 			rowcount = 0;
 		}
-	}
+	}*/
 }
 
 

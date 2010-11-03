@@ -7,17 +7,12 @@
 //
 
 #import "PhotoGridElement.h"
-
-#define OFFSCREENPOSOFFSET     512
-#define OFFSCREENNEGOFFSET     -512
-#define PORTRAITSCREENWIDTH    768
-#define PORTRAITSCREENHEIGHT   1024
-#define LANDSCAPESCREENHEIGHT  768
-#define LANDSCAPESCREENWIDTH   1024
+#import "Constants.h"
+#import "CalculationUtil.h"
 
 @implementation PhotoGridElement
 
-@synthesize offScreenPosition, onScreenPosition;
+@synthesize offScreenPosition, onScreenPosition, photoName, column, row, numColumns, numRows;
 
 
 - (void)performOffScreenCalculations
@@ -25,14 +20,8 @@
 	//postition 0 is the top of the screen, position 1 is the bottom
 	int offScreenColPos = 0;
 	int offScreenRowPos = 0;
-	int screenWidth = PORTRAITSCREENWIDTH;
-	int screenHeight = PORTRAITSCREENHEIGHT;
-	if([UIDevice currentDevice].orientation == UIInterfaceOrientationLandscapeLeft ||
-	   [UIDevice currentDevice].orientation == UIInterfaceOrientationLandscapeRight)
-	{
-		screenWidth = LANDSCAPESCREENWIDTH;
-		screenHeight = LANDSCAPESCREENHEIGHT;
-	}
+	int screenWidth = [CalculationUtil getScreenWidth];
+	int screenHeight = [CalculationUtil getScreenHeight];
 	
 	if(column > numColumns / 2)
 	{
@@ -65,27 +54,31 @@
 
 - (void)performOnScreenCalculations
 {
-	int screenWidth = PORTRAITSCREENWIDTH;
-	int screenHeight = PORTRAITSCREENHEIGHT;
-	if([UIDevice currentDevice].orientation == UIInterfaceOrientationLandscapeLeft ||
-	   [UIDevice currentDevice].orientation == UIInterfaceOrientationLandscapeRight)
-	{
-		screenWidth = LANDSCAPESCREENWIDTH;
-		screenHeight = LANDSCAPESCREENHEIGHT;
-	}
-	int cellWidth = screenWidth / numColumns;
-	int cellHeight = screenHeight / numRows;
-	self.onScreenPosition = CGRectMake(column * cellWidth, row * cellHeight, cellWidth, cellHeight);
+	int screenWidth = [CalculationUtil getScreenWidth];
+	int screenHeight = [CalculationUtil getScreenHeight];
+
+	NSLog(@"screenWidth: %i, numColumns: %i", screenWidth, numColumns);
+	NSLog(@"screenHeight: %i, numRows: %i", screenHeight, numRows);
+	//int cellWidth = screenWidth / numColumns;
+	//int cellHeight = screenHeight / numRows;
+	int cellWidth = PHOTOWIDTH;
+	int cellHeight = PHOTOHEIGHT;
+	NSLog(@"cellWidth: %i  cellHeight: %i", cellWidth, cellHeight);
+	self.onScreenPosition = CGRectMake(column * cellWidth, row * cellHeight, PHOTOWIDTH, PHOTOHEIGHT);
 }
 
-- (id)initWithRow:(NSInteger)r column:(NSInteger)col numRows:(NSInteger)numrows numCols:(NSInteger)numcols
+- (id)initWithRow:(NSInteger)r column:(NSInteger)col photoWidth:(NSInteger)pWidth photoHeight:(NSInteger)pHeight photoName:(NSString*)name;
 {
 	if(self = [super init])
     {
-		column = col;
-		row = r;
-		numColumns = numcols;
-		numRows = numrows;
+		int screenWidth = [CalculationUtil getScreenWidth];
+		int screenHeight = [CalculationUtil getScreenHeight];
+		
+		self.column = col;
+		self.row = r;
+		self.numColumns = screenWidth / pWidth;
+		self.numRows = screenHeight / pHeight;
+		self.photoName = name;
 		[self performOffScreenCalculations];
 		[self performOnScreenCalculations];
 	}

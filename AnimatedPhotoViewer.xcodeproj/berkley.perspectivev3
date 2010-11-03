@@ -339,7 +339,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>7E20D3E612811AF3005477A5</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PhotoGridElement.m</string>
+								<string>AnimatedPhotoViewerViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -347,11 +347,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7E20D3E712811AF3005477A5</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PhotoGridElement.m</string>
+										<string>AnimatedPhotoViewerViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7E20D57B1281BCF4005477A5</string>
+										<string>7E20D62C1281C9FA005477A5</string>
 										<key>history</key>
 										<array>
 											<string>7E20D49912812B4D005477A5</string>
@@ -366,11 +366,14 @@
 											<string>7E20D4A212812B4D005477A5</string>
 											<string>7E20D4A312812B4D005477A5</string>
 											<string>7E20D4A412812B4D005477A5</string>
-											<string>7E20D5701281BB14005477A5</string>
 											<string>7E20D5721281BB14005477A5</string>
-											<string>7E20D5731281BB14005477A5</string>
-											<string>7E20D5791281BCF4005477A5</string>
-											<string>7E20D57A1281BCF4005477A5</string>
+											<string>7E20D6251281C9FA005477A5</string>
+											<string>7E20D6261281C9FA005477A5</string>
+											<string>7E20D6271281C9FA005477A5</string>
+											<string>7E20D6281281C9FA005477A5</string>
+											<string>7E20D6291281C9FA005477A5</string>
+											<string>7E20D62A1281C9FA005477A5</string>
+											<string>7E20D62B1281C9FA005477A5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -425,7 +428,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 31}, {603, 297}}</string>
+										<string>{{10, 27}, {1326, 151}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -669,7 +672,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>310492404.48154902</real>
+	<real>310495738.11823601</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -686,7 +689,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>7E20D5761281BB14005477A5</string>
+		<string>7E20D62D1281C9FA005477A5</string>
 		<string>7E20D43F12812347005477A5</string>
 		<string>7E20D44012812347005477A5</string>
 		<string>/Users/berkley/project/iphone/AnimatedPhotoViewer/AnimatedPhotoViewer.xcodeproj</string>

@@ -16,12 +16,18 @@
 	NSInteger row;
 	NSInteger numColumns;
 	NSInteger numRows;
+	NSString *photoName;
 
 }
 
 @property (nonatomic, assign) CGRect offScreenPosition;
 @property (nonatomic, assign) CGRect onScreenPosition;
+@property (nonatomic, assign) NSInteger column;
+@property (nonatomic, assign) NSInteger row;
+@property (nonatomic, assign) NSInteger numColumns;
+@property (nonatomic, assign) NSInteger numRows;
+@property (nonatomic, retain) NSString *photoName;
 
-- (id)initWithRow:(NSInteger)r column:(NSInteger)col numRows:(NSInteger)numrows numCols:(NSInteger)numcols;
+- (id)initWithRow:(NSInteger)r column:(NSInteger)col photoWidth:(NSInteger)pWidth photoHeight:(NSInteger)pHeight photoName:(NSString*)name;
 
 @end
