@@ -63,15 +63,31 @@
 	}
 }
 
+- (void)performOnScreenCalculations
+{
+	int screenWidth = PORTRAITSCREENWIDTH;
+	int screenHeight = PORTRAITSCREENHEIGHT;
+	if([UIDevice currentDevice].orientation == UIInterfaceOrientationLandscapeLeft ||
+	   [UIDevice currentDevice].orientation == UIInterfaceOrientationLandscapeRight)
+	{
+		screenWidth = LANDSCAPESCREENWIDTH;
+		screenHeight = LANDSCAPESCREENHEIGHT;
+	}
+	int cellWidth = screenWidth / numColumns;
+	int cellHeight = screenHeight / numRows;
+	self.onScreenPosition = CGRectMake(column * cellWidth, row * cellHeight, cellWidth, cellHeight);
+}
+
 - (id)initWithRow:(NSInteger)r column:(NSInteger)col numRows:(NSInteger)numrows numCols:(NSInteger)numcols
 {
 	if(self = [super init])
     {
-		col = col;
+		column = col;
 		row = r;
 		numColumns = numcols;
 		numRows = numrows;
 		[self performOffScreenCalculations];
+		[self performOnScreenCalculations];
 	}
 	return self;
 }

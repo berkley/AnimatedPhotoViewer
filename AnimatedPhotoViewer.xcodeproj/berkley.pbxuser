@@ -138,6 +138,9 @@
 			7E20D5731281BB14005477A5 /* PBXTextBookmark */ = 7E20D5731281BB14005477A5 /* PBXTextBookmark */;
 			7E20D5741281BB14005477A5 /* XCBuildMessageTextBookmark */ = 7E20D5741281BB14005477A5 /* XCBuildMessageTextBookmark */;
 			7E20D5751281BB14005477A5 /* PBXTextBookmark */ = 7E20D5751281BB14005477A5 /* PBXTextBookmark */;
+			7E20D5791281BCF4005477A5 /* PBXTextBookmark */ = 7E20D5791281BCF4005477A5 /* PBXTextBookmark */;
+			7E20D57A1281BCF4005477A5 /* PBXTextBookmark */ = 7E20D57A1281BCF4005477A5 /* PBXTextBookmark */;
+			7E20D57B1281BCF4005477A5 /* PBXTextBookmark */ = 7E20D57B1281BCF4005477A5 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 7E20D3EC12811AF3005477A5 /* Source Control */;
 		userBuildSettings = {
@@ -715,16 +718,16 @@
 	};
 	7E20D5331281ABE6005477A5 /* PhotoGridElement.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1265, 690}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1265, 665}}";
 			sepNavSelRange = "{456, 0}";
 			sepNavVisRange = "{0, 581}";
 		};
 	};
 	7E20D5341281ABE6005477A5 /* PhotoGridElement.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1265, 1040}}";
-			sepNavSelRange = "{1766, 0}";
-			sepNavVisRange = "{669, 1374}";
+			sepNavIntBoundsRect = "{{0, 0}, {1265, 1248}}";
+			sepNavSelRange = "{2321, 0}";
+			sepNavVisRange = "{1071, 1568}";
 		};
 	};
 	7E20D5701281BB14005477A5 /* PBXTextBookmark */ = {
@@ -785,5 +788,35 @@
 		rType = 0;
 		vrLen = 1374;
 		vrLoc = 669;
+	};
+	7E20D5791281BCF4005477A5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7E20D5331281ABE6005477A5 /* PhotoGridElement.h */;
+		name = "PhotoGridElement.h: 23";
+		rLen = 0;
+		rLoc = 456;
+		rType = 0;
+		vrLen = 581;
+		vrLoc = 0;
+	};
+	7E20D57A1281BCF4005477A5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7E20D5341281ABE6005477A5 /* PhotoGridElement.m */;
+		name = "PhotoGridElement.m: 78";
+		rLen = 0;
+		rLoc = 2278;
+		rType = 0;
+		vrLen = 1549;
+		vrLoc = 1074;
+	};
+	7E20D57B1281BCF4005477A5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7E20D5341281ABE6005477A5 /* PhotoGridElement.m */;
+		name = "PhotoGridElement.m: 78";
+		rLen = 0;
+		rLoc = 2321;
+		rType = 0;
+		vrLen = 1568;
+		vrLoc = 1071;
 	};
 }
