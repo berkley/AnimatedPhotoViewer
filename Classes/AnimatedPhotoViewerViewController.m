@@ -101,8 +101,6 @@ BOOL photoViewLoaded = NO;
 		exploded = NO;
 	else 
 		exploded = YES;
-	
-
 }
 
 - (void)initViews
@@ -128,6 +126,7 @@ BOOL photoViewLoaded = NO;
 		}
 	}
 	exploded = NO;
+	photoViewLoaded = YES;
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -167,6 +166,13 @@ BOOL photoViewLoaded = NO;
 			[subview removeFromSuperview];
 			[subview release];
 		}
+		else if([subview isKindOfClass:[UIView class]])
+		{ //3dar
+			//[subview removeFromSuperview];
+			//[subview release];
+			//[sm3dar suspend];
+			[sm3dar forceRelease];
+		}
 	}
 	photoViewLoaded = NO;
 }
@@ -203,14 +209,29 @@ BOOL photoViewLoaded = NO;
 - (void)handleSwipe:(id)caller
 {
 	NSLog(@"swipe");
-	//load 3dar view
-	[self removeAllSubviews];
-	sm3dar = [SM3DAR_Controller sharedController];
-    sm3dar.delegate = self;
-    sm3dar.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];
-    self.view = sm3dar.view;
-	self.elevationGrid = [[[ElevationGrid alloc] initFromFile:@"elevation_grid_25km_100s.txt"] autorelease];
-	[self addGridAtX:0 Y:0 Z:-80];
+	
+	if(photoViewLoaded)
+	{
+		//load 3dar view
+		[self changeViews];
+		[self removeAllSubviews];
+		sm3dar = [SM3DAR_Controller sharedController];
+		sm3dar.delegate = self;
+		sm3dar.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];
+		[self.view addSubview:sm3dar.view];
+		self.elevationGrid = [[[ElevationGrid alloc] initFromFile:@"elevation_grid_25km_100s.txt"] autorelease];
+		[self addGridAtX:0 Y:0 Z:-80];
+		photoViewLoaded = NO;
+		
+		UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+		[sm3dar.view addGestureRecognizer:swipeRecognizer];
+		[swipeRecognizer release];
+	}
+	else 
+	{
+		[self removeAllSubviews];
+		[self initViews];
+	}
 }
 
 // Override to allow orientations other than the default portrait orientation.

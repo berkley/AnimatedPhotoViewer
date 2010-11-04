@@ -295,13 +295,15 @@
 								<string>7E2181EA128224D500C5EE84</string>
 								<string>7E20D7E112820DD7005477A5</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>7E21828D12824F0A00C5EE84</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>15</integer>
+									<integer>19</integer>
 									<integer>10</integer>
 									<integer>0</integer>
 								</array>
@@ -354,7 +356,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7E2584FA12825E52004A7F92</string>
+										<string>7E25858612826B4E004A7F92</string>
 										<key>history</key>
 										<array>
 											<string>7E20D6271281C9FA005477A5</string>
@@ -374,11 +376,9 @@
 											<string>7E20D7B71282042B005477A5</string>
 											<string>7E20D7DD12820623005477A5</string>
 											<string>7E20D7DE12820623005477A5</string>
-											<string>7E20D80A12820FB2005477A5</string>
 											<string>7E20D80C12820FB2005477A5</string>
 											<string>7E2181361282146900C5EE84</string>
 											<string>7E21815912821B6F00C5EE84</string>
-											<string>7E21815A12821B6F00C5EE84</string>
 											<string>7E21815C12821B6F00C5EE84</string>
 											<string>7E2181F81282254A00C5EE84</string>
 											<string>7E2181F91282254A00C5EE84</string>
@@ -386,16 +386,18 @@
 											<string>7E2181FC1282254A00C5EE84</string>
 											<string>7E2181FD1282254A00C5EE84</string>
 											<string>7E21824D1282498100C5EE84</string>
-											<string>7E21826C12824BBB00C5EE84</string>
 											<string>7E21826D12824BBB00C5EE84</string>
-											<string>7E21829012824F5100C5EE84</string>
 											<string>7E21829212824F5100C5EE84</string>
 											<string>7E21829312824F5100C5EE84</string>
 											<string>7E21829A1282504E00C5EE84</string>
 											<string>7E21829B1282504E00C5EE84</string>
 											<string>7E2182AA1282524C00C5EE84</string>
 											<string>7E2584F412825E48004A7F92</string>
-											<string>7E2584F912825E52004A7F92</string>
+											<string>7E25852A1282656C004A7F92</string>
+											<string>7E25852B1282656C004A7F92</string>
+											<string>7E25852C1282656C004A7F92</string>
+											<string>7E25857E12826AC3004A7F92</string>
+											<string>7E25857F12826AC3004A7F92</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -694,7 +696,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>310533714.86044103</real>
+	<real>310537038.17530203</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -711,7 +713,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>7E25850112825E52004A7F92</string>
+		<string>7E2585301282656C004A7F92</string>
 		<string>7E25850212825E52004A7F92</string>
 		<string>/Users/berkley/project/iphone/AnimatedPhotoViewer/AnimatedPhotoViewer.xcodeproj</string>
 	</array>
