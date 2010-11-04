@@ -14,47 +14,6 @@
 
 @synthesize offScreenPosition, onScreenPosition, photoName, column, row, numColumns, numRows, latitude, longitude;
 
-
-/*- (void)performOffScreenCalculations
-{
-	//for rows, postition 0 is the top of the screen, position 1 is the bottom
-	//for columns, postition 0 is the left of the screen, position 1 is the right
-	int offScreenColPos = 0;
-	int offScreenRowPos = 0;
-	int screenWidth = [CalculationUtil getScreenWidth];
-	int screenHeight = [CalculationUtil getScreenHeight];
-	
-	if(self.column > self.numColumns / 2)
-	{
-		offScreenColPos = 1;
-	}
-	
-	if(self.row > self.numRows / 2)
-	{
-		offScreenRowPos = 1;
-	}
-	
-	NSLog(@"offScreen Quadrant: %i, %i", offScreenRowPos, offScreenColPos);
-
-	//set the off screen position to one of the 4 corners
-	if(offScreenRowPos == 0 && offScreenColPos == 0)
-	{
-		self.offScreenPosition = CGRectMake(OFFSCREENNEGOFFSET, OFFSCREENNEGOFFSET, 0, 0);
-	}
-	else if(offScreenRowPos == 1 && offScreenColPos == 0)
-	{
-		self.offScreenPosition = CGRectMake(screenWidth	+ OFFSCREENPOSOFFSET, OFFSCREENNEGOFFSET, 0, 0);
-	}
-	else if(offScreenRowPos == 0 && offScreenColPos == 1)
-	{
-		self.offScreenPosition = CGRectMake(OFFSCREENNEGOFFSET, screenHeight + OFFSCREENPOSOFFSET, 0, 0);
-	}
-	else if(offScreenRowPos == 1 && offScreenColPos == 1)
-	{
-		self.offScreenPosition = CGRectMake(screenWidth	+ OFFSCREENPOSOFFSET, screenHeight + OFFSCREENPOSOFFSET, 0, 0);
-	}
-}*/
-
 - (void)performOffScreenCalculations
 {
 	int screenWidth = [CalculationUtil getScreenWidth];

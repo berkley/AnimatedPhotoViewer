@@ -23,7 +23,7 @@
 	}
 	
 	int numrows = screenHeight / PHOTOHEIGHT;
-	NSLog(@"Returning number of rows: %i", numrows);
+	//NSLog(@"Returning number of rows: %i", numrows);
 	return numrows;
 }
 
@@ -39,7 +39,7 @@
 	}
 	
 	int numcols = screenWidth / PHOTOWIDTH;
-	NSLog(@"Returning number of columns: %i", numcols);
+	//NSLog(@"Returning number of columns: %i", numcols);
 	return numcols;
 }
 
@@ -53,7 +53,7 @@
 		screenWidth = screenHeight;
 	}
 	
-	NSLog(@"returning screen width: %i", screenWidth);
+	//NSLog(@"returning screen width: %i", screenWidth);
 	return screenWidth;
 }
 
@@ -68,7 +68,7 @@
 	}
 
 	screenHeight = [[UIScreen mainScreen] bounds].size.height;
-	NSLog(@"returning screen height: %i", screenHeight);
+	//NSLog(@"returning screen height: %i", screenHeight);
 	return screenHeight;
 }
 

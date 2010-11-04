@@ -59,20 +59,20 @@ SM3DAR_Controller *sm3dar;
 		NSMutableArray *colArr = [[NSMutableArray alloc] initWithCapacity:cols];
 		for(int j=0; j<cols; j++)
 		{
-			NSLog(@"adding photo %@", [photoArr objectAtIndex:photoArrIndex]);
+			//NSLog(@"adding photo %@", [photoArr objectAtIndex:photoArrIndex]);
 			NSString *line = [photoArr objectAtIndex:photoArrIndex];
 			NSArray *photoProps = [line componentsSeparatedByString:@","];
 			NSString *name = [photoProps objectAtIndex:0];
 			NSString *lat = [photoProps objectAtIndex:1];
 			NSString *lon = [photoProps objectAtIndex:2];
-			NSLog(@"photo info: %@, %@, %@", name, lat, lon);
+			//NSLog(@"photo info: %@, %@, %@", name, lat, lon);
 			PhotoGridElement *gridElement = [[PhotoGridElement alloc] initWithRow:i column:j 
 											photoWidth:PHOTOWIDTH photoHeight:PHOTOHEIGHT 
 											photoName:name lat:[lat floatValue] lon:[lon floatValue]];
-			NSLog(@"adding gridElement %@ at onScreenPosition (%f, %f)", gridElement.photoName, 
-				  gridElement.onScreenPosition.origin.x, gridElement.onScreenPosition.origin.y);
-			NSLog(@"adding gridElement %@ at offScreenPosition (%f, %f)", gridElement.photoName, 
-				  gridElement.offScreenPosition.origin.x, gridElement.offScreenPosition.origin.y);
+			//NSLog(@"adding gridElement %@ at onScreenPosition (%f, %f)", gridElement.photoName, 
+			//	  gridElement.onScreenPosition.origin.x, gridElement.onScreenPosition.origin.y);
+			//NSLog(@"adding gridElement %@ at offScreenPosition (%f, %f)", gridElement.photoName, 
+			//	  gridElement.offScreenPosition.origin.x, gridElement.offScreenPosition.origin.y);
 			[colArr addObject:gridElement];
 			photoArrIndex++;
 			if(photoArrIndex == [photoArr count])
@@ -106,9 +106,10 @@ SM3DAR_Controller *sm3dar;
 	return photoArr;
 }
 
-- (void)changeViews
+//explode the photos views
+- (void)changePhotoViews
 {
-	NSLog(@"photoGridCols count: %i", [photoGridCols count]);
+	//NSLog(@"photoGridCols count: %i", [photoGridCols count]);
 	for(int i=0; i<[photoContainerView.subviews count]; i++)
 	{
 		UIView *subview = [photoContainerView.subviews objectAtIndex:i];
@@ -128,10 +129,35 @@ SM3DAR_Controller *sm3dar;
 		exploded = YES;
 }
 
+//release all PhotoGridElement views and the photoContainerView
+- (void)resetPhotoViews
+{
+	if(photoGridCols != nil)
+	{  //make sure we release all of the current views before re-initing them
+		for(int i=0; i<[photoGridCols count]; i++)
+		{
+			NSArray *photoGridRows = (NSArray*)[photoGridCols objectAtIndex:i];
+			for(int j=0; j<[photoGridRows count]; j++)
+			{
+				PhotoGridElement *photoElement = (PhotoGridElement*)[photoGridRows objectAtIndex:j];
+				[photoElement removeFromSuperview];
+				[photoElement release];
+			}
+		}
+	}
+	[photoContainerView removeFromSuperview];
+	[photoContainerView release];
+}
+
 - (void)initViews
 {
 	NSArray *photoArr = [self getPhotoArray];
+	
 	photoGridCols = [self createGridWithPhotos:photoArr];
+	if(photoContainerView != nil)
+	{
+		[photoContainerView release];
+	}
 	photoContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [CalculationUtil getScreenWidth], [CalculationUtil getScreenHeight])];
 	[photoContainerView setBackgroundColor:[UIColor blackColor]];
 	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
@@ -145,14 +171,14 @@ SM3DAR_Controller *sm3dar;
 	[photoContainerView addGestureRecognizer:tapRecognizer];
 	[tapRecognizer release];
 	
-	NSLog(@"photoGridCols count: %i", [photoGridCols count]);
+	//NSLog(@"photoGridCols count: %i", [photoGridCols count]);
 	for(int i=0; i<[photoGridCols count]; i++)
 	{
 		NSArray *photoGridRows = (NSArray*)[photoGridCols objectAtIndex:i];
 		for(int j=0; j<[photoGridRows count]; j++)
 		{
 			PhotoGridElement *photoElement = (PhotoGridElement*)[photoGridRows objectAtIndex:j];
-			NSLog(@"image %i, %i: %@", i, j, photoElement.photoName);
+			//NSLog(@"image %i, %i: %@", i, j, photoElement.photoName);
 			photoElement.frame = photoElement.offScreenPosition;
 			[UIView beginAnimations:nil context:nil];
 			[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
@@ -173,7 +199,9 @@ SM3DAR_Controller *sm3dar;
     [super viewDidLoad];
 	NSLog(@"View did load");	
 	photoViewLoaded = YES;
-	//[[Session sharedInstance].motionManager startGyroUpdatesToQueue:<#(NSOperationQueue *)queue#> withHandler:<#(CMGyroHandler)handler#>]
+	//operationQueue = [[NSOperationQueue alloc] init];
+	//[[Session sharedInstance].motionManager startGyroUpdatesToQueue:operationQueue withHandler:self]
+	
 	sm3dar = [SM3DAR_Controller sharedController];
 	sm3dar.delegate = self;
 	sm3dar.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];
@@ -188,21 +216,40 @@ SM3DAR_Controller *sm3dar;
 	[sm3dar suspend];
 	sm3dar.view.hidden = YES;
 	
+	self.view.backgroundColor = [UIColor blackColor];
+	
 	[self initViews];
 }
 
-- (void)removeAllSubviews
+- (void)switchSubviews
 {
+	NSString *pvl = @"FALSE";
+	if(photoViewLoaded)
+		pvl = @"TRUE";
+	
+	NSLog(@"switching subviews...photoViewLoaded is %@", pvl);
 	if(photoViewLoaded)
 	{
-		[photoContainerView setHidden:YES];
+		NSLog(@"loading 3dar");
+		[self changePhotoViews];
+		photoContainerView.hidden = YES;
+		[sm3dar resume];
+		sm3dar.view.hidden = NO;
 		photoViewLoaded = NO;
+		//[photoContainerView setHidden:YES];
+		//photoViewLoaded = NO;
 	}
 	else 
 	{
+		NSLog(@"loading photo view");
+		photoContainerView.hidden = NO;
 		[sm3dar suspend];
-		[photoContainerView setHidden:NO];
+		sm3dar.view.hidden = YES;
+		[self changePhotoViews];
 		photoViewLoaded = YES;
+		//[sm3dar suspend];
+		//[photoContainerView setHidden:NO];
+		//photoViewLoaded = YES;
 	}
 
 }
@@ -210,29 +257,14 @@ SM3DAR_Controller *sm3dar;
 - (void)handleTap:(id)caller
 {
 	NSLog(@"tap");
-	[self changeViews];
+	[self changePhotoViews];
 }
 
 - (void)handleSwipe:(id)caller
 {
 	NSLog(@"swipe");
 	
-	if(photoViewLoaded)
-	{
-		[self changeViews];
-		photoContainerView.hidden = YES;
-		[sm3dar resume];
-		sm3dar.view.hidden = NO;
-		photoViewLoaded = NO;
-	}
-	else 
-	{
-		photoContainerView.hidden = NO;
-		[sm3dar suspend];
-		sm3dar.view.hidden = YES;
-		[self changeViews];
-		photoViewLoaded = YES;
-	}
+	[self switchSubviews];
 }
 
 // Override to allow orientations other than the default portrait orientation.
@@ -250,7 +282,7 @@ SM3DAR_Controller *sm3dar;
 {	
 	if(!exploded)
 	{
-		[self changeViews];
+		[self changePhotoViews];
 	}
 	[self performSelector:@selector(changeOrientation:) withObject:self afterDelay:1];
 }
@@ -259,7 +291,7 @@ SM3DAR_Controller *sm3dar;
 {
 	if(photoViewLoaded)
 	{
-		[self removeAllSubviews];
+		[self resetPhotoViews];
 		[self initViews];	
 	}
 }
