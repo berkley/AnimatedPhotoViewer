@@ -356,7 +356,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7E25858612826B4E004A7F92</string>
+										<string>7E2585CE1282756D004A7F92</string>
 										<key>history</key>
 										<array>
 											<string>7E20D6271281C9FA005477A5</string>
@@ -381,7 +381,6 @@
 											<string>7E21815912821B6F00C5EE84</string>
 											<string>7E21815C12821B6F00C5EE84</string>
 											<string>7E2181F81282254A00C5EE84</string>
-											<string>7E2181F91282254A00C5EE84</string>
 											<string>7E2181FB1282254A00C5EE84</string>
 											<string>7E2181FC1282254A00C5EE84</string>
 											<string>7E2181FD1282254A00C5EE84</string>
@@ -397,7 +396,8 @@
 											<string>7E25852B1282656C004A7F92</string>
 											<string>7E25852C1282656C004A7F92</string>
 											<string>7E25857E12826AC3004A7F92</string>
-											<string>7E25857F12826AC3004A7F92</string>
+											<string>7E25859D1282701A004A7F92</string>
+											<string>7E2585CD12827559004A7F92</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -696,7 +696,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>310537038.17530203</real>
+	<real>310539629.19249898</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -713,6 +713,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>7E2585CF1282756D004A7F92</string>
 		<string>7E2585301282656C004A7F92</string>
 		<string>7E25850212825E52004A7F92</string>
 		<string>/Users/berkley/project/iphone/AnimatedPhotoViewer/AnimatedPhotoViewer.xcodeproj</string>

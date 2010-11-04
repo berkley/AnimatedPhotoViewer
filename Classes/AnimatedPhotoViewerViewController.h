@@ -11,9 +11,8 @@
 #import "SM3DAR.h"
 #import "ElevationGrid.h"
 
-@interface AnimatedPhotoViewerViewController : UIViewController <UIGestureRecognizerDelegate, SM3DAR_Delegate> 
+@interface AnimatedPhotoViewerViewController : /*SM3DAR_Controller*/UIViewController <UIGestureRecognizerDelegate, SM3DAR_Delegate> 
 {
-	SM3DAR_Controller *sm3dar;
 	ElevationGrid *elevationGrid;
 }
 

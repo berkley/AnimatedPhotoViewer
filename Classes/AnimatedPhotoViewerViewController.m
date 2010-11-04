@@ -20,6 +20,31 @@
 BOOL exploded = NO;
 NSArray *photoGridCols;
 BOOL photoViewLoaded = NO;
+UIView *photoContainerView;
+SM3DAR_Controller *sm3dar;
+
+- (void) addGridAtX:(CGFloat)x Y:(CGFloat)y Z:(CGFloat)z
+{
+    // Create point.
+    SM3DAR_Fixture *p = [[SM3DAR_Fixture alloc] init];
+    
+    Coord3D coord = {
+        x, y, z
+    };
+    
+    p.worldPoint = coord;
+	
+    GridView *gridView = [[GridView alloc] init];
+	
+    // Give the point a view.
+    gridView.point = p;
+    p.view = gridView;
+    [gridView release];
+    
+    // Add point to 3DAR scene.
+    [sm3dar addPointOfInterest:p];
+    [p release];
+}
 
 //create a 2d grid of PhotoGridElements with start positions for each photo
 - (NSArray*)createGridWithPhotos:(NSArray*)photoArr
@@ -84,9 +109,9 @@ BOOL photoViewLoaded = NO;
 - (void)changeViews
 {
 	NSLog(@"photoGridCols count: %i", [photoGridCols count]);
-	for(int i=0; i<[self.view.subviews count]; i++)
+	for(int i=0; i<[photoContainerView.subviews count]; i++)
 	{
-		UIView *subview = [self.view.subviews objectAtIndex:i];
+		UIView *subview = [photoContainerView.subviews objectAtIndex:i];
 		if([subview isKindOfClass:[PhotoGridElement class]])
 		{
 			PhotoGridElement *element = (PhotoGridElement*)subview;
@@ -107,6 +132,18 @@ BOOL photoViewLoaded = NO;
 {
 	NSArray *photoArr = [self getPhotoArray];
 	photoGridCols = [self createGridWithPhotos:photoArr];
+	photoContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [CalculationUtil getScreenWidth], [CalculationUtil getScreenHeight])];
+	[photoContainerView setBackgroundColor:[UIColor blackColor]];
+	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+	UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+	
+	swipeRecognizer.delegate = self;
+	[photoContainerView addGestureRecognizer:swipeRecognizer];
+	[swipeRecognizer release];
+	
+	tapRecognizer.delegate = self;
+	[photoContainerView addGestureRecognizer:tapRecognizer];
+	[tapRecognizer release];
 	
 	NSLog(@"photoGridCols count: %i", [photoGridCols count]);
 	for(int i=0; i<[photoGridCols count]; i++)
@@ -120,11 +157,12 @@ BOOL photoViewLoaded = NO;
 			[UIView beginAnimations:nil context:nil];
 			[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
 			[UIView setAnimationDuration:ANIMATIONDURATION];
-			[self.view addSubview:photoElement];
+			[photoContainerView addSubview:photoElement];
 			photoElement.frame = photoElement.onScreenPosition;
 			[UIView commitAnimations];
 		}
 	}
+	[self.view addSubview:photoContainerView];
 	exploded = NO;
 	photoViewLoaded = YES;
 }
@@ -133,48 +171,40 @@ BOOL photoViewLoaded = NO;
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
-	
-	//motionManager = [CMMotionManager alloc
 	NSLog(@"View did load");	
-	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-	UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-	
-	swipeRecognizer.delegate = self;
-	[self.view addGestureRecognizer:swipeRecognizer];
-	[swipeRecognizer release];
-	
-	tapRecognizer.delegate = self;
-	[self.view addGestureRecognizer:tapRecognizer];
-	[tapRecognizer release];
-	
 	photoViewLoaded = YES;
-	
 	//[[Session sharedInstance].motionManager startGyroUpdatesToQueue:<#(NSOperationQueue *)queue#> withHandler:<#(CMGyroHandler)handler#>]
+	sm3dar = [SM3DAR_Controller sharedController];
+	sm3dar.delegate = self;
+	sm3dar.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];
+	[self.view addSubview:sm3dar.view];
+	self.elevationGrid = [[[ElevationGrid alloc] initFromFile:@"elevation_grid_25km_100s.txt"] autorelease];
+	[self addGridAtX:0 Y:0 Z:-80];
+	photoViewLoaded = NO;
+	
+	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+	[sm3dar.view addGestureRecognizer:swipeRecognizer];
+	[swipeRecognizer release];
+	[sm3dar suspend];
+	sm3dar.view.hidden = YES;
 	
 	[self initViews];
 }
 
 - (void)removeAllSubviews
 {
-	int count = [self.view.subviews count];
-	for(int i=0; i<count; i++)
+	if(photoViewLoaded)
 	{
-		NSLog(@"view: %i", i);
-		UIView *subview = [self.view.subviews objectAtIndex:0];
-		if([subview isKindOfClass:[PhotoGridElement class]])
-		{
-			[subview removeFromSuperview];
-			[subview release];
-		}
-		else if([subview isKindOfClass:[UIView class]])
-		{ //3dar
-			//[subview removeFromSuperview];
-			//[subview release];
-			//[sm3dar suspend];
-			[sm3dar forceRelease];
-		}
+		[photoContainerView setHidden:YES];
+		photoViewLoaded = NO;
 	}
-	photoViewLoaded = NO;
+	else 
+	{
+		[sm3dar suspend];
+		[photoContainerView setHidden:NO];
+		photoViewLoaded = YES;
+	}
+
 }
 
 - (void)handleTap:(id)caller
@@ -183,54 +213,25 @@ BOOL photoViewLoaded = NO;
 	[self changeViews];
 }
 
-- (void) addGridAtX:(CGFloat)x Y:(CGFloat)y Z:(CGFloat)z
-{
-    // Create point.
-    SM3DAR_Fixture *p = [[SM3DAR_Fixture alloc] init];
-    
-    Coord3D coord = {
-        x, y, z
-    };
-    
-    p.worldPoint = coord;
-	
-    GridView *gridView = [[GridView alloc] init];
-	
-    // Give the point a view.
-    gridView.point = p;
-    p.view = gridView;
-    [gridView release];
-    
-    // Add point to 3DAR scene.
-    [sm3dar addPointOfInterest:p];
-    [p release];
-}
-
 - (void)handleSwipe:(id)caller
 {
 	NSLog(@"swipe");
 	
 	if(photoViewLoaded)
 	{
-		//load 3dar view
 		[self changeViews];
-		[self removeAllSubviews];
-		sm3dar = [SM3DAR_Controller sharedController];
-		sm3dar.delegate = self;
-		sm3dar.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];
-		[self.view addSubview:sm3dar.view];
-		self.elevationGrid = [[[ElevationGrid alloc] initFromFile:@"elevation_grid_25km_100s.txt"] autorelease];
-		[self addGridAtX:0 Y:0 Z:-80];
+		photoContainerView.hidden = YES;
+		[sm3dar resume];
+		sm3dar.view.hidden = NO;
 		photoViewLoaded = NO;
-		
-		UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-		[sm3dar.view addGestureRecognizer:swipeRecognizer];
-		[swipeRecognizer release];
 	}
 	else 
 	{
-		[self removeAllSubviews];
-		[self initViews];
+		photoContainerView.hidden = NO;
+		[sm3dar suspend];
+		sm3dar.view.hidden = YES;
+		[self changeViews];
+		photoViewLoaded = YES;
 	}
 }
 
