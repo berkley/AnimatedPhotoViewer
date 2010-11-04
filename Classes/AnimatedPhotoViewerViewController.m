@@ -149,8 +149,12 @@ NSMutableDictionary *poiDict;
 			}
 		}
 	}
-	[photoContainerView removeFromSuperview];
-	[photoContainerView release];
+	if(photoContainerView != nil)
+	{
+		[photoContainerView removeFromSuperview];
+		[photoContainerView release];
+		photoContainerView = nil;
+	}
 }
 
 - (void)initViews
@@ -245,6 +249,8 @@ NSMutableDictionary *poiDict;
 																	 subtitle:nil
 															  markerViewClass:[SM3DAR_IconMarkerView class] 
 																   properties:nil];
+				photoElement.frame = CGRectMake(0, 0, 72, 72);
+				[point.view addSubview:photoElement];
 				[poiDict setObject:point forKey:photoElement.photoName];
 			}
 		}
@@ -276,7 +282,8 @@ NSMutableDictionary *poiDict;
 		photoContainerView.hidden = NO;
 		[sm3dar suspend];
 		sm3dar.view.hidden = YES;
-		[self changePhotoViews];
+		[self resetPhotoViews];
+		[self initViews];
 		photoViewLoaded = YES;
 	}
 }
