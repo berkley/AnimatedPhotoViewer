@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreMotion/CMMotionManager.h>
 #import "SM3DAR.h"
 #import "ElevationGrid.h"
 

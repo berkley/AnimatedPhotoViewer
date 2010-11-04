@@ -15,4 +15,6 @@
 
 @property (nonatomic, retain) CMMotionManager *motionManager;
 
++ (Session*)sharedInstance;
+
 @end

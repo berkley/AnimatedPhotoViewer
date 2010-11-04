@@ -6,6 +6,7 @@
 //  Copyright 2010 UCSB. All rights reserved.
 //
 
+
 #import "AnimatedPhotoViewerViewController.h"
 #import "PhotoGridElement.h"
 #import "Constants.h"
@@ -23,6 +24,8 @@ BOOL photoViewLoaded = NO;
 UIView *photoContainerView;
 SM3DAR_Controller *sm3dar;
 NSMutableDictionary *poiDict;
+NSTimer *motionTimer;
+UIInterfaceOrientation currentOrientation;
 
 //add the 3dar grid
 - (void) addGridAtX:(CGFloat)x Y:(CGFloat)y Z:(CGFloat)z
@@ -157,6 +160,16 @@ NSMutableDictionary *poiDict;
 	}
 }
 
+//set the photo view to receive messages from the accelerometer (iff photoViewLoaded)
+- (void)setAccellerometerDelegate
+{
+    if(photoViewLoaded)
+	{
+		[[UIAccelerometer sharedAccelerometer] setUpdateInterval:(1.0/kAccelerometerFrequency)];
+		[[UIAccelerometer sharedAccelerometer] setDelegate:self];
+	}
+}
+
 - (void)initViews
 {
 	NSArray *photoArr = [self getPhotoArray];
@@ -201,15 +214,29 @@ NSMutableDictionary *poiDict;
 	[self.view addSubview:photoContainerView];
 	exploded = NO;
 	photoViewLoaded = YES;
+	[self setAccellerometerDelegate];
 }
+
+/*- (void)motionTimerFired:(NSTimer*)timer
+{
+	//NSLog(@"timer fired");
+	CMAccelerometerData *motion = [Session sharedInstance].motionManager.accelerometerData;
+	NSLog(@"yaw: %f pitch: %f roll: %f", motion.acceleration.y, motion.acceleration.x, motion.acceleration.z);
+}*/
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
 	NSLog(@"View did load");	
-	//operationQueue = [[NSOperationQueue alloc] init];
-	//[[Session sharedInstance].motionManager startGyroUpdatesToQueue:operationQueue withHandler:self]
+	
+	//uncomment and change this for accelerometer support
+	//motionTimer = [NSTimer timerWithTimeInterval:0.5 target:self selector:@selector(motionTimerFired:) userInfo:nil repeats:YES];
+	//NSRunLoop *runner = [NSRunLoop currentRunLoop];
+	//[runner addTimer:motionTimer forMode: NSDefaultRunLoopMode];
+
+	//[Session sharedInstance].motionManager.accelerometerUpdateInterval = 1;
+	//[[Session sharedInstance].motionManager startAccelerometerUpdates];
 	
 	sm3dar = [SM3DAR_Controller sharedController];
 	sm3dar.delegate = self;
@@ -246,14 +273,14 @@ NSMutableDictionary *poiDict;
 																	longitude:photoElement.longitude 
 																	 altitude:0 
 																		title:photoElement.photoName
-																	 subtitle:nil
+																	 subtitle:@"test"
 															  markerViewClass:[SM3DAR_IconMarkerView class] 
 																   properties:nil];
 				photoElement.frame = CGRectMake(0, 0, 72, 72);
 				SM3DAR_IconMarkerView *iconMarkerView = [[SM3DAR_IconMarkerView alloc] initWithFrame:photoElement.frame];
 				iconMarkerView.icon = photoElement;
-				//[point.view addSubview:iconMarkerView];
-				//point.view.icon = iconMarkerView;
+				point.view = iconMarkerView;
+				iconMarkerView.point = point;
 				[poiDict setObject:point forKey:photoElement.photoName];
 			}
 		}
@@ -288,6 +315,7 @@ NSMutableDictionary *poiDict;
 		[self resetPhotoViews];
 		[self initViews];
 		photoViewLoaded = YES;
+		[self setAccellerometerDelegate];
 	}
 }
 
@@ -313,15 +341,18 @@ NSMutableDictionary *poiDict;
 	return NO;
 }
 
+//rotate the photo views
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {	
 	if(!exploded)
 	{
 		[self changePhotoViews];
 	}
+	currentOrientation = toInterfaceOrientation;
 	[self performSelector:@selector(changeOrientation:) withObject:self afterDelay:1];
 }
 
+//recalculate the photos views when the orientation changes
 - (void)changeOrientation:(id)caller
 {
 	if(photoViewLoaded)
@@ -329,6 +360,30 @@ NSMutableDictionary *poiDict;
 		[self resetPhotoViews];
 		[self initViews];	
 	}
+}
+
+- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
+{
+	//NSLog(@"y: %f x: %f z: %f", acceleration.y, acceleration.x, acceleration.z);
+	[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+	if(currentOrientation == UIInterfaceOrientationLandscapeLeft ||
+	   currentOrientation == UIInterfaceOrientationLandscapeRight)
+	{
+		if(acceleration.x < -0.9)
+		{
+			[[UIAccelerometer sharedAccelerometer] setDelegate:nil];
+			[self switchSubviews];
+		}
+	}
+	else 
+	{
+		if(acceleration.y < -0.9)
+		{
+			[[UIAccelerometer sharedAccelerometer] setDelegate:nil];
+			[self switchSubviews];
+		}
+	}
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -342,6 +397,7 @@ NSMutableDictionary *poiDict;
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 	NSLog(@"!!!!!!!!!!!!!!!!View Did Unload!!!!!!!!!!!!!!!!!!!!!!!!");
+	[motionTimer invalidate];
 }
 
 - (void)dealloc {

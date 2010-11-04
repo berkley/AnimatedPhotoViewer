@@ -28,5 +28,4 @@
 #define PHOTOHEIGHT			   80
 
 //accelerometer constants
-#define kAccelerometerFrequency     5.0 // Hz
-#define kFilteringFactor            0.1
+#define kAccelerometerFrequency    1 //hz
