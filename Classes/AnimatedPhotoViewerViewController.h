@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import "SM3DAR.h"
+#import "ElevationGrid.h"
 
-@interface AnimatedPhotoViewerViewController : UIViewController <UIGestureRecognizerDelegate> {
-
+@interface AnimatedPhotoViewerViewController : UIViewController <UIGestureRecognizerDelegate, SM3DAR_Delegate> 
+{
+	SM3DAR_Controller *sm3dar;
+	ElevationGrid *elevationGrid;
 }
+
+@property (nonatomic, retain) ElevationGrid *elevationGrid;
 
 @end
 

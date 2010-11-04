@@ -13,6 +13,8 @@
 
 @implementation AnimatedPhotoViewerViewController
 
+@synthesize elevationGrid;
+
 BOOL exploded = NO;
 NSArray *photoGridCols;
 
@@ -148,6 +150,21 @@ NSArray *photoGridCols;
 	[self initViews];
 }
 
+- (void)removeAllSubviews
+{
+	int count = [self.view.subviews count];
+	for(int i=0; i<count; i++)
+	{
+		NSLog(@"view: %i", i);
+		UIView *subview = [self.view.subviews objectAtIndex:0];
+		if([subview isKindOfClass:[PhotoGridElement class]])
+		{
+			[subview removeFromSuperview];
+			[subview release];
+		}
+	}
+}
+
 - (void)handleTap:(id)caller
 {
 	NSLog(@"tap");
@@ -157,6 +174,15 @@ NSArray *photoGridCols;
 - (void)handleSwipe:(id)caller
 {
 	NSLog(@"swipe");
+	//load 3dar view
+	[self removeAllSubviews];
+	//sm3dar = [SM3DAR_Controller sharedController];
+    //sm3dar.delegate = self;
+    //sm3dar.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];
+    //self.view = sm3dar.view;
+	//self.elevationGrid = [[[ElevationGrid alloc] initFromFile:@"elevation_grid_25km_100s.txt"] autorelease];
+	
+	
 }
 
 // Override to allow orientations other than the default portrait orientation.
@@ -173,35 +199,9 @@ NSArray *photoGridCols;
 	[self performSelector:@selector(changeOrientation:) withObject:self afterDelay:1];
 }
 
-/*- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-	int count = [self.view.subviews count];
-	for(int i=0; i<count; i++)
-	{
-		NSLog(@"view: %i", i);
-		UIView *subview = [self.view.subviews objectAtIndex:0];
-		if([subview isKindOfClass:[PhotoGridElement class]])
-		{
-			[subview removeFromSuperview];
-			[subview release];
-		}
-	}
-	[self initViews];
-}*/
-
 - (void)changeOrientation:(id)caller
 {
-	int count = [self.view.subviews count];
-	for(int i=0; i<count; i++)
-	{
-		NSLog(@"view: %i", i);
-		UIView *subview = [self.view.subviews objectAtIndex:0];
-		if([subview isKindOfClass:[PhotoGridElement class]])
-		{
-			[subview removeFromSuperview];
-			[subview release];
-		}
-	}
+	[self removeAllSubviews];
 	[self initViews];	
 }
 
