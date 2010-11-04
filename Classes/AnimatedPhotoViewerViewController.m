@@ -10,6 +10,8 @@
 #import "PhotoGridElement.h"
 #import "Constants.h"
 #import "CalculationUtil.h"
+#import "Session.h"
+#import "GridView.h"
 
 @implementation AnimatedPhotoViewerViewController
 
@@ -17,8 +19,7 @@
 
 BOOL exploded = NO;
 NSArray *photoGridCols;
-
-
+BOOL photoViewLoaded = NO;
 
 //create a 2d grid of PhotoGridElements with start positions for each photo
 - (NSArray*)createGridWithPhotos:(NSArray*)photoArr
@@ -147,6 +148,10 @@ NSArray *photoGridCols;
 	[self.view addGestureRecognizer:tapRecognizer];
 	[tapRecognizer release];
 	
+	photoViewLoaded = YES;
+	
+	//[[Session sharedInstance].motionManager startGyroUpdatesToQueue:<#(NSOperationQueue *)queue#> withHandler:<#(CMGyroHandler)handler#>]
+	
 	[self initViews];
 }
 
@@ -163,12 +168,36 @@ NSArray *photoGridCols;
 			[subview release];
 		}
 	}
+	photoViewLoaded = NO;
 }
 
 - (void)handleTap:(id)caller
 {
 	NSLog(@"tap");
 	[self changeViews];
+}
+
+- (void) addGridAtX:(CGFloat)x Y:(CGFloat)y Z:(CGFloat)z
+{
+    // Create point.
+    SM3DAR_Fixture *p = [[SM3DAR_Fixture alloc] init];
+    
+    Coord3D coord = {
+        x, y, z
+    };
+    
+    p.worldPoint = coord;
+	
+    GridView *gridView = [[GridView alloc] init];
+	
+    // Give the point a view.
+    gridView.point = p;
+    p.view = gridView;
+    [gridView release];
+    
+    // Add point to 3DAR scene.
+    [sm3dar addPointOfInterest:p];
+    [p release];
 }
 
 - (void)handleSwipe:(id)caller
@@ -181,11 +210,18 @@ NSArray *photoGridCols;
     sm3dar.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];
     self.view = sm3dar.view;
 	self.elevationGrid = [[[ElevationGrid alloc] initFromFile:@"elevation_grid_25km_100s.txt"] autorelease];
+	[self addGridAtX:0 Y:0 Z:-80];
 }
 
 // Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return YES;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+{
+	if(photoViewLoaded)
+	{
+		return YES;		
+	}
+	return NO;
+
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
@@ -199,20 +235,24 @@ NSArray *photoGridCols;
 
 - (void)changeOrientation:(id)caller
 {
-	[self removeAllSubviews];
-	[self initViews];	
+	if(photoViewLoaded)
+	{
+		[self removeAllSubviews];
+		[self initViews];	
+	}
 }
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
+	NSLog(@"!!!!!!!!!!!!WARNING: DID RECEIVE MEMORY WARNING!!!!!!!!!!!!");
 	// Release any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
+	NSLog(@"!!!!!!!!!!!!!!!!View Did Unload!!!!!!!!!!!!!!!!!!!!!!!!");
 }
 
 
