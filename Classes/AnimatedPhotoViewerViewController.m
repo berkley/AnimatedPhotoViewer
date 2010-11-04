@@ -250,7 +250,10 @@ NSMutableDictionary *poiDict;
 															  markerViewClass:[SM3DAR_IconMarkerView class] 
 																   properties:nil];
 				photoElement.frame = CGRectMake(0, 0, 72, 72);
-				[point.view addSubview:photoElement];
+				SM3DAR_IconMarkerView *iconMarkerView = [[SM3DAR_IconMarkerView alloc] initWithFrame:photoElement.frame];
+				iconMarkerView.icon = photoElement;
+				//[point.view addSubview:iconMarkerView];
+				//point.view.icon = iconMarkerView;
 				[poiDict setObject:point forKey:photoElement.photoName];
 			}
 		}
