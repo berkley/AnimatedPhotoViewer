@@ -23,6 +23,7 @@ BOOL photoViewLoaded = NO;
 UIView *photoContainerView;
 SM3DAR_Controller *sm3dar;
 
+//add the 3dar grid
 - (void) addGridAtX:(CGFloat)x Y:(CGFloat)y Z:(CGFloat)z
 {
     // Create point.
@@ -91,6 +92,7 @@ SM3DAR_Controller *sm3dar;
 	return rowArr;
 }
 
+//get the photos and lat/lons from the photos.txt file
 - (NSArray*) getPhotoArray
 {
 	NSError *error;
@@ -106,7 +108,7 @@ SM3DAR_Controller *sm3dar;
 	return photoArr;
 }
 
-//explode the photos views
+//explode/implode the photos views
 - (void)changePhotoViews
 {
 	//NSLog(@"photoGridCols count: %i", [photoGridCols count]);
@@ -163,10 +165,12 @@ SM3DAR_Controller *sm3dar;
 	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
 	UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
 	
+	//add swipe recognizer
 	swipeRecognizer.delegate = self;
 	[photoContainerView addGestureRecognizer:swipeRecognizer];
 	[swipeRecognizer release];
 	
+	//add tap recognizer
 	tapRecognizer.delegate = self;
 	[photoContainerView addGestureRecognizer:tapRecognizer];
 	[tapRecognizer release];
@@ -198,7 +202,6 @@ SM3DAR_Controller *sm3dar;
 {
     [super viewDidLoad];
 	NSLog(@"View did load");	
-	photoViewLoaded = YES;
 	//operationQueue = [[NSOperationQueue alloc] init];
 	//[[Session sharedInstance].motionManager startGyroUpdatesToQueue:operationQueue withHandler:self]
 	
@@ -208,7 +211,6 @@ SM3DAR_Controller *sm3dar;
 	[self.view addSubview:sm3dar.view];
 	self.elevationGrid = [[[ElevationGrid alloc] initFromFile:@"elevation_grid_25km_100s.txt"] autorelease];
 	[self addGridAtX:0 Y:0 Z:-80];
-	photoViewLoaded = NO;
 	
 	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
 	[sm3dar.view addGestureRecognizer:swipeRecognizer];
@@ -216,6 +218,7 @@ SM3DAR_Controller *sm3dar;
 	[sm3dar suspend];
 	sm3dar.view.hidden = YES;
 	
+	photoViewLoaded = NO;
 	self.view.backgroundColor = [UIColor blackColor];
 	
 	[self initViews];
@@ -236,8 +239,6 @@ SM3DAR_Controller *sm3dar;
 		[sm3dar resume];
 		sm3dar.view.hidden = NO;
 		photoViewLoaded = NO;
-		//[photoContainerView setHidden:YES];
-		//photoViewLoaded = NO;
 	}
 	else 
 	{
@@ -247,11 +248,7 @@ SM3DAR_Controller *sm3dar;
 		sm3dar.view.hidden = YES;
 		[self changePhotoViews];
 		photoViewLoaded = YES;
-		//[sm3dar suspend];
-		//[photoContainerView setHidden:NO];
-		//photoViewLoaded = YES;
 	}
-
 }
 
 - (void)handleTap:(id)caller
@@ -263,7 +260,6 @@ SM3DAR_Controller *sm3dar;
 - (void)handleSwipe:(id)caller
 {
 	NSLog(@"swipe");
-	
 	[self switchSubviews];
 }
 
@@ -275,7 +271,6 @@ SM3DAR_Controller *sm3dar;
 		return YES;		
 	}
 	return NO;
-
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
@@ -308,7 +303,6 @@ SM3DAR_Controller *sm3dar;
 	// e.g. self.myOutlet = nil;
 	NSLog(@"!!!!!!!!!!!!!!!!View Did Unload!!!!!!!!!!!!!!!!!!!!!!!!");
 }
-
 
 - (void)dealloc {
     [super dealloc];
