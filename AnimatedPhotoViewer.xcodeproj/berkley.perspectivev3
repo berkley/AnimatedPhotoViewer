@@ -354,7 +354,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7E0BF44112830FD800AFCF75</string>
+										<string>7E0BF45D1283149900AFCF75</string>
 										<key>history</key>
 										<array>
 											<string>7E20D6271281C9FA005477A5</string>
@@ -389,13 +389,13 @@
 											<string>7E25852A1282656C004A7F92</string>
 											<string>7E25852B1282656C004A7F92</string>
 											<string>7E25852C1282656C004A7F92</string>
-											<string>7E2585E712830233004A7F92</string>
 											<string>7E2585EE128302E5004A7F92</string>
 											<string>7E2585EF128302E5004A7F92</string>
-											<string>7E0BF42112830BDA00AFCF75</string>
 											<string>7E0BF42812830CE900AFCF75</string>
-											<string>7E0BF42912830CE900AFCF75</string>
-											<string>7E0BF44012830F1500AFCF75</string>
+											<string>7E0BF4591283149900AFCF75</string>
+											<string>7E0BF45A1283149900AFCF75</string>
+											<string>7E0BF45B1283149900AFCF75</string>
+											<string>7E0BF45C1283149900AFCF75</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -409,18 +409,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1326, 622}}</string>
+								<string>{{0, 0}, {1326, 722}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 59 1680 969 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>622pt</string>
+							<string>722pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>301pt</string>
+							<string>201pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -434,9 +434,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1326, 274}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 59 1680 969 0 0 1680 1028 </string>
+										<string>{{10, 27}, {1326, 174}}</string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -490,7 +488,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1326, 267}}</string>
+										<string>{{10, 27}, {1326, 174}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 59 1680 969 0 0 1680 1028 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -694,7 +694,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>310579160.41294998</real>
+	<real>310580377.00454402</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -711,6 +711,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>7E0BF45E1283149900AFCF75</string>
 		<string>7E0BF43E12830EB600AFCF75</string>
 		<string>7E0BF43F12830EB600AFCF75</string>
 		<string>/Users/berkley/project/iphone/AnimatedPhotoViewer/AnimatedPhotoViewer.xcodeproj</string>

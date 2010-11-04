@@ -22,6 +22,7 @@ NSArray *photoGridCols;
 BOOL photoViewLoaded = NO;
 UIView *photoContainerView;
 SM3DAR_Controller *sm3dar;
+NSMutableDictionary *poiDict;
 
 //add the 3dar grid
 - (void) addGridAtX:(CGFloat)x Y:(CGFloat)y Z:(CGFloat)z
@@ -69,7 +70,7 @@ SM3DAR_Controller *sm3dar;
 			//NSLog(@"photo info: %@, %@, %@", name, lat, lon);
 			PhotoGridElement *gridElement = [[PhotoGridElement alloc] initWithRow:i column:j 
 											photoWidth:PHOTOWIDTH photoHeight:PHOTOHEIGHT 
-											photoName:name lat:[lat floatValue] lon:[lon floatValue]];
+											photoName:name lat:[lat doubleValue] lon:[lon doubleValue]];
 			//NSLog(@"adding gridElement %@ at onScreenPosition (%f, %f)", gridElement.photoName, 
 			//	  gridElement.onScreenPosition.origin.x, gridElement.onScreenPosition.origin.y);
 			//NSLog(@"adding gridElement %@ at offScreenPosition (%f, %f)", gridElement.photoName, 
@@ -125,6 +126,7 @@ SM3DAR_Controller *sm3dar;
 			[UIView commitAnimations];
 		}
 	}
+	
 	if(exploded)
 		exploded = NO;
 	else 
@@ -224,6 +226,33 @@ SM3DAR_Controller *sm3dar;
 	[self initViews];
 }
 
+- (void)addPhotosTo3darGrid
+{
+	NSLog(@"Adding photos to the 3dar view");
+	if(poiDict == nil)
+	{
+		poiDict = [[NSMutableDictionary alloc] init];
+		for(int i=0; i<[photoGridCols count]; i++)
+		{
+			NSArray *photoGridRows = (NSArray*)[photoGridCols objectAtIndex:i];
+			for(int j=0; j<[photoGridRows count]; j++)
+			{
+				PhotoGridElement *photoElement = (PhotoGridElement*)[photoGridRows objectAtIndex:j];
+				SM3DAR_Point *point = [sm3dar initPointOfInterestWithLatitude:photoElement.latitude 
+																	longitude:photoElement.longitude 
+																	 altitude:0 
+																		title:photoElement.photoName
+																	 subtitle:nil
+															  markerViewClass:[SM3DAR_IconMarkerView class] 
+																   properties:nil];
+				[poiDict setObject:point forKey:photoElement.photoName];
+			}
+		}
+		
+		[sm3dar addPointsOfInterest:[poiDict allValues]];
+	}
+}
+
 - (void)switchSubviews
 {
 	NSString *pvl = @"FALSE";
@@ -239,6 +268,7 @@ SM3DAR_Controller *sm3dar;
 		[sm3dar resume];
 		sm3dar.view.hidden = NO;
 		photoViewLoaded = NO;
+		[self addPhotosTo3darGrid];
 	}
 	else 
 	{

@@ -52,7 +52,7 @@
 }
 
 - (id)initWithRow:(NSInteger)r column:(NSInteger)col photoWidth:(NSInteger)pWidth 
-	  photoHeight:(NSInteger)pHeight photoName:(NSString*)name lat:(CGFloat)lat lon:(CGFloat)lon
+	  photoHeight:(NSInteger)pHeight photoName:(NSString*)name lat:(CLLocationDegrees)lat lon:(CLLocationDegrees)lon
 {
 	if(self = [super initWithImage:[UIImage imageNamed:name]])
     {

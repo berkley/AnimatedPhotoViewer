@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <CoreLocation/CoreLocation.h>
 
 @interface PhotoGridElement : UIImageView {
 	CGRect offScreenPosition;
@@ -17,8 +17,8 @@
 	NSInteger numColumns;
 	NSInteger numRows;
 	NSString *photoName;
-	CGFloat latitude;
-	CGFloat longitude;
+	CLLocationDegrees latitude;
+	CLLocationDegrees longitude;
 }
 
 @property (nonatomic, assign) CGRect offScreenPosition;
@@ -28,11 +28,11 @@
 @property (nonatomic, assign) NSInteger numColumns;
 @property (nonatomic, assign) NSInteger numRows;
 @property (nonatomic, retain) NSString *photoName;
-@property (nonatomic, assign) CGFloat latitude;
-@property (nonatomic, assign) CGFloat longitude;
+@property (nonatomic, assign) CLLocationDegrees latitude;
+@property (nonatomic, assign) CLLocationDegrees longitude;
 
 - (id)initWithRow:(NSInteger)r column:(NSInteger)col photoWidth:(NSInteger)pWidth 
-	  photoHeight:(NSInteger)pHeight photoName:(NSString*)name lat:(CGFloat)lat lon:(CGFloat)lon;
+	  photoHeight:(NSInteger)pHeight photoName:(NSString*)name lat:(CLLocationDegrees)lat lon:(CLLocationDegrees)lon;
 - (void)swapFrames;
 
 @end
