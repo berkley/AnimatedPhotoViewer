@@ -151,10 +151,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7E21819A128221D700C5EE84 /* ElevationGrid.h */,
-				7E21819B128221D700C5EE84 /* ElevationGrid.m */,
-				7E21819C128221D700C5EE84 /* GridView.h */,
-				7E21819D128221D700C5EE84 /* GridView.m */,
+				7E21828D12824F0A00C5EE84 /* 3DAR */,
 				1D3623240D0F684500981E51 /* AnimatedPhotoViewerAppDelegate.h */,
 				1D3623250D0F684500981E51 /* AnimatedPhotoViewerAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* AnimatedPhotoViewerViewController.h */,
@@ -300,6 +297,17 @@
 				7E2181E1128223ED00C5EE84 /* Categories */,
 			);
 			name = lib;
+			sourceTree = "<group>";
+		};
+		7E21828D12824F0A00C5EE84 /* 3DAR */ = {
+			isa = PBXGroup;
+			children = (
+				7E21819A128221D700C5EE84 /* ElevationGrid.h */,
+				7E21819B128221D700C5EE84 /* ElevationGrid.m */,
+				7E21819C128221D700C5EE84 /* GridView.h */,
+				7E21819D128221D700C5EE84 /* GridView.m */,
+			);
+			name = 3DAR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

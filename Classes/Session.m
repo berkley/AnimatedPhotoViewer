@@ -11,7 +11,17 @@
 @implementation Session
 
 static Session *sharedInstance = nil;
-//static CMMotionManager *motionManager;
+
+@synthesize motionManager;
+
+- (id)init
+{
+	if(self = [super init])
+	{
+		motionManager = [[CMMotionManager alloc] init];
+	}
+	return self;
+}
 
 + (Session*)sharedInstance
 {
@@ -20,7 +30,6 @@ static Session *sharedInstance = nil;
         if (sharedInstance == nil)
 		{
 			sharedInstance = [[Session alloc] init];
-			//motionManager = [[CMMotionManager alloc] init];
 		}		
     }
     return sharedInstance;

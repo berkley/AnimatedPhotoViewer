@@ -256,8 +256,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -297,14 +295,14 @@
 								<string>7E2181EA128224D500C5EE84</string>
 								<string>7E20D7E112820DD7005477A5</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
-									<integer>2</integer>
-									<integer>1</integer>
+									<integer>18</integer>
+									<integer>10</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -337,12 +335,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>7E20D3E612811AF3005477A5</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SM3DAR.h</string>
+								<string>CalculationUtil.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -350,11 +350,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>7E20D3E712811AF3005477A5</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SM3DAR.h</string>
+										<string>CalculationUtil.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7E21826F12824BBB00C5EE84</string>
+										<string>7E2182B2128252B100C5EE84</string>
 										<key>history</key>
 										<array>
 											<string>7E20D6271281C9FA005477A5</string>
@@ -376,25 +376,26 @@
 											<string>7E20D7DE12820623005477A5</string>
 											<string>7E20D80A12820FB2005477A5</string>
 											<string>7E20D80C12820FB2005477A5</string>
-											<string>7E20D80E12820FB2005477A5</string>
-											<string>7E20D81112820FB2005477A5</string>
 											<string>7E2181361282146900C5EE84</string>
-											<string>7E21815812821B6F00C5EE84</string>
 											<string>7E21815912821B6F00C5EE84</string>
 											<string>7E21815A12821B6F00C5EE84</string>
-											<string>7E21815B12821B6F00C5EE84</string>
 											<string>7E21815C12821B6F00C5EE84</string>
-											<string>7E21817912821E6400C5EE84</string>
 											<string>7E2181F81282254A00C5EE84</string>
 											<string>7E2181F91282254A00C5EE84</string>
 											<string>7E2181FB1282254A00C5EE84</string>
 											<string>7E2181FC1282254A00C5EE84</string>
 											<string>7E2181FD1282254A00C5EE84</string>
 											<string>7E21824D1282498100C5EE84</string>
-											<string>7E21826B12824BBB00C5EE84</string>
 											<string>7E21826C12824BBB00C5EE84</string>
 											<string>7E21826D12824BBB00C5EE84</string>
-											<string>7E21826E12824BBB00C5EE84</string>
+											<string>7E21829012824F5100C5EE84</string>
+											<string>7E21829212824F5100C5EE84</string>
+											<string>7E21829312824F5100C5EE84</string>
+											<string>7E21829412824F5100C5EE84</string>
+											<string>7E21829A1282504E00C5EE84</string>
+											<string>7E21829B1282504E00C5EE84</string>
+											<string>7E2182AA1282524C00C5EE84</string>
+											<string>7E2182AB1282524C00C5EE84</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -434,8 +435,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1326, 260}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 59 1680 969 0 0 1680 1028 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -490,6 +489,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1326, 260}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 59 1680 969 0 0 1680 1028 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -693,7 +694,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>310528955.30111903</real>
+	<real>310530737.163535</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -710,6 +711,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>7E2182B3128252B100C5EE84</string>
 		<string>7E218115128211ED00C5EE84</string>
 		<string>7E2180FB1282106F00C5EE84</string>
 		<string>/Users/berkley/project/iphone/AnimatedPhotoViewer/AnimatedPhotoViewer.xcodeproj</string>

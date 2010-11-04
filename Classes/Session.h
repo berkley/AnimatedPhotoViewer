@@ -10,7 +10,9 @@
 #import <CoreMotion/CMMotionManager.h>
 
 @interface Session : NSObject {
-
+	CMMotionManager *motionManager;
 }
+
+@property (nonatomic, retain) CMMotionManager *motionManager;
 
 @end

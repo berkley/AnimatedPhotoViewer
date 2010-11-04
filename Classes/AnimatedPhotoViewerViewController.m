@@ -176,13 +176,11 @@ NSArray *photoGridCols;
 	NSLog(@"swipe");
 	//load 3dar view
 	[self removeAllSubviews];
-	//sm3dar = [SM3DAR_Controller sharedController];
-    //sm3dar.delegate = self;
-    //sm3dar.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];
-    //self.view = sm3dar.view;
-	//self.elevationGrid = [[[ElevationGrid alloc] initFromFile:@"elevation_grid_25km_100s.txt"] autorelease];
-	
-	
+	sm3dar = [SM3DAR_Controller sharedController];
+    sm3dar.delegate = self;
+    sm3dar.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];
+    self.view = sm3dar.view;
+	self.elevationGrid = [[[ElevationGrid alloc] initFromFile:@"elevation_grid_25km_100s.txt"] autorelease];
 }
 
 // Override to allow orientations other than the default portrait orientation.

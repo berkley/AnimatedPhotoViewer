@@ -13,13 +13,13 @@
 
 + (int)getNumberOfRows
 {
-	int screenWidth = PORTRAITSCREENWIDTH;
-	int screenHeight = PORTRAITSCREENHEIGHT;
+	int screenWidth = [self getScreenWidth];
+	int screenHeight = [self getScreenHeight];
 	if([UIDevice currentDevice].orientation == UIInterfaceOrientationLandscapeLeft ||
 	   [UIDevice currentDevice].orientation == UIInterfaceOrientationLandscapeRight)
 	{
-		screenWidth = LANDSCAPESCREENWIDTH;
-		screenHeight = LANDSCAPESCREENHEIGHT;
+		screenWidth = [self getScreenWidth];
+		screenHeight = [self getScreenHeight];;
 	}
 	
 	int numrows = screenHeight / PHOTOHEIGHT;
@@ -29,13 +29,13 @@
 
 + (int)getNumberOfColumns
 {
-	int screenWidth = PORTRAITSCREENWIDTH;
-	int screenHeight = PORTRAITSCREENHEIGHT;
+	int screenWidth = [self getScreenWidth];
+	int screenHeight = [self getScreenHeight];;
 	if([UIDevice currentDevice].orientation == UIInterfaceOrientationLandscapeLeft ||
 	   [UIDevice currentDevice].orientation == UIInterfaceOrientationLandscapeRight)
 	{
-		screenWidth = LANDSCAPESCREENWIDTH;
-		screenHeight = LANDSCAPESCREENHEIGHT;
+		screenWidth = [self getScreenWidth];
+		screenHeight = [self getScreenHeight];;
 	}
 	
 	int numcols = screenWidth / PHOTOWIDTH;
@@ -45,11 +45,12 @@
 
 + (int)getScreenWidth
 {
-	int screenWidth = PORTRAITSCREENWIDTH;
+	int screenWidth = [[UIScreen mainScreen] bounds].size.width;
+	int screenHeight = [[UIScreen mainScreen] bounds].size.height;
 	if([UIDevice currentDevice].orientation == UIInterfaceOrientationLandscapeLeft ||
 	   [UIDevice currentDevice].orientation == UIInterfaceOrientationLandscapeRight)
 	{
-		screenWidth = LANDSCAPESCREENWIDTH;
+		screenWidth = screenHeight;
 	}
 	
 	NSLog(@"returning screen width: %i", screenWidth);
@@ -58,13 +59,15 @@
 
 + (int)getScreenHeight
 {
-	int screenHeight = PORTRAITSCREENHEIGHT;
+	int screenWidth = [[UIScreen mainScreen] bounds].size.width;
+	int screenHeight = [[UIScreen mainScreen] bounds].size.height;
 	if([UIDevice currentDevice].orientation == UIInterfaceOrientationLandscapeLeft ||
 	   [UIDevice currentDevice].orientation == UIInterfaceOrientationLandscapeRight)
 	{
-		screenHeight = LANDSCAPESCREENHEIGHT;
+		screenWidth = screenWidth;
 	}
 
+	screenHeight = [[UIScreen mainScreen] bounds].size.height;
 	NSLog(@"returning screen height: %i", screenHeight);
 	return screenHeight;
 }
