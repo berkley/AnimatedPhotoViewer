@@ -15,6 +15,7 @@
 		2899E5220DE3E06400AC0155 /* AnimatedPhotoViewerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* AnimatedPhotoViewerViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */; };
+		7E0BF6281283A6B400AFCF75 /* PhotoGridElementContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0BF6271283A6B400AFCF75 /* PhotoGridElementContainer.m */; };
 		7E20D3FB12811D72005477A5 /* IMG_4812.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E20D3F112811D72005477A5 /* IMG_4812.jpg */; };
 		7E20D3FC12811D72005477A5 /* IMG_4762.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E20D3F212811D72005477A5 /* IMG_4762.jpg */; };
 		7E20D3FD12811D72005477A5 /* IMG_4750.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E20D3F312811D72005477A5 /* IMG_4750.jpg */; };
@@ -70,6 +71,8 @@
 		28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedPhotoViewerViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* AnimatedPhotoViewer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedPhotoViewer_Prefix.pch; sourceTree = "<group>"; };
+		7E0BF6261283A6B400AFCF75 /* PhotoGridElementContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridElementContainer.h; sourceTree = "<group>"; };
+		7E0BF6271283A6B400AFCF75 /* PhotoGridElementContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGridElementContainer.m; sourceTree = "<group>"; };
 		7E20D3F112811D72005477A5 /* IMG_4812.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_4812.jpg; sourceTree = "<group>"; };
 		7E20D3F212811D72005477A5 /* IMG_4762.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_4762.jpg; sourceTree = "<group>"; };
 		7E20D3F312811D72005477A5 /* IMG_4750.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_4750.jpg; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				7E20D6111281C86E005477A5 /* CalculationUtil.m */,
 				7E20D7F512820EDF005477A5 /* Session.h */,
 				7E20D7F612820EDF005477A5 /* Session.m */,
+				7E0BF6261283A6B400AFCF75 /* PhotoGridElementContainer.h */,
+				7E0BF6271283A6B400AFCF75 /* PhotoGridElementContainer.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				7E2181B11282223F00C5EE84 /* NSString+BSJSONAdditions.m in Sources */,
 				7E2181E6128223ED00C5EE84 /* UIApplication_TLCommon.m in Sources */,
 				7E2181E7128223ED00C5EE84 /* UIColor_Expanded.m in Sources */,
+				7E0BF6281283A6B400AFCF75 /* PhotoGridElementContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,12 +466,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chad Berkley (J247YF275X)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "430DE2F1-0AB7-4DDA-9AE4-4DBD35265EF7";
+				SDKROOT = iphoneos4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;

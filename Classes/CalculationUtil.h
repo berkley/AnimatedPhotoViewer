@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Constants.h"
+#import "Session.h"
 
 @interface CalculationUtil : NSObject {
 
@@ -17,5 +18,9 @@
 + (int)getScreenWidth;
 + (int)getNumberOfColumns;
 + (int)getNumberOfRows;
++ (BOOL)pnpoly:(NSArray*)vertices location:(CLLocation*)loc;
++ (double)toRadians:(double)degrees;
++ (void)testTriangleCreation;
++ (CLLocationCoordinate2D)pointOnCircle:(double)radius angleInDegrees:(double)angleInDegrees originx:(double)originx originy:(double)originy;
 
 @end

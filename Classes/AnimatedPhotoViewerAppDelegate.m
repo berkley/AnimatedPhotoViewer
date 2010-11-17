@@ -8,6 +8,7 @@
 
 #import "AnimatedPhotoViewerAppDelegate.h"
 #import "AnimatedPhotoViewerViewController.h"
+#import "CalculationUtil.h"
 
 @implementation AnimatedPhotoViewerAppDelegate
 
@@ -18,9 +19,9 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
-    // Override point for customization after app launch. 
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
+{        
+	[[UIApplication sharedApplication] setStatusBarHidden:YES];
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
 

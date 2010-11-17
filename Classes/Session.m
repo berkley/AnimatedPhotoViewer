@@ -12,13 +12,14 @@
 
 static Session *sharedInstance = nil;
 
-@synthesize motionManager;
+@synthesize motionManager, currentOrientation, currentHeading, currentLocation, photoContainer;
 
 - (id)init
 {
 	if(self = [super init])
 	{
 		motionManager = [[CMMotionManager alloc] init];
+		photoContainer = [[PhotoGridElementContainer alloc]init];
 	}
 	return self;
 }

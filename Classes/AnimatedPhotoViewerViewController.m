@@ -13,6 +13,8 @@
 #import "CalculationUtil.h"
 #import "Session.h"
 #import "GridView.h"
+#import "PhotoGridElementContainer.h"
+#import "math.h"
 
 @implementation AnimatedPhotoViewerViewController
 
@@ -25,7 +27,7 @@ UIView *photoContainerView;
 SM3DAR_Controller *sm3dar;
 NSMutableDictionary *poiDict;
 NSTimer *motionTimer;
-UIInterfaceOrientation currentOrientation;
+CLLocationManager *locationManager;
 
 //add the 3dar grid
 - (void) addGridAtX:(CGFloat)x Y:(CGFloat)y Z:(CGFloat)z
@@ -217,6 +219,22 @@ UIInterfaceOrientation currentOrientation;
 	[self setAccellerometerDelegate];
 }
 
+- (void)init3dar
+{
+	sm3dar = [SM3DAR_Controller sharedController];
+	sm3dar.delegate = self;
+	sm3dar.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];
+	[self.view addSubview:sm3dar.view];
+	self.elevationGrid = [[[ElevationGrid alloc] initFromFile:@"elevation_grid_25km_100s.txt"] autorelease];
+	[self addGridAtX:0 Y:0 Z:-80];
+	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+	[sm3dar.view addGestureRecognizer:swipeRecognizer];
+	[swipeRecognizer release];
+	//[sm3dar startCamera];
+	[sm3dar suspend];
+	sm3dar.view.hidden = YES;
+}
+
 /*- (void)motionTimerFired:(NSTimer*)timer
 {
 	//NSLog(@"timer fired");
@@ -229,7 +247,7 @@ UIInterfaceOrientation currentOrientation;
 {
     [super viewDidLoad];
 	NSLog(@"View did load");	
-	
+	[Session sharedInstance].currentOrientation = UIInterfaceOrientationPortrait;
 	//uncomment and change this for accelerometer support
 	//motionTimer = [NSTimer timerWithTimeInterval:0.5 target:self selector:@selector(motionTimerFired:) userInfo:nil repeats:YES];
 	//NSRunLoop *runner = [NSRunLoop currentRunLoop];
@@ -238,18 +256,13 @@ UIInterfaceOrientation currentOrientation;
 	//[Session sharedInstance].motionManager.accelerometerUpdateInterval = 1;
 	//[[Session sharedInstance].motionManager startAccelerometerUpdates];
 	
-	sm3dar = [SM3DAR_Controller sharedController];
-	sm3dar.delegate = self;
-	sm3dar.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];
-	[self.view addSubview:sm3dar.view];
-	self.elevationGrid = [[[ElevationGrid alloc] initFromFile:@"elevation_grid_25km_100s.txt"] autorelease];
-	[self addGridAtX:0 Y:0 Z:-80];
+	locationManager = [[CLLocationManager alloc] init];
+	locationManager.headingFilter = 10.0;
+	[locationManager startUpdatingHeading];
+	[locationManager startUpdatingLocation];
+	locationManager.delegate = self;
 	
-	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-	[sm3dar.view addGestureRecognizer:swipeRecognizer];
-	[swipeRecognizer release];
-	[sm3dar suspend];
-	sm3dar.view.hidden = YES;
+	[self init3dar];
 	
 	photoViewLoaded = NO;
 	self.view.backgroundColor = [UIColor blackColor];
@@ -302,6 +315,7 @@ UIInterfaceOrientation currentOrientation;
 		[self changePhotoViews];
 		photoContainerView.hidden = YES;
 		[sm3dar resume];
+		[sm3dar startCamera];
 		sm3dar.view.hidden = NO;
 		photoViewLoaded = NO;
 		[self addPhotosTo3darGrid];
@@ -334,10 +348,10 @@ UIInterfaceOrientation currentOrientation;
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
 {
-	if(photoViewLoaded)
+	/*if(photoViewLoaded)
 	{
 		return YES;		
-	}
+	}*/
 	return NO;
 }
 
@@ -348,9 +362,29 @@ UIInterfaceOrientation currentOrientation;
 	{
 		[self changePhotoViews];
 	}
-	currentOrientation = toInterfaceOrientation;
+	[Session sharedInstance].currentOrientation = toInterfaceOrientation;
 	[self performSelector:@selector(changeOrientation:) withObject:self afterDelay:1];
 }
+
+/*- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+	if(fromInterfaceOrientation == UIInterfaceOrientationPortrait)
+	{
+		[sm3dar.view removeFromSuperview];
+		[sm3dar forceRelease];
+		sm3dar = nil;
+		sm3dar = [SM3DAR_Controller reinit];
+		[self init3dar];
+		NSLog(@"setting 3dar size to width: %i, height: %i", [CalculationUtil getScreenWidth], [CalculationUtil getScreenHeight]);
+		sm3dar.view.frame = CGRectMake(0, 0, [CalculationUtil getScreenWidth], [CalculationUtil getScreenHeight]);
+		[sm3dar removeAllPointsOfInterest];
+		[self addGridAtX:0 Y:0 Z:-80];		
+		if(!photoViewLoaded)
+		{
+			sm3dar.view.hidden = NO;
+		}
+	}
+}*/
 
 //recalculate the photos views when the orientation changes
 - (void)changeOrientation:(id)caller
@@ -362,12 +396,13 @@ UIInterfaceOrientation currentOrientation;
 	}
 }
 
+//change the view when the user pitches the device up
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
 	//NSLog(@"y: %f x: %f z: %f", acceleration.y, acceleration.x, acceleration.z);
 	[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-	if(currentOrientation == UIInterfaceOrientationLandscapeLeft ||
-	   currentOrientation == UIInterfaceOrientationLandscapeRight)
+	if([Session sharedInstance].currentOrientation == UIInterfaceOrientationLandscapeLeft ||
+	   [Session sharedInstance].currentOrientation == UIInterfaceOrientationLandscapeRight)
 	{
 		if(acceleration.x < -0.9)
 		{
@@ -383,7 +418,95 @@ UIInterfaceOrientation currentOrientation;
 			[self switchSubviews];
 		}
 	}
+}
 
+- (void)updatePhotosForNewHeading
+{
+	CLLocation *here = [Session sharedInstance].currentLocation;
+	double degrees = 30.0;
+	
+	//test location in the middle of portland
+	//CLLocation *here = [[CLLocation alloc] initWithLatitude:45.5 longitude:-122.5];
+	
+	CLHeading *dir = [Session sharedInstance].currentHeading;
+	double leftBound = dir.trueHeading;
+	double rightBound = dir.trueHeading;	
+	
+	//60 degree view portal
+	leftBound = leftBound - degrees;
+	if(leftBound < 0)
+	{
+		leftBound = leftBound + 360;
+	}
+	
+	rightBound = rightBound + degrees;
+	if(rightBound >= 360)
+	{
+		rightBound = rightBound - 360;
+	}
+	
+	CLLocationCoordinate2D leftcoord = [CalculationUtil pointOnCircle:1.0 angleInDegrees:leftBound originx:here.coordinate.longitude originy:here.coordinate.latitude];
+	CLLocationCoordinate2D rightcoord = [CalculationUtil pointOnCircle:1.0 angleInDegrees:rightBound originx:here.coordinate.longitude originy:here.coordinate.latitude];
+	NSLog(@"leftcoord: lat: %f lon: %f", leftcoord.latitude, leftcoord.longitude);
+	NSLog(@"rightcoord: lat: %f lon: %f", rightcoord.latitude, rightcoord.longitude);	
+	
+	CLLocation *rightBoundingPoint = [[CLLocation alloc] initWithLatitude:rightcoord.latitude longitude:rightcoord.longitude];
+	CLLocation *leftBoundingPoint = [[CLLocation alloc] initWithLatitude:leftcoord.latitude longitude:leftcoord.longitude];
+	
+	NSArray *vertices = [NSArray arrayWithObjects:here, leftBoundingPoint, rightBoundingPoint, nil];
+	
+	NSLog(@"bounding points are: (%f,%f) (%f,%f) (%f,%f)", here.coordinate.longitude, here.coordinate.latitude, 
+		  leftBoundingPoint.coordinate.longitude, leftBoundingPoint.coordinate.latitude,
+		  rightBoundingPoint.coordinate.longitude, rightBoundingPoint.coordinate.latitude);
+	NSLog(@"here is: %f,%f", here.coordinate.longitude, here.coordinate.latitude);
+	
+	for(int i=0; i<[photoGridCols count]; i++)
+	{
+		NSArray *photoGridRows = (NSArray*)[photoGridCols objectAtIndex:i];
+		for(int j=0; j<[photoGridRows count]; j++)
+		{ 	//check if the photos is in the polygon [(here.coordinate.lon, here.coordinate.lat), (lbpLon, lbpLat), (rbpLon, rbpLat)]
+			PhotoGridElement *photoElement = (PhotoGridElement*)[photoGridRows objectAtIndex:j];
+			CLLocation *location = [[CLLocation alloc] initWithLatitude:photoElement.latitude longitude:photoElement.longitude];
+			NSLog(@"photo location: %f, %f", photoElement.longitude, photoElement.latitude);
+			BOOL isInPoly = [CalculationUtil pnpoly:vertices location:location];
+			NSLog(@"is in poly: %i", isInPoly);
+			if(isInPoly)
+			{  //the photo should be displayed
+				[UIView beginAnimations:nil context:nil];
+				[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+				[UIView setAnimationDuration:ANIMATIONDURATION];
+				photoElement.alpha = 1.0;
+				[UIView commitAnimations];
+			}
+			else 
+			{  //photo should not be displayed
+				[UIView beginAnimations:nil context:nil];
+				[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+				[UIView setAnimationDuration:ANIMATIONDURATION];
+				photoElement.alpha = 0.0;
+				[UIView commitAnimations];
+			}
+		}
+	}
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+	NSLog(@"location updated: lat: %f lon: %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+	[Session sharedInstance].currentLocation = newLocation;
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
+{
+	NSLog(@"heading updated: mag: %f true: %f", newHeading.magneticHeading, newHeading.trueHeading);
+	[Session sharedInstance].currentHeading = newHeading;
+	[self updatePhotosForNewHeading];
+}
+
+//3dar delegate method that does the opposite of the above method
+-(void)didChangeOrientationYaw:(CGFloat)yaw pitch:(CGFloat)pitch roll:(CGFloat)roll
+{
+	NSLog(@"3dar orientation change: yaw %f pitch %f roll %f", yaw, pitch, roll);
 }
 
 - (void)didReceiveMemoryWarning {

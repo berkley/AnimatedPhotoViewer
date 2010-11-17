@@ -13,7 +13,7 @@
 #import "ElevationGrid.h"
 
 @interface AnimatedPhotoViewerViewController : UIViewController 
-  <UIGestureRecognizerDelegate, SM3DAR_Delegate, UIAccelerometerDelegate> 
+  <UIGestureRecognizerDelegate, SM3DAR_Delegate, UIAccelerometerDelegate, CLLocationManagerDelegate> 
 {
 	ElevationGrid *elevationGrid;
 }
