@@ -16,10 +16,11 @@
 #import "PhotoGridElementContainer.h"
 #import "math.h"
 #import "Flickr.h"
+#import "ControlOverlayViewController.h"
 
 @implementation AnimatedPhotoViewerViewController
 
-@synthesize elevationGrid;
+@synthesize elevationGrid, plusButton;;
 
 BOOL exploded = NO;
 NSArray *photoGridCols;
@@ -29,6 +30,7 @@ SM3DAR_Controller *sm3dar;
 NSMutableDictionary *poiDict;
 NSTimer *motionTimer;
 CLLocationManager *locationManager;
+
 
 //add the 3dar grid
 - (void) addGridAtX:(CGFloat)x Y:(CGFloat)y Z:(CGFloat)z
@@ -218,6 +220,16 @@ CLLocationManager *locationManager;
 	exploded = NO;
 	photoViewLoaded = YES;
 	[self setAccellerometerDelegate];
+	
+	//add the plus button
+	double screenWidth = [CalculationUtil getScreenWidth];
+	double screenHeight = [CalculationUtil getScreenHeight];
+	plusButton = [[UIButton alloc] initWithFrame:CGRectMake(screenWidth - 50, screenHeight - 50, 40, 40)];
+	plusButton.showsTouchWhenHighlighted = YES;
+	UIImage *plusButtonImage = [UIImage imageNamed:@"PlusButton.png"];
+	[plusButton setImage:plusButtonImage forState:UIControlStateNormal];
+	[plusButton addTarget:self action:@selector(plusButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
+	[self.view addSubview:plusButton];	
 }
 
 - (void)init3dar
@@ -281,6 +293,15 @@ CLLocationManager *locationManager;
 	self.view.backgroundColor = [UIColor blackColor];
 	
 	[self initViews];
+}
+
+- (void)plusButtonTouched:(id)sender
+{
+	ControlOverlayViewController *covc = [[ControlOverlayViewController alloc] init];
+	[self.view addSubview:covc.view];
+	covc.animatedPhotoViewerViewController = self;
+	//[covc release];
+	plusButton.hidden = YES;
 }
 
 //handle alert view feedback

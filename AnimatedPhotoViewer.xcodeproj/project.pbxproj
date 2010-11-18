@@ -59,6 +59,10 @@
 		7E4907EB12939B020098E0D3 /* Flickr.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4907EA12939B020098E0D3 /* Flickr.m */; };
 		7ED15DCF1294806B004B73D2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED15DCE1294806B004B73D2 /* CFNetwork.framework */; };
 		7ED15DD212948078004B73D2 /* libObjectiveFlickr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED15DAC12947D8B004B73D2 /* libObjectiveFlickr.a */; };
+		7ED15F111294D792004B73D2 /* ControlOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */; };
+		7ED15F1E1294DB76004B73D2 /* MinusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED15F1B1294DB76004B73D2 /* MinusButton.png */; };
+		7ED15F1F1294DB76004B73D2 /* PlusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED15F1C1294DB76004B73D2 /* PlusButton.png */; };
+		7ED15F201294DB76004B73D2 /* ControlPanelBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED15F1D1294DB76004B73D2 /* ControlPanelBar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,21 +70,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 7ED15DA012947D8B004B73D2 /* ObjectiveFlickr.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 6A8666490F9593B200325E1C /* ObjectiveFlickr.framework */;
+			remoteGlobalIDString = 6A8666490F9593B200325E1C;
 			remoteInfo = "ObjectiveFlickr (framework)";
 		};
 		7ED15DAB12947D8B004B73D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7ED15DA012947D8B004B73D2 /* ObjectiveFlickr.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 6ABF72E60F939BE600B9179E /* libObjectiveFlickr.a */;
+			remoteGlobalIDString = 6ABF72E60F939BE600B9179E;
 			remoteInfo = "ObjectiveFlickr (library)";
 		};
 		7ED15DDB12948179004B73D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7ED15DA012947D8B004B73D2 /* ObjectiveFlickr.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 6ABF72E50F939BE600B9179E /* ObjectiveFlickr (library) */;
+			remoteGlobalIDString = 6ABF72E50F939BE600B9179E;
 			remoteInfo = "ObjectiveFlickr (library)";
 		};
 /* End PBXContainerItemProxy section */
@@ -158,6 +162,11 @@
 		7E4907EA12939B020098E0D3 /* Flickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flickr.m; sourceTree = "<group>"; };
 		7ED15DA012947D8B004B73D2 /* ObjectiveFlickr.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveFlickr.xcodeproj; path = ../objectiveflickr/ObjectiveFlickr.xcodeproj; sourceTree = SOURCE_ROOT; };
 		7ED15DCE1294806B004B73D2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7ED15F0E1294D792004B73D2 /* ControlOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlOverlayViewController.h; sourceTree = "<group>"; };
+		7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlOverlayViewController.m; sourceTree = "<group>"; };
+		7ED15F1B1294DB76004B73D2 /* MinusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MinusButton.png; path = Graphics/MinusButton.png; sourceTree = "<group>"; };
+		7ED15F1C1294DB76004B73D2 /* PlusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PlusButton.png; path = Graphics/PlusButton.png; sourceTree = "<group>"; };
+		7ED15F1D1294DB76004B73D2 /* ControlPanelBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ControlPanelBar.png; path = Graphics/ControlPanelBar.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* AnimatedPhotoViewer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AnimatedPhotoViewer-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +210,8 @@
 				7E20D7F612820EDF005477A5 /* Session.m */,
 				7E0BF6261283A6B400AFCF75 /* PhotoGridElementContainer.h */,
 				7E0BF6271283A6B400AFCF75 /* PhotoGridElementContainer.m */,
+				7ED15F0E1294D792004B73D2 /* ControlOverlayViewController.h */,
+				7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -220,6 +231,7 @@
 				7E4907E812939AE40098E0D3 /* Flickr */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				7ED15F161294DB25004B73D2 /* Graphics */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -369,6 +381,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7ED15F161294DB25004B73D2 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				7ED15F1B1294DB76004B73D2 /* MinusButton.png */,
+				7ED15F1C1294DB76004B73D2 /* PlusButton.png */,
+				7ED15F1D1294DB76004B73D2 /* ControlPanelBar.png */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -468,6 +490,9 @@
 				7E20D7E912820DD7005477A5 /* 3dar_logo.png in Resources */,
 				7E20D7EA12820DD7005477A5 /* SM3DAR_keys.txt in Resources */,
 				7E218191128220F400C5EE84 /* elevation_grid_25km_100s.txt in Resources */,
+				7ED15F1E1294DB76004B73D2 /* MinusButton.png in Resources */,
+				7ED15F1F1294DB76004B73D2 /* PlusButton.png in Resources */,
+				7ED15F201294DB76004B73D2 /* ControlPanelBar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +520,7 @@
 				7E2181E7128223ED00C5EE84 /* UIColor_Expanded.m in Sources */,
 				7E0BF6281283A6B400AFCF75 /* PhotoGridElementContainer.m in Sources */,
 				7E4907EB12939B020098E0D3 /* Flickr.m in Sources */,
+				7ED15F111294D792004B73D2 /* ControlOverlayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

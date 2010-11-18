@@ -19,6 +19,7 @@ static NSString *flickrNsidKey = @"geoflickr.flickrNsid";
 @synthesize motionManager, currentOrientation, currentHeading, currentLocation, photoContainer;
 @synthesize flickrAuthKey, flickrUsername, flickrFullname, flickrNsid;
 
+//init the class
 - (id)init
 {
 	if(self = [super init])
@@ -29,6 +30,7 @@ static NSString *flickrNsidKey = @"geoflickr.flickrNsid";
 		flickrUsername = nil;
 		flickrFullname = nil;
 		flickrNsid = nil;
+		//get the saved flickr values from UserDefaults
 		NSString *fak = [[NSUserDefaults standardUserDefaults] stringForKey:flickrAuthKeyKey];
 		NSString *fun = [[NSUserDefaults standardUserDefaults] stringForKey:flickrUsernameKey];
 		NSString *ffn = [[NSUserDefaults standardUserDefaults] stringForKey:flickrFullnameKey];
@@ -48,6 +50,7 @@ static NSString *flickrNsidKey = @"geoflickr.flickrNsid";
 	return self;
 }
 
+//save the flickr user information to UserDefaults
 - (void)writeUserDefaults
 {
 	NSLog(@"writing user defaults");
@@ -59,6 +62,7 @@ static NSString *flickrNsidKey = @"geoflickr.flickrNsid";
 	[defaults synchronize];
 }
 
+//get the singleton instance of session
 + (Session*)sharedInstance
 {
     @synchronized(self)
@@ -71,6 +75,7 @@ static NSString *flickrNsidKey = @"geoflickr.flickrNsid";
     return sharedInstance;
 }
 	
+//print out the contents of a dictionary at level 0
 + (void)inspectDictionary:(NSDictionary*)dict
 {
 	for(int i=0l; i<[[dict allKeys] count]; i++)

@@ -16,9 +16,11 @@
   <UIGestureRecognizerDelegate, SM3DAR_Delegate, UIAccelerometerDelegate, CLLocationManagerDelegate> 
 {
 	ElevationGrid *elevationGrid;
+	UIButton *plusButton;
 }
 
 @property (nonatomic, retain) ElevationGrid *elevationGrid;
+@property (nonatomic, retain) UIButton *plusButton;
 
 @end
 
