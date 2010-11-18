@@ -56,7 +56,34 @@
 		7E2181E6128223ED00C5EE84 /* UIApplication_TLCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2181E3128223ED00C5EE84 /* UIApplication_TLCommon.m */; };
 		7E2181E7128223ED00C5EE84 /* UIColor_Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2181E5128223ED00C5EE84 /* UIColor_Expanded.m */; };
 		7E2182171282475E00C5EE84 /* lib3DAR_v4_0_6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E2182161282475E00C5EE84 /* lib3DAR_v4_0_6.a */; };
+		7E4907EB12939B020098E0D3 /* Flickr.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4907EA12939B020098E0D3 /* Flickr.m */; };
+		7ED15DCF1294806B004B73D2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED15DCE1294806B004B73D2 /* CFNetwork.framework */; };
+		7ED15DD212948078004B73D2 /* libObjectiveFlickr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED15DAC12947D8B004B73D2 /* libObjectiveFlickr.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7ED15DA912947D8B004B73D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7ED15DA012947D8B004B73D2 /* ObjectiveFlickr.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6A8666490F9593B200325E1C /* ObjectiveFlickr.framework */;
+			remoteInfo = "ObjectiveFlickr (framework)";
+		};
+		7ED15DAB12947D8B004B73D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7ED15DA012947D8B004B73D2 /* ObjectiveFlickr.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6ABF72E60F939BE600B9179E /* libObjectiveFlickr.a */;
+			remoteInfo = "ObjectiveFlickr (library)";
+		};
+		7ED15DDB12948179004B73D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7ED15DA012947D8B004B73D2 /* ObjectiveFlickr.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6ABF72E50F939BE600B9179E /* ObjectiveFlickr (library) */;
+			remoteInfo = "ObjectiveFlickr (library)";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +154,10 @@
 		7E2181E4128223ED00C5EE84 /* UIColor_Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColor_Expanded.h; sourceTree = "<group>"; };
 		7E2181E5128223ED00C5EE84 /* UIColor_Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColor_Expanded.m; sourceTree = "<group>"; };
 		7E2182161282475E00C5EE84 /* lib3DAR_v4_0_6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = lib3DAR_v4_0_6.a; sourceTree = "<group>"; };
+		7E4907E912939B020098E0D3 /* Flickr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flickr.h; sourceTree = "<group>"; };
+		7E4907EA12939B020098E0D3 /* Flickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flickr.m; sourceTree = "<group>"; };
+		7ED15DA012947D8B004B73D2 /* ObjectiveFlickr.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveFlickr.xcodeproj; path = ../objectiveflickr/ObjectiveFlickr.xcodeproj; sourceTree = SOURCE_ROOT; };
+		7ED15DCE1294806B004B73D2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* AnimatedPhotoViewer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AnimatedPhotoViewer-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +176,8 @@
 				7E2181D01282236200C5EE84 /* SystemConfiguration.framework in Frameworks */,
 				7E2181DC1282238900C5EE84 /* CoreMotion.framework in Frameworks */,
 				7E2182171282475E00C5EE84 /* lib3DAR_v4_0_6.a in Frameworks */,
+				7ED15DD212948078004B73D2 /* libObjectiveFlickr.a in Frameworks */,
+				7ED15DCF1294806B004B73D2 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,11 +217,13 @@
 			isa = PBXGroup;
 			children = (
 				7E2181EA128224D500C5EE84 /* lib */,
+				7E4907E812939AE40098E0D3 /* Flickr */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				7ED15DCE1294806B004B73D2 /* CFNetwork.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -205,6 +240,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7ED15DA012947D8B004B73D2 /* ObjectiveFlickr.xcodeproj */,
 				7E218190128220F400C5EE84 /* elevation_grid_25km_100s.txt */,
 				7E20D3F012811D4A005477A5 /* Photos */,
 				2899E5210DE3E06400AC0155 /* AnimatedPhotoViewerViewController.xib */,
@@ -315,6 +351,24 @@
 			name = 3DAR;
 			sourceTree = "<group>";
 		};
+		7E4907E812939AE40098E0D3 /* Flickr */ = {
+			isa = PBXGroup;
+			children = (
+				7E4907E912939B020098E0D3 /* Flickr.h */,
+				7E4907EA12939B020098E0D3 /* Flickr.m */,
+			);
+			name = Flickr;
+			sourceTree = "<group>";
+		};
+		7ED15DA112947D8B004B73D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7ED15DAA12947D8B004B73D2 /* ObjectiveFlickr.framework */,
+				7ED15DAC12947D8B004B73D2 /* libObjectiveFlickr.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -329,6 +383,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7ED15DDC12948179004B73D2 /* PBXTargetDependency */,
 			);
 			name = AnimatedPhotoViewer;
 			productName = AnimatedPhotoViewer;
@@ -355,12 +410,35 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7ED15DA112947D8B004B73D2 /* Products */;
+					ProjectRef = 7ED15DA012947D8B004B73D2 /* ObjectiveFlickr.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* AnimatedPhotoViewer */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7ED15DAA12947D8B004B73D2 /* ObjectiveFlickr.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ObjectiveFlickr.framework;
+			remoteRef = 7ED15DA912947D8B004B73D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7ED15DAC12947D8B004B73D2 /* libObjectiveFlickr.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libObjectiveFlickr.a;
+			remoteRef = 7ED15DAB12947D8B004B73D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -416,10 +494,19 @@
 				7E2181E6128223ED00C5EE84 /* UIApplication_TLCommon.m in Sources */,
 				7E2181E7128223ED00C5EE84 /* UIColor_Expanded.m in Sources */,
 				7E0BF6281283A6B400AFCF75 /* PhotoGridElementContainer.m in Sources */,
+				7E4907EB12939B020098E0D3 /* Flickr.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7ED15DDC12948179004B73D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectiveFlickr (library)";
+			targetProxy = 7ED15DDB12948179004B73D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
@@ -427,10 +514,15 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AnimatedPhotoViewer_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit,
+					/Users/berkley/project/iphone/objectiveflickr/Source,
+				);
 				INFOPLIST_FILE = "AnimatedPhotoViewer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -450,8 +542,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AnimatedPhotoViewer_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit,
+					/Users/berkley/project/iphone/objectiveflickr/Source,
+				);
 				INFOPLIST_FILE = "AnimatedPhotoViewer-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

@@ -26,12 +26,23 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
-     <key>UISupportedInterfaceOrientations</key>
-     <array>
-          <string>UIInterfaceOrientationPortrait</string>
-          <string>UIInterfaceOrientationPortraitUpsideDown</string>
-          <string>UIInterfaceOrientationLandscapeLeft</string>
-          <string>UIInterfaceOrientationLandscapeRight</string>
-     </array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.bordertownlabs.geoflickr.url</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>geoflickr</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

@@ -17,6 +17,10 @@
 	CLLocation *currentLocation;
 	CLHeading *currentHeading;
 	PhotoGridElementContainer *photoContainer;
+	NSString *flickrAuthKey;
+	NSString *flickrUsername;
+	NSString *flickrFullname;
+	NSString *flickrNsid;
 }
 
 @property (nonatomic, assign) UIInterfaceOrientation currentOrientation;
@@ -24,7 +28,13 @@
 @property (nonatomic, retain) CLLocation *currentLocation;
 @property (nonatomic, retain) CLHeading *currentHeading;
 @property (nonatomic, retain) PhotoGridElementContainer *photoContainer;
+@property (nonatomic, retain) NSString *flickrAuthKey;
+@property (nonatomic, retain) NSString *flickrUsername;
+@property (nonatomic, retain) NSString *flickrFullname;
+@property (nonatomic, retain) NSString *flickrNsid;
 
 + (Session*)sharedInstance;
++ (void)inspectDictionary:(NSDictionary*)dict;
+- (void)writeUserDefaults;
 
 @end

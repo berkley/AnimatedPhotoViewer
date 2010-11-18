@@ -9,6 +9,7 @@
 #import "AnimatedPhotoViewerAppDelegate.h"
 #import "AnimatedPhotoViewerViewController.h"
 #import "CalculationUtil.h"
+#import "Flickr.h"
 
 @implementation AnimatedPhotoViewerAppDelegate
 
@@ -29,29 +30,40 @@
 }
 
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    /*
-     Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-     Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-     */
+- (void)applicationWillResignActive:(UIApplication *)application 
+{
+	[[Session sharedInstance] writeUserDefaults];
 }
 
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    /*
-     Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-     */
+- (void)applicationDidBecomeActive:(UIApplication *)application 
+{
+	
 }
 
 
-- (void)applicationWillTerminate:(UIApplication *)application {
-    /*
-     Called when the application is about to terminate.
-     See also applicationDidEnterBackground:.
-     */
+- (void)applicationWillTerminate:(UIApplication *)application 
+{
+	[[Session sharedInstance] writeUserDefaults];
 }
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url 
+{
+	NSLog(@"opened app with url %@", url);
 
+	if([url.scheme isEqualToString:@"geoflickr"])
+	{  	//url is of the form: geoflickr://auth.success?frob=72157625288618289-38d6666c4b7f3cd4-5927508
+		NSString *query = [url query];
+		NSLog(@"query: %@", query);
+		NSString *frob = [query substringFromIndex:5];
+		NSLog(@"frob: %@", frob);
+		[Session sharedInstance].flickrAuthKey = @"";
+		[[Flickr sharedInstance] getAuthToken:frob];
+		NSLog(@"authkey: %@", [Session sharedInstance].flickrAuthKey);
+	}
+
+	return YES;
+}
 #pragma mark -
 #pragma mark Memory management
 
@@ -59,6 +71,7 @@
     /*
      Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
      */
+	NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!MEMORY WARNING!!!!!!!!!!!!!!!!!!!!!!");
 }
 
 

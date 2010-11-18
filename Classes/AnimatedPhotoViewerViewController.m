@@ -15,6 +15,7 @@
 #import "GridView.h"
 #import "PhotoGridElementContainer.h"
 #import "math.h"
+#import "Flickr.h"
 
 @implementation AnimatedPhotoViewerViewController
 
@@ -247,6 +248,18 @@ CLLocationManager *locationManager;
 {
     [super viewDidLoad];
 	NSLog(@"View did load");	
+	if([Session sharedInstance].flickrAuthKey == nil)
+	{  //need to authenticate
+		UIAlertView *alert = [[UIAlertView alloc] 
+							  initWithTitle:@"Flickr" 
+							  message:@"You need to authorize this app to use your Flickr account.  Safari will open and you will be brought back to the app after you finish the process." 
+							  delegate:self 
+							  cancelButtonTitle:@"Cancel" 
+							  otherButtonTitles:@"Ok", nil];
+		[alert show];
+		[alert release];
+		alert = nil;
+	}
 	[Session sharedInstance].currentOrientation = UIInterfaceOrientationPortrait;
 	//uncomment and change this for accelerometer support
 	//motionTimer = [NSTimer timerWithTimeInterval:0.5 target:self selector:@selector(motionTimerFired:) userInfo:nil repeats:YES];
@@ -268,6 +281,15 @@ CLLocationManager *locationManager;
 	self.view.backgroundColor = [UIColor blackColor];
 	
 	[self initViews];
+}
+
+//handle alert view feedback
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if(buttonIndex == 1)
+	{
+		[[Flickr sharedInstance] openAuthUrl];
+	}
 }
 
 - (void)addPhotosTo3darGrid
@@ -348,10 +370,10 @@ CLLocationManager *locationManager;
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
 {
-	/*if(photoViewLoaded)
+	if(photoViewLoaded)
 	{
 		return YES;		
-	}*/
+	}
 	return NO;
 }
 
@@ -400,7 +422,7 @@ CLLocationManager *locationManager;
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
 	//NSLog(@"y: %f x: %f z: %f", acceleration.y, acceleration.x, acceleration.z);
-	[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+	/*[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
 	if([Session sharedInstance].currentOrientation == UIInterfaceOrientationLandscapeLeft ||
 	   [Session sharedInstance].currentOrientation == UIInterfaceOrientationLandscapeRight)
 	{
@@ -417,7 +439,7 @@ CLLocationManager *locationManager;
 			[[UIAccelerometer sharedAccelerometer] setDelegate:nil];
 			[self switchSubviews];
 		}
-	}
+	}*/
 }
 
 - (void)updatePhotosForNewHeading
@@ -467,9 +489,9 @@ CLLocationManager *locationManager;
 		{ 	//check if the photos is in the polygon [(here.coordinate.lon, here.coordinate.lat), (lbpLon, lbpLat), (rbpLon, rbpLat)]
 			PhotoGridElement *photoElement = (PhotoGridElement*)[photoGridRows objectAtIndex:j];
 			CLLocation *location = [[CLLocation alloc] initWithLatitude:photoElement.latitude longitude:photoElement.longitude];
-			NSLog(@"photo location: %f, %f", photoElement.longitude, photoElement.latitude);
+			//NSLog(@"photo location: %f, %f", photoElement.longitude, photoElement.latitude);
 			BOOL isInPoly = [CalculationUtil pnpoly:vertices location:location];
-			NSLog(@"is in poly: %i", isInPoly);
+			//NSLog(@"is in poly: %i", isInPoly);
 			if(isInPoly)
 			{  //the photo should be displayed
 				[UIView beginAnimations:nil context:nil];
@@ -492,7 +514,7 @@ CLLocationManager *locationManager;
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-	NSLog(@"location updated: lat: %f lon: %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+	//NSLog(@"location updated: lat: %f lon: %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
 	[Session sharedInstance].currentLocation = newLocation;
 }
 
