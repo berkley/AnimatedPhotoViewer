@@ -175,6 +175,30 @@ ControlOverlayViewController *covc;
 	}
 }
 
+- (void)removePlusButton
+{
+	[plusButton removeFromSuperview];
+	[plusButton release];
+	plusButton = nil;
+}
+
+- (void)addPlusButton
+{
+	//add the plus button
+	if(plusButton != nil)
+	{
+		[self removePlusButton];
+	}
+	double screenWidth = [CalculationUtil getScreenWidth];
+	double screenHeight = [CalculationUtil getScreenHeight];
+	plusButton = [[UIButton alloc] initWithFrame:CGRectMake(screenWidth - 50, screenHeight - 50, 40, 40)];
+	plusButton.showsTouchWhenHighlighted = YES;
+	UIImage *plusButtonImage = [UIImage imageNamed:@"PlusButton.png"];
+	[plusButton setImage:plusButtonImage forState:UIControlStateNormal];
+	[plusButton addTarget:self action:@selector(plusButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
+	[self.view addSubview:plusButton];	
+}
+
 - (void)initViews
 {
 	self.photoViewLoaded = NO;
@@ -222,32 +246,29 @@ ControlOverlayViewController *covc;
 	photoViewLoaded = YES;
 	[self setAccellerometerDelegate];
 	
-	//add the plus button
-	double screenWidth = [CalculationUtil getScreenWidth];
-	double screenHeight = [CalculationUtil getScreenHeight];
-	plusButton = [[UIButton alloc] initWithFrame:CGRectMake(screenWidth - 50, screenHeight - 50, 40, 40)];
-	plusButton.showsTouchWhenHighlighted = YES;
-	UIImage *plusButtonImage = [UIImage imageNamed:@"PlusButton.png"];
-	[plusButton setImage:plusButtonImage forState:UIControlStateNormal];
-	[plusButton addTarget:self action:@selector(plusButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
-	
+	if(optionsPaneIsDisplayed)
+	{
+		NSLog(@"optionPaneIsDisplayed");		
+	}
+	else {
+		NSLog(@"optionPaneIs NOT Displayed");
+	}
+
+
 	if(optionsPaneIsDisplayed)
 	{
 		[covc.view removeFromSuperview];
-		
-		plusButton.hidden = YES;
-		[plusButton removeFromSuperview];
+		[self removePlusButton];
 		[UIView beginAnimations:nil context:nil];
 		[UIView setAnimationDuration:ANIMATIONDURATION];
 		[covc setScreenSizesAndRects];
 		[covc setRectOnScreen];
 		[self.view addSubview:covc.view];
-		optionsPaneIsDisplayed = YES;
 		[UIView commitAnimations];
 	}
 	else 
 	{
-		[self.view addSubview:plusButton];	
+		[self addPlusButton];
 	}
 }
 
@@ -320,17 +341,15 @@ ControlOverlayViewController *covc;
 	optionsPaneIsDisplayed = NO;
 	[covc release];
 	covc = nil;
-	plusButton.frame = CGRectMake([CalculationUtil getScreenWidth] - 50, [CalculationUtil getScreenHeight] - 50, 40, 40);
-	plusButton.hidden = NO;
-	[self.view addSubview:plusButton];
+	[self addPlusButton];
+	[covc.view removeFromSuperview];
 }
 
 - (void)plusButtonTouched:(id)sender
 {
 	covc = [[ControlOverlayViewController alloc] init];
 	covc.animatedPhotoViewerViewController = self;
-	plusButton.hidden = YES;
-	[plusButton removeFromSuperview];
+	[self removePlusButton];
 	[covc setRectOffScreen];
 	[self.view addSubview:covc.view];
 

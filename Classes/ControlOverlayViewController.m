@@ -68,7 +68,6 @@ double screenHeight;
 	[self setRectOffScreen];
 	[UIView commitAnimations];	
 	self.animatedPhotoViewerViewController.plusButton.hidden = NO;
-	[self.view removeFromSuperview];
 	[self.animatedPhotoViewerViewController controlOverlayDidExit];
 }
 
