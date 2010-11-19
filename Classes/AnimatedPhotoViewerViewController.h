@@ -17,10 +17,14 @@
 {
 	ElevationGrid *elevationGrid;
 	UIButton *plusButton;
+	BOOL photoViewLoaded;
 }
 
 @property (nonatomic, retain) ElevationGrid *elevationGrid;
 @property (nonatomic, retain) UIButton *plusButton;
+@property (nonatomic, assign) BOOL photoViewLoaded;
+
+- (void)controlOverlayDidExit;
 
 @end
 

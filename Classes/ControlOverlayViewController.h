@@ -16,4 +16,8 @@
 
 @property (nonatomic, retain) AnimatedPhotoViewerViewController *animatedPhotoViewerViewController;
 
+- (void)setRectOnScreen;
+- (void)setRectOffScreen;
+- (void) setScreenSizesAndRects;
+
 @end

@@ -13,76 +13,90 @@
 
 @synthesize animatedPhotoViewerViewController;
 
-UIView *controllerBarView;
+UIImageView *backgroundImageView;
 UIButton *minusButton;
+CGRect onScreenRect;
+CGRect offScreenRect;
+double screenWidth;
+double screenHeight;
+
+- (id)init
+{
+	if(self = [super init])
+	{
+		[self setScreenSizesAndRects];
+	}
+	return self;
+}
+
+- (void) setScreenSizesAndRects
+{
+	screenWidth = [CalculationUtil getScreenWidth];
+	screenHeight = [CalculationUtil getScreenHeight];
+	onScreenRect = CGRectMake(10, 10, screenWidth - 20, screenHeight - 20);
+	offScreenRect = CGRectMake(screenWidth + 1000, 0, screenWidth, screenHeight);
+	NSLog(@"screenWidth: %f", screenWidth);
+	minusButton.frame = CGRectMake(screenWidth - 80, 20, 40, 40);
+}
 
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
-	double screenWidth = [CalculationUtil getScreenWidth];
-	double screenHeight = [CalculationUtil getScreenHeight];
-	CGRect offscreenMainRect = CGRectMake(screenWidth + 100, screenHeight - 120, screenWidth - 20, 100);
-	CGRect mainRect = CGRectMake(10, screenHeight - 120, screenWidth - 20, 100);
-	controllerBarView = [[UIView alloc] initWithFrame:mainRect];
-	UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:mainRect];
-	backgroundImageView.image = [UIImage imageNamed:@"ControlPanelBar.png"];
-	[controllerBarView addSubview:backgroundImageView];
+	
+	self.view.backgroundColor = [UIColor whiteColor];
+	self.view.alpha = .5;
+
+	//backgroundImageView = [[UIImageView alloc] initWithFrame:onScreenRect];
+	//backgroundImageView.image = [UIImage imageNamed:@"ControlPanelBar.png"];
 	
 	//add the minus button
-	minusButton = [[UIButton alloc] initWithFrame:CGRectMake(screenWidth - 50, screenHeight - 50, 40, 40)];
+	minusButton = [[UIButton alloc] initWithFrame:CGRectMake(screenWidth - 80, 20, 40, 40)];
 	minusButton.showsTouchWhenHighlighted = YES;
 	UIImage *minusButtonImage = [UIImage imageNamed:@"MinusButton.png"];
 	[minusButton setImage:minusButtonImage forState:UIControlStateNormal];
 	[minusButton addTarget:self action:@selector(minusButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:minusButton];	
-	[self.view addSubview:backgroundImageView];
-
-	//self.view.frame = offscreenMainRect;
-	/*[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationBeginsFromCurrentState:YES];
-	[UIView setAnimationDuration:ANIMATIONDURATION];
-	self.view.frame = mainRect;
-	[UIView commitAnimations];*/
+	//[self.view addSubview:backgroundImageView];
+	self.view.hidden = NO;
 }
 
 - (void)minusButtonTouched:(id)sender
 {
-	double screenWidth = [CalculationUtil getScreenWidth];
-	double screenHeight = [CalculationUtil getScreenHeight];
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationBeginsFromCurrentState:YES];
 	[UIView setAnimationDuration:ANIMATIONDURATION];
-	
-	self.view.frame = CGRectMake(screenWidth + 100, screenHeight - 120, screenWidth - 20, 100);
-	//self.view.hidden = YES;
+	[self setRectOffScreen];
 	[UIView commitAnimations];	
 	self.animatedPhotoViewerViewController.plusButton.hidden = NO;
+	[self.view removeFromSuperview];
+	[self.animatedPhotoViewerViewController controlOverlayDidExit];
 }
 
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (void)setRectOffScreen
+{
+	[self setScreenSizesAndRects];
+	self.view.frame = offScreenRect;
 }
-*/
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
+- (void)setRectOnScreen
+{
+	[self setScreenSizesAndRects];
+	self.view.frame = onScreenRect;
+}
+
+- (void)didReceiveMemoryWarning 
+{
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+- (void)viewDidUnload 
+{
+	[super viewDidUnload];
+	[minusButton release];
 }
 
-
-- (void)dealloc {
+- (void)dealloc 
+{
     [super dealloc];
 }
 

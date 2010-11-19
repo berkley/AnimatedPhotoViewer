@@ -20,17 +20,17 @@
 
 @implementation AnimatedPhotoViewerViewController
 
-@synthesize elevationGrid, plusButton;;
+@synthesize elevationGrid, plusButton, photoViewLoaded;
 
 BOOL exploded = NO;
 NSArray *photoGridCols;
-BOOL photoViewLoaded = NO;
 UIView *photoContainerView;
 SM3DAR_Controller *sm3dar;
 NSMutableDictionary *poiDict;
 NSTimer *motionTimer;
 CLLocationManager *locationManager;
-
+BOOL optionsPaneIsDisplayed = NO;
+ControlOverlayViewController *covc;
 
 //add the 3dar grid
 - (void) addGridAtX:(CGFloat)x Y:(CGFloat)y Z:(CGFloat)z
@@ -177,6 +177,7 @@ CLLocationManager *locationManager;
 
 - (void)initViews
 {
+	self.photoViewLoaded = NO;
 	NSArray *photoArr = [self getPhotoArray];
 	
 	photoGridCols = [self createGridWithPhotos:photoArr];
@@ -229,7 +230,25 @@ CLLocationManager *locationManager;
 	UIImage *plusButtonImage = [UIImage imageNamed:@"PlusButton.png"];
 	[plusButton setImage:plusButtonImage forState:UIControlStateNormal];
 	[plusButton addTarget:self action:@selector(plusButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
-	[self.view addSubview:plusButton];	
+	
+	if(optionsPaneIsDisplayed)
+	{
+		[covc.view removeFromSuperview];
+		
+		plusButton.hidden = YES;
+		[plusButton removeFromSuperview];
+		[UIView beginAnimations:nil context:nil];
+		[UIView setAnimationDuration:ANIMATIONDURATION];
+		[covc setScreenSizesAndRects];
+		[covc setRectOnScreen];
+		[self.view addSubview:covc.view];
+		optionsPaneIsDisplayed = YES;
+		[UIView commitAnimations];
+	}
+	else 
+	{
+		[self.view addSubview:plusButton];	
+	}
 }
 
 - (void)init3dar
@@ -294,14 +313,33 @@ CLLocationManager *locationManager;
 	
 	[self initViews];
 }
+ 
+//callback to get rid of covc
+- (void)controlOverlayDidExit
+{
+	optionsPaneIsDisplayed = NO;
+	[covc release];
+	covc = nil;
+	plusButton.frame = CGRectMake([CalculationUtil getScreenWidth] - 50, [CalculationUtil getScreenHeight] - 50, 40, 40);
+	plusButton.hidden = NO;
+	[self.view addSubview:plusButton];
+}
 
 - (void)plusButtonTouched:(id)sender
 {
-	ControlOverlayViewController *covc = [[ControlOverlayViewController alloc] init];
-	[self.view addSubview:covc.view];
+	covc = [[ControlOverlayViewController alloc] init];
 	covc.animatedPhotoViewerViewController = self;
-	//[covc release];
 	plusButton.hidden = YES;
+	[plusButton removeFromSuperview];
+	[covc setRectOffScreen];
+	[self.view addSubview:covc.view];
+
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationBeginsFromCurrentState:YES];
+	[UIView setAnimationDuration:ANIMATIONDURATION];
+	[covc setRectOnScreen];
+	[UIView commitAnimations];
+	optionsPaneIsDisplayed = YES;
 }
 
 //handle alert view feedback
@@ -379,7 +417,7 @@ CLLocationManager *locationManager;
 - (void)handleTap:(id)caller
 {
 	NSLog(@"tap");
-	[self changePhotoViews];
+	//[self changePhotoViews];
 }
 
 - (void)handleSwipe:(id)caller

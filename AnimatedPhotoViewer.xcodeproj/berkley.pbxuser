@@ -15,16 +15,16 @@
 	};
 	28D7ACF60DDB3853001CB0EB /* AnimatedPhotoViewerViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1265, 682}}";
-			sepNavSelRange = "{632, 0}";
-			sepNavVisRange = "{0, 640}";
+			sepNavIntBoundsRect = "{{0, 0}, {1263, 1057}}";
+			sepNavSelRange = "{739, 0}";
+			sepNavVisRange = "{0, 747}";
 		};
 	};
 	28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1328, 7475}}";
-			sepNavSelRange = "{521, 0}";
-			sepNavVisRange = "{0, 1147}";
+			sepNavIntBoundsRect = "{{0, 0}, {1617, 7969}}";
+			sepNavSelRange = "{10797, 0}";
+			sepNavVisRange = "{10588, 849}";
 			sepNavWindowFrame = "{{15, 465}, {750, 558}}";
 		};
 	};
@@ -119,6 +119,32 @@
 			7E02986B1294F325000290F9 /* PBXTextBookmark */ = 7E02986B1294F325000290F9 /* PBXTextBookmark */;
 			7E02986C1294F325000290F9 /* PBXTextBookmark */ = 7E02986C1294F325000290F9 /* PBXTextBookmark */;
 			7E02986D1294F325000290F9 /* PBXTextBookmark */ = 7E02986D1294F325000290F9 /* PBXTextBookmark */;
+			7E0298E11296307E000290F9 /* PBXTextBookmark */ = 7E0298E11296307E000290F9 /* PBXTextBookmark */;
+			7E0298E21296307E000290F9 /* PBXTextBookmark */ = 7E0298E21296307E000290F9 /* PBXTextBookmark */;
+			7E0298E41296307E000290F9 /* PBXTextBookmark */ = 7E0298E41296307E000290F9 /* PBXTextBookmark */;
+			7E0298E51296307E000290F9 /* PBXTextBookmark */ = 7E0298E51296307E000290F9 /* PBXTextBookmark */;
+			7E0298E61296307E000290F9 /* PBXTextBookmark */ = 7E0298E61296307E000290F9 /* PBXTextBookmark */;
+			7E0298E71296307E000290F9 /* PBXTextBookmark */ = 7E0298E71296307E000290F9 /* PBXTextBookmark */;
+			7E0298E81296307E000290F9 /* PBXTextBookmark */ = 7E0298E81296307E000290F9 /* PBXTextBookmark */;
+			7E0298E91296307E000290F9 /* PBXTextBookmark */ = 7E0298E91296307E000290F9 /* PBXTextBookmark */;
+			7E0298EA1296307E000290F9 /* PBXTextBookmark */ = 7E0298EA1296307E000290F9 /* PBXTextBookmark */;
+			7E0298ED12963263000290F9 /* PBXTextBookmark */ = 7E0298ED12963263000290F9 /* PBXTextBookmark */;
+			7E0298EE12963263000290F9 /* PBXTextBookmark */ = 7E0298EE12963263000290F9 /* PBXTextBookmark */;
+			7E0298EF12963263000290F9 /* PBXTextBookmark */ = 7E0298EF12963263000290F9 /* PBXTextBookmark */;
+			7E0298F812963518000290F9 /* PBXTextBookmark */ = 7E0298F812963518000290F9 /* PBXTextBookmark */;
+			7E0298F912963518000290F9 /* PBXTextBookmark */ = 7E0298F912963518000290F9 /* PBXTextBookmark */;
+			7E0298FA12963518000290F9 /* PBXTextBookmark */ = 7E0298FA12963518000290F9 /* PBXTextBookmark */;
+			7E0298FB1296354A000290F9 /* PBXTextBookmark */ = 7E0298FB1296354A000290F9 /* PBXTextBookmark */;
+			7E0299021296374E000290F9 /* PBXTextBookmark */ = 7E0299021296374E000290F9 /* PBXTextBookmark */;
+			7E0299031296374E000290F9 /* PBXTextBookmark */ = 7E0299031296374E000290F9 /* PBXTextBookmark */;
+			7E0299041296374E000290F9 /* PBXTextBookmark */ = 7E0299041296374E000290F9 /* PBXTextBookmark */;
+			7E029909129637A8000290F9 /* PBXTextBookmark */ = 7E029909129637A8000290F9 /* PBXTextBookmark */;
+			7E02990A129637A8000290F9 /* PBXTextBookmark */ = 7E02990A129637A8000290F9 /* PBXTextBookmark */;
+			7E02991B12963BA7000290F9 /* PBXTextBookmark */ = 7E02991B12963BA7000290F9 /* PBXTextBookmark */;
+			7E02991C12963BA7000290F9 /* PBXTextBookmark */ = 7E02991C12963BA7000290F9 /* PBXTextBookmark */;
+			7E02991D12963BA7000290F9 /* PBXTextBookmark */ = 7E02991D12963BA7000290F9 /* PBXTextBookmark */;
+			7E02992012963C71000290F9 /* PBXTextBookmark */ = 7E02992012963C71000290F9 /* PBXTextBookmark */;
+			7E02992112963C71000290F9 /* PBXTextBookmark */ = 7E02992112963C71000290F9 /* PBXTextBookmark */;
 			7E0BF4951283209200AFCF75 = 7E0BF4951283209200AFCF75 /* PBXBookmark */;
 			7E0BF61E12839C5E00AFCF75 = 7E0BF61E12839C5E00AFCF75 /* PBXTextBookmark */;
 			7E0BF641128433CF00AFCF75 = 7E0BF641128433CF00AFCF75 /* PlistBookmark */;
@@ -176,7 +202,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 43";
 		rLen = 0;
-		rLoc = 1505;
+		rLoc = 1757;
 		rType = 0;
 		vrLen = 2234;
 		vrLoc = 231;
@@ -186,7 +212,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 43";
 		rLen = 0;
-		rLoc = 1505;
+		rLoc = 1757;
 		rType = 0;
 		vrLen = 2152;
 		vrLoc = 231;
@@ -196,7 +222,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 43";
 		rLen = 0;
-		rLoc = 1505;
+		rLoc = 1757;
 		rType = 0;
 		vrLen = 2152;
 		vrLoc = 231;
@@ -206,7 +232,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 43";
 		rLen = 0;
-		rLoc = 1505;
+		rLoc = 1757;
 		rType = 0;
 		vrLen = 1824;
 		vrLoc = 352;
@@ -216,7 +242,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 62";
 		rLen = 0;
-		rLoc = 2148;
+		rLoc = 1942;
 		rType = 0;
 		vrLen = 961;
 		vrLoc = 1650;
@@ -253,7 +279,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 62";
 		rLen = 0;
-		rLoc = 2148;
+		rLoc = 1942;
 		rType = 0;
 		vrLen = 2116;
 		vrLoc = 276;
@@ -273,7 +299,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 53";
 		rLen = 37;
-		rLoc = 1753;
+		rLoc = 1760;
 		rType = 0;
 		vrLen = 2116;
 		vrLoc = 276;
@@ -283,7 +309,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 38";
 		rLen = 0;
-		rLoc = 1459;
+		rLoc = 1685;
 		rType = 0;
 		vrLen = 2131;
 		vrLoc = 276;
@@ -293,7 +319,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 39";
 		rLen = 0;
-		rLoc = 1459;
+		rLoc = 1685;
 		rType = 0;
 		vrLen = 2136;
 		vrLoc = 276;
@@ -303,7 +329,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 39";
 		rLen = 0;
-		rLoc = 1459;
+		rLoc = 1685;
 		rType = 0;
 		vrLen = 2136;
 		vrLoc = 276;
@@ -313,7 +339,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 39";
 		rLen = 0;
-		rLoc = 1459;
+		rLoc = 1685;
 		rType = 0;
 		vrLen = 2136;
 		vrLoc = 276;
@@ -323,7 +349,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 39";
 		rLen = 0;
-		rLoc = 1459;
+		rLoc = 1685;
 		rType = 0;
 		vrLen = 855;
 		vrLoc = 1557;
@@ -333,7 +359,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 39";
 		rLen = 0;
-		rLoc = 1459;
+		rLoc = 1685;
 		rType = 0;
 		vrLen = 2343;
 		vrLoc = 491;
@@ -343,7 +369,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
 		name = "AnimatedPhotoViewerViewController.m: 231";
 		rLen = 0;
-		rLoc = 7727;
+		rLoc = 8252;
 		rType = 0;
 		vrLen = 2323;
 		vrLoc = 6349;
@@ -353,7 +379,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
 		name = "AnimatedPhotoViewerViewController.m: 302";
 		rLen = 0;
-		rLoc = 10378;
+		rLoc = 11103;
 		rType = 0;
 		vrLen = 1744;
 		vrLoc = 9322;
@@ -363,7 +389,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
 		name = "AnimatedPhotoViewerViewController.m: 302";
 		rLen = 0;
-		rLoc = 10378;
+		rLoc = 11103;
 		rType = 0;
 		vrLen = 1691;
 		vrLoc = 9456;
@@ -373,7 +399,7 @@
 		fRef = 7ED15F0E1294D792004B73D2 /* ControlOverlayViewController.h */;
 		name = "ControlOverlayViewController.h: 18";
 		rLen = 0;
-		rLoc = 468;
+		rLoc = 553;
 		rType = 0;
 		vrLen = 429;
 		vrLoc = 0;
@@ -393,7 +419,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* AnimatedPhotoViewerViewController.h */;
 		name = "AnimatedPhotoViewerViewController.h: 23";
 		rLen = 0;
-		rLoc = 632;
+		rLoc = 739;
 		rType = 0;
 		vrLen = 640;
 		vrLoc = 0;
@@ -413,7 +439,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 61";
 		rLen = 0;
-		rLoc = 2264;
+		rLoc = 2160;
 		rType = 0;
 		vrLen = 2113;
 		vrLoc = 480;
@@ -433,7 +459,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 45";
 		rLen = 0;
-		rLoc = 1749;
+		rLoc = 1757;
 		rType = 0;
 		vrLen = 2365;
 		vrLoc = 399;
@@ -457,6 +483,266 @@
 		rType = 0;
 		vrLen = 1566;
 		vrLoc = 1129;
+	};
+	7E0298E11296307E000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7E20D7F612820EDF005477A5 /* Session.m */;
+		name = "Session.m: 60";
+		rLen = 0;
+		rLoc = 2086;
+		rType = 0;
+		vrLen = 2565;
+		vrLoc = 130;
+	};
+	7E0298E21296307E000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7E0298E31296307E000290F9 /* UIView.h */;
+		name = "UIView.h: 38";
+		rLen = 43;
+		rLoc = 1266;
+		rType = 0;
+		vrLen = 3554;
+		vrLoc = 0;
+	};
+	7E0298E31296307E000290F9 /* UIView.h */ = {
+		isa = PBXFileReference;
+		name = UIView.h;
+		path = "/Developer/XCode-3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h";
+		sourceTree = "<absolute>";
+	};
+	7E0298E41296307E000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* AnimatedPhotoViewerViewController.h */;
+		name = "AnimatedPhotoViewerViewController.h: 27";
+		rLen = 0;
+		rLoc = 739;
+		rType = 0;
+		vrLen = 747;
+		vrLoc = 0;
+	};
+	7E0298E51296307E000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7E20D6111281C86E005477A5 /* CalculationUtil.m */;
+		name = "CalculationUtil.m: 184";
+		rLen = 0;
+		rLoc = 5798;
+		rType = 0;
+		vrLen = 1652;
+		vrLoc = 583;
+	};
+	7E0298E61296307E000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7E20D5331281ABE6005477A5 /* PhotoGridElement.h */;
+		name = "PhotoGridElement.h: 21";
+		rLen = 0;
+		rLoc = 471;
+		rType = 0;
+		vrLen = 1173;
+		vrLoc = 0;
+	};
+	7E0298E71296307E000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7ED15F0E1294D792004B73D2 /* ControlOverlayViewController.h */;
+		name = "ControlOverlayViewController.h: 21";
+		rLen = 22;
+		rLoc = 529;
+		rType = 0;
+		vrLen = 559;
+		vrLoc = 0;
+	};
+	7E0298E81296307E000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
+		name = "ControlOverlayViewController.m: 32";
+		rLen = 31;
+		rLoc = 561;
+		rType = 0;
+		vrLen = 1727;
+		vrLoc = 375;
+	};
+	7E0298E91296307E000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
+		name = "AnimatedPhotoViewerViewController.m: 238";
+		rLen = 0;
+		rLoc = 8075;
+		rType = 0;
+		vrLen = 1858;
+		vrLoc = 6535;
+	};
+	7E0298EA1296307E000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
+		name = "AnimatedPhotoViewerViewController.m: 238";
+		rLen = 0;
+		rLoc = 8075;
+		rType = 0;
+		vrLen = 1858;
+		vrLoc = 6535;
+	};
+	7E0298ED12963263000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
+		name = "ControlOverlayViewController.m: 34";
+		rLen = 0;
+		rLoc = 595;
+		rType = 0;
+		vrLen = 755;
+		vrLoc = 418;
+	};
+	7E0298EE12963263000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
+		rLen = 0;
+		rLoc = 242;
+		rType = 1;
+	};
+	7E0298EF12963263000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
+		name = "AnimatedPhotoViewerViewController.m: 239";
+		rLen = 0;
+		rLoc = 8093;
+		rType = 0;
+		vrLen = 941;
+		vrLoc = 7702;
+	};
+	7E0298F812963518000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
+		name = "ControlOverlayViewController.m: 68";
+		rLen = 0;
+		rLoc = 1757;
+		rType = 0;
+		vrLen = 1584;
+		vrLoc = 1033;
+	};
+	7E0298F912963518000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
+		rLen = 0;
+		rLoc = 241;
+		rType = 1;
+	};
+	7E0298FA12963518000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
+		name = "AnimatedPhotoViewerViewController.m: 238";
+		rLen = 0;
+		rLoc = 8043;
+		rType = 0;
+		vrLen = 1812;
+		vrLoc = 7065;
+	};
+	7E0298FB1296354A000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
+		name = "AnimatedPhotoViewerViewController.m: 238";
+		rLen = 0;
+		rLoc = 8043;
+		rType = 0;
+		vrLen = 941;
+		vrLoc = 7702;
+	};
+	7E0299021296374E000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
+		name = "AnimatedPhotoViewerViewController.m: 238";
+		rLen = 0;
+		rLoc = 8043;
+		rType = 0;
+		vrLen = 1911;
+		vrLoc = 6805;
+	};
+	7E0299031296374E000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
+		name = "ControlOverlayViewController.m: 33";
+		rLen = 22;
+		rLoc = 570;
+		rType = 0;
+		vrLen = 1645;
+		vrLoc = 482;
+	};
+	7E0299041296374E000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
+		name = "ControlOverlayViewController.m: 41";
+		rLen = 0;
+		rLoc = 887;
+		rType = 0;
+		vrLen = 1747;
+		vrLoc = 520;
+	};
+	7E029909129637A8000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
+		name = "AnimatedPhotoViewerViewController.m: 238";
+		rLen = 0;
+		rLoc = 8043;
+		rType = 0;
+		vrLen = 941;
+		vrLoc = 7702;
+	};
+	7E02990A129637A8000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
+		name = "ControlOverlayViewController.m: 42";
+		rLen = 0;
+		rLoc = 949;
+		rType = 0;
+		vrLen = 882;
+		vrLoc = 576;
+	};
+	7E02991B12963BA7000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
+		name = "ControlOverlayViewController.m: 72";
+		rLen = 21;
+		rLoc = 2137;
+		rType = 0;
+		vrLen = 1319;
+		vrLoc = 1230;
+	};
+	7E02991C12963BA7000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
+		name = "AnimatedPhotoViewerViewController.m: 319";
+		rLen = 0;
+		rLoc = 10960;
+		rType = 0;
+		vrLen = 1303;
+		vrLoc = 10299;
+	};
+	7E02991D12963BA7000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
+		name = "AnimatedPhotoViewerViewController.m: 319";
+		rLen = 0;
+		rLoc = 10960;
+		rType = 0;
+		vrLen = 1336;
+		vrLoc = 10341;
+	};
+	7E02992012963C71000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
+		name = "ControlOverlayViewController.m: 39";
+		rLen = 0;
+		rLoc = 949;
+		rType = 0;
+		vrLen = 1166;
+		vrLoc = 593;
+	};
+	7E02992112963C71000290F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
+		name = "AnimatedPhotoViewerViewController.m: 320";
+		rLen = 0;
+		rLoc = 10960;
+		rType = 0;
+		vrLen = 849;
+		vrLoc = 10588;
 	};
 	7E0BF4951283209200AFCF75 /* PBXBookmark */ = {
 		isa = PBXBookmark;
@@ -624,7 +910,7 @@
 	};
 	7E20D5331281ABE6005477A5 /* PhotoGridElement.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1265, 642}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1263, 682}}";
 			sepNavSelRange = "{471, 0}";
 			sepNavVisRange = "{0, 1173}";
 		};
@@ -652,9 +938,9 @@
 	};
 	7E20D6111281C86E005477A5 /* CalculationUtil.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1265, 2600}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1263, 2600}}";
 			sepNavSelRange = "{5798, 0}";
-			sepNavVisRange = "{581, 1740}";
+			sepNavVisRange = "{583, 1652}";
 		};
 	};
 	7E20D79B1282037C005477A5 /* PBXBookmark */ = {
@@ -740,9 +1026,9 @@
 	};
 	7E20D7F612820EDF005477A5 /* Session.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1265, 1170}}";
-			sepNavSelRange = "{2689, 0}";
-			sepNavVisRange = "{1129, 1566}";
+			sepNavIntBoundsRect = "{{0, 0}, {1263, 1170}}";
+			sepNavSelRange = "{2086, 0}";
+			sepNavVisRange = "{130, 2565}";
 		};
 	};
 	7E20D83C12821059005477A5 /* CoreMotion.h */ = {
@@ -951,16 +1237,16 @@
 	};
 	7ED15F0E1294D792004B73D2 /* ControlOverlayViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1265, 682}}";
-			sepNavSelRange = "{330, 33}";
-			sepNavVisRange = "{0, 474}";
+			sepNavIntBoundsRect = "{{0, 0}, {1263, 682}}";
+			sepNavSelRange = "{529, 22}";
+			sepNavVisRange = "{0, 559}";
 		};
 	};
 	7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1265, 1105}}";
-			sepNavSelRange = "{1749, 0}";
-			sepNavVisRange = "{399, 2365}";
+			sepNavIntBoundsRect = "{{0, 0}, {1617, 1235}}";
+			sepNavSelRange = "{949, 0}";
+			sepNavVisRange = "{593, 1166}";
 		};
 	};
 	7ED15F171294DB54004B73D2 /* PBXTextBookmark */ = {
@@ -1008,7 +1294,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* AnimatedPhotoViewerViewController.m */;
 		name = "AnimatedPhotoViewerViewController.m: 231";
 		rLen = 0;
-		rLoc = 7727;
+		rLoc = 8252;
 		rType = 0;
 		vrLen = 2216;
 		vrLoc = 6457;
@@ -1028,7 +1314,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 49";
 		rLen = 37;
-		rLoc = 1753;
+		rLoc = 1760;
 		rType = 0;
 		vrLen = 1976;
 		vrLoc = 231;
@@ -1038,7 +1324,7 @@
 		fRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */;
 		name = "ControlOverlayViewController.m: 43";
 		rLen = 0;
-		rLoc = 1505;
+		rLoc = 1757;
 		rType = 0;
 		vrLen = 2155;
 		vrLoc = 231;
