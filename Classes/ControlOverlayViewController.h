@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AnimatedPhotoViewerViewController.h"
 
-@interface ControlOverlayViewController : UIViewController 
+@interface ControlOverlayViewController : UIViewController <UITextFieldDelegate>
 {
 	AnimatedPhotoViewerViewController *animatedPhotoViewerViewController;
 }

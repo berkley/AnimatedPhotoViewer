@@ -15,9 +15,14 @@ static NSString *flickrAuthKeyKey = @"geoflickr.flickrAuthKey";
 static NSString *flickrUsernameKey = @"geoflickr.flickrUsername";
 static NSString *flickrFullnameKey = @"geoflickr.flickrFullname";
 static NSString *flickrNsidKey = @"geoflickr.flickrNsid";
+static NSString *searchMyPhotosOnlyKey = @"geoflickr.searchMyPhotosOnly";
+static NSString *numberOfPhotosKey = @"geoflickr.numberOfPhotos";
+static NSString *distanceThresholdKey = @"geoflickr.distanceThreshold";
+static NSString *queryKey = @"geoflickr.queryKey";
 
 @synthesize motionManager, currentOrientation, currentHeading, currentLocation, photoContainer;
 @synthesize flickrAuthKey, flickrUsername, flickrFullname, flickrNsid;
+@synthesize searchMyPhotosOnly, numberOfPhotos, distanceThreshold, query;
 
 //init the class
 - (id)init
@@ -30,11 +35,29 @@ static NSString *flickrNsidKey = @"geoflickr.flickrNsid";
 		flickrUsername = nil;
 		flickrFullname = nil;
 		flickrNsid = nil;
+		searchMyPhotosOnly = NO;
+		numberOfPhotos = 80;
+		distanceThreshold = 1;
+		query = nil;
+		
 		//get the saved flickr values from UserDefaults
 		NSString *fak = [[NSUserDefaults standardUserDefaults] stringForKey:flickrAuthKeyKey];
 		NSString *fun = [[NSUserDefaults standardUserDefaults] stringForKey:flickrUsernameKey];
 		NSString *ffn = [[NSUserDefaults standardUserDefaults] stringForKey:flickrFullnameKey];
 		NSString *fni = [[NSUserDefaults standardUserDefaults] stringForKey:flickrNsidKey];
+		NSString *q = [[NSUserDefaults standardUserDefaults] stringForKey:queryKey];
+		NSInteger dt = [[NSUserDefaults standardUserDefaults] integerForKey:distanceThresholdKey];
+		NSInteger np = [[NSUserDefaults standardUserDefaults] integerForKey:numberOfPhotosKey];
+		BOOL smpo = [[NSUserDefaults standardUserDefaults] boolForKey:searchMyPhotosOnlyKey];
+
+		self.distanceThreshold = dt;
+		self.numberOfPhotos = np;
+		
+		if(smpo)
+			self.searchMyPhotosOnly = YES;
+		else 
+			self.searchMyPhotosOnly = NO;
+
 		if(fak != nil)
 			self.flickrAuthKey = fak;
 		if(fun != nil)
@@ -43,6 +66,8 @@ static NSString *flickrNsidKey = @"geoflickr.flickrNsid";
 			self.flickrFullname = ffn;
 		if(fni != nil)
 			self.flickrNsid = fni;
+		if(q != nil)
+			self.query = q;
 		
 		NSLog(@"recovered user defaults: flickrAuthKey: %@ flickrUsername: %@ flickrFullname: %@ flickrNsid: %@", 
 			  self.flickrAuthKey, self.flickrUsername, self.flickrFullname, self.flickrNsid);
@@ -59,6 +84,10 @@ static NSString *flickrNsidKey = @"geoflickr.flickrNsid";
 	[defaults setObject:self.flickrUsername forKey:flickrUsernameKey];
 	[defaults setObject:self.flickrFullname forKey:flickrFullnameKey];
 	[defaults setObject:self.flickrNsid forKey:flickrNsidKey];
+	[defaults setObject:self.query forKey:queryKey];
+	[defaults setBool:self.searchMyPhotosOnly forKey:searchMyPhotosOnlyKey];
+	[defaults setInteger:self.numberOfPhotos forKey:numberOfPhotosKey];
+	[defaults setInteger:self.distanceThreshold forKey:distanceThresholdKey];
 	[defaults synchronize];
 }
 
