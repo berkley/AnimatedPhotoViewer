@@ -51,16 +51,89 @@ NSString *queryType;
 	}
 }
 
+- (void)makeFlickrAPICallWithName:(NSString*)name params:(NSDictionary*)params queryType:(NSString*)qt
+{
+	queryType = qt;
+	OFFlickrAPIRequest *request = [[OFFlickrAPIRequest alloc] initWithAPIContext:self.context];
+	[request setDelegate:self];
+	[request callAPIMethodWithGET:name arguments:params];
+}
+
+//search flickr using the current values in Session
+- (void)searchFlickr
+{
+	NSMutableArray *keys = [[NSMutableArray alloc] init];
+	NSMutableArray *objects = [[NSMutableArray alloc] init];
+
+	//add the api key
+	[keys addObject:@"api_key"];
+	[objects addObject:self.apikey];
+	
+	//add the user id if we only want to search this users photos, don't add
+	//anything to search public photos
+	if([Session sharedInstance].searchMyPhotosOnly)
+	{
+		[keys addObject:@"user_id"];
+		[objects addObject:@"me"];
+	}
+	
+	//add the text based query if the query string isn't nil
+	NSString *query = [Session trimString:[Session sharedInstance].query];
+	if(![query isEqualToString:@""])
+	{
+		[keys addObject:@"text"];
+		[objects addObject:query];
+	}
+	
+	//add geo radius params
+	[keys addObject:@"radius"];
+	[objects addObject:[NSNumber numberWithInt:[Session sharedInstance].distanceThreshold]];
+	
+	//add current location
+	[keys addObject:@"lat"];
+	[objects addObject:[NSNumber numberWithDouble:[Session sharedInstance].currentLocation.coordinate.latitude]];
+	[keys addObject:@"lon"];
+	[objects addObject:[NSNumber numberWithDouble:[Session sharedInstance].currentLocation.coordinate.longitude]];
+	
+	//add the geo bounding box (triangle)
+	/*[keys addObject:@"bbox"];
+	double minLon, minLat, maxLon, maxLat;
+	if([Session sharedInstance].currentLocation.coordinate.longitude > [Session sharedInstance].headingCornerAtDistance.coordinate.longitude)
+	{
+		maxLon = [Session sharedInstance].currentLocation.coordinate.longitude;
+		minLon = [Session sharedInstance].headingCornerAtDistance.coordinate.longitude;
+	}
+	else 
+	{
+		minLon = [Session sharedInstance].currentLocation.coordinate.longitude;
+		maxLon = [Session sharedInstance].headingCornerAtDistance.coordinate.longitude;
+	}
+	
+	if([Session sharedInstance].currentLocation.coordinate.latitude > [Session sharedInstance].headingCornerAtDistance.coordinate.latitude)
+	{
+		maxLat = [Session sharedInstance].currentLocation.coordinate.latitude;
+		minLat = [Session sharedInstance].headingCornerAtDistance.coordinate.latitude;
+	}
+	else 
+	{
+		minLat = [Session sharedInstance].currentLocation.coordinate.latitude;
+		maxLat = [Session sharedInstance].headingCornerAtDistance.coordinate.latitude;
+	}
+
+	NSString *boundingCoords = [NSString stringWithFormat:@"%f,%f,%f,%f", minLon, minLat, maxLon, maxLat];
+	[objects addObject:boundingCoords];*/
+
+											  
+	[self makeFlickrAPICallWithName:@"flickr.photos.search" params:[NSDictionary dictionaryWithObjects:objects forKeys:keys] queryType:@"search"];
+}
+
 //sets Session.flickrAuthKey if successful
 - (void)getAuthToken:(NSString*)frob
 {
-	OFFlickrAPIRequest *request = [[OFFlickrAPIRequest alloc] initWithAPIContext:self.context];
-	[request setDelegate:self];
 	NSArray *objects = [NSArray arrayWithObjects:self.apikey, frob, nil];
 	NSArray *keys = [NSArray arrayWithObjects:@"api_key", @"frob", nil];
 	NSDictionary *dict = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
-	[request callAPIMethodWithGET:@"flickr.auth.GetToken" arguments:dict];
-	queryType = @"getAuthToken";
+	[self makeFlickrAPICallWithName:@"flickr.auth.GetToken" params:dict queryType:@"getAuthToken"];
 }
 
 - (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didCompleteWithResponse:(NSDictionary *)inResponseDictionary

@@ -19,10 +19,12 @@ static NSString *searchMyPhotosOnlyKey = @"geoflickr.searchMyPhotosOnly";
 static NSString *numberOfPhotosKey = @"geoflickr.numberOfPhotos";
 static NSString *distanceThresholdKey = @"geoflickr.distanceThreshold";
 static NSString *queryKey = @"geoflickr.queryKey";
+static NSString *useCurrentLocationKey = @"geoflickr.useCurrentLocation";
 
 @synthesize motionManager, currentOrientation, currentHeading, currentLocation, photoContainer;
+@synthesize leftBoundingCorner, rightBoundingCorner, headingCornerAtDistance;
 @synthesize flickrAuthKey, flickrUsername, flickrFullname, flickrNsid;
-@synthesize searchMyPhotosOnly, numberOfPhotos, distanceThreshold, query;
+@synthesize searchMyPhotosOnly, numberOfPhotos, distanceThreshold, query, useCurrentLocation;
 
 //init the class
 - (id)init
@@ -49,9 +51,11 @@ static NSString *queryKey = @"geoflickr.queryKey";
 		NSInteger dt = [[NSUserDefaults standardUserDefaults] integerForKey:distanceThresholdKey];
 		NSInteger np = [[NSUserDefaults standardUserDefaults] integerForKey:numberOfPhotosKey];
 		BOOL smpo = [[NSUserDefaults standardUserDefaults] boolForKey:searchMyPhotosOnlyKey];
+		BOOL ucl = [[NSUserDefaults standardUserDefaults] boolForKey:useCurrentLocationKey];
 
 		self.distanceThreshold = dt;
 		self.numberOfPhotos = np;
+		self.useCurrentLocation = ucl;
 		
 		if(smpo)
 			self.searchMyPhotosOnly = YES;
@@ -88,6 +92,7 @@ static NSString *queryKey = @"geoflickr.queryKey";
 	[defaults setBool:self.searchMyPhotosOnly forKey:searchMyPhotosOnlyKey];
 	[defaults setInteger:self.numberOfPhotos forKey:numberOfPhotosKey];
 	[defaults setInteger:self.distanceThreshold forKey:distanceThresholdKey];
+	[defaults setBool:self.useCurrentLocation forKey:useCurrentLocationKey];
 	[defaults synchronize];
 }
 
@@ -113,6 +118,16 @@ static NSString *queryKey = @"geoflickr.queryKey";
 		NSString *obj = [dict objectForKey:key];
 		NSLog(@"key: %@, obj: %@", key, obj);
 	}
+}
+
+//return a string trimmed of white space chars
+//if str is nil, return an empty string
++ (NSString*)trimString:(NSString*)str
+{
+	if(str != nil)
+		return [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	else 
+		return @"";
 }
 
 @end

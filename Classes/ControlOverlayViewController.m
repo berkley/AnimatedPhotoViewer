@@ -26,12 +26,15 @@ UISlider *numberPhotosSlider;
 UISwitch *myPhotosSwitch;
 UISwitch *useCurrentLocationSwitch;
 UITextField *searchTextField;
+UIButton *chooseLocationButton;
 
 //labels
 UILabel *distanceLabel;
 UILabel *numberPhotosLabel;
 UILabel *myPhotosLabel;
 UILabel *useCurrentLocationLabel;
+UILabel *distanceMilesLabel;
+UILabel *distanceKMLabel;
 
 - (id)init
 {
@@ -55,13 +58,21 @@ UILabel *useCurrentLocationLabel;
 									  searchTextField.frame.origin.y + searchTextField.frame.size.height + 10, 
 									  (screenWidth - 40) / 2 - 10, 
 									  30);
+	distanceKMLabel.frame = CGRectMake(searchTextField.frame.origin.x + 5,
+									   distanceLabel.frame.origin.y + distanceLabel.frame.size.height + 10, 
+									   (screenWidth - 40)/2 - 10, 
+									   30);
+	distanceMilesLabel.frame = CGRectMake(searchTextField.frame.origin.x + 5 + (screenWidth - 40) / 2 - 10,
+									   distanceLabel.frame.origin.y + distanceLabel.frame.size.height + 10, 
+									   (screenWidth - 40)/2 - 10, 
+									   30);
 	
 	numberPhotosLabel.frame = CGRectMake(searchTextField.frame.origin.x + 5, 
-										 distanceLabel.frame.origin.y + distanceLabel.frame.size.height + 10, 
+										 distanceKMLabel.frame.origin.y + distanceKMLabel.frame.size.height + 10, 
 										 (screenWidth - 40)/2 - 10, 
 										 30);
-	numberPhotosSlider.frame = CGRectMake(searchTextField.frame.origin.x + distanceLabel.frame.size.width + 10, 
-										  distanceSlider.frame.origin.y + distanceSlider.frame.size.height + 10, 
+	numberPhotosSlider.frame = CGRectMake(searchTextField.frame.origin.x + distanceKMLabel.frame.size.width + 10, 
+										  distanceKMLabel.frame.origin.y + distanceKMLabel.frame.size.height + 10, 
 										  (screenWidth - 40) / 2 - 10, 
 										  30);
 	
@@ -73,6 +84,21 @@ UILabel *useCurrentLocationLabel;
 									  numberPhotosSlider.frame.origin.y + numberPhotosSlider.frame.size.height + 10, 
 									  (screenWidth - 40) / 2 - 10, 
 									  30);
+	
+	useCurrentLocationLabel.frame = CGRectMake(searchTextField.frame.origin.x + 5, 
+									 myPhotosLabel.frame.origin.y + myPhotosLabel.frame.size.height + 10, 
+									 (screenWidth - 40)/2 - 10, 
+									 30);
+	useCurrentLocationSwitch.frame = CGRectMake(searchTextField.frame.origin.x + distanceLabel.frame.size.width + 10, 
+									  myPhotosSwitch.frame.origin.y + myPhotosSwitch.frame.size.height + 10, 
+									  (screenWidth - 40) / 2 - 10, 
+									  30);
+	
+	chooseLocationButton.frame = CGRectMake(searchTextField.frame.origin.x + 5,
+											useCurrentLocationLabel.frame.origin.y + useCurrentLocationLabel.frame.size.height + 10,
+											(screenWidth - 40) / 2,
+											30);
+	chooseLocationButton.enabled = !useCurrentLocationSwitch.on;
 }
 
 - (void) setScreenSizesAndRects
@@ -83,6 +109,12 @@ UILabel *useCurrentLocationLabel;
 	offScreenRect = CGRectMake(screenWidth + 1000, 0, screenWidth, screenHeight);
 	NSLog(@"screenWidth: %f", screenWidth);
 	[self layoutUIElements];
+}
+
+- (void)updateDistanceLabels
+{
+	distanceKMLabel.text = [NSString stringWithFormat:@"%f", distanceSlider.value * .62];
+	distanceMilesLabel.text = [NSString stringWithFormat:@"%f", distanceSlider.value];
 }
 
 - (void)viewDidLoad 
@@ -114,15 +146,25 @@ UILabel *useCurrentLocationLabel;
 	
 	//distance slider
 	distanceLabel = [[UILabel alloc] init];
-	distanceLabel.text = @"Distance";
+	distanceLabel.text = @"Distance Threshold";
+	distanceLabel.adjustsFontSizeToFitWidth = YES;
+	distanceLabel.minimumFontSize = 8;
 	distanceLabel.alpha = .8;
 	distanceLabel.backgroundColor = [UIColor clearColor];
 	distanceSlider = [[UISlider alloc] init];
-	distanceSlider.minimumValue = 1.0;
-	distanceSlider.maximumValue = 10.0;
+	distanceSlider.minimumValue = 1.0; //miles
+	distanceSlider.maximumValue = 20.0; //miles
+	distanceSlider.continuous = YES;
 	distanceSlider.alpha = .8;
 	[distanceSlider addTarget:self action:@selector(distanceValueUpdated:) forControlEvents:UIControlEventValueChanged];
 	distanceSlider.value = [Session sharedInstance].distanceThreshold;
+	distanceKMLabel = [[UILabel alloc] init];
+	distanceKMLabel.alpha = .8;
+	distanceKMLabel.backgroundColor = [UIColor clearColor];
+	distanceMilesLabel = [[UILabel alloc] init];
+	distanceMilesLabel.alpha = .8;
+	distanceMilesLabel.backgroundColor = [UIColor clearColor];
+	[self updateDistanceLabels];
 	
 	//number of photos slider
 	numberPhotosLabel = [[UILabel alloc] init];
@@ -149,21 +191,57 @@ UILabel *useCurrentLocationLabel;
 		myPhotosSwitch.on = YES;
 	}
 	
+	useCurrentLocationLabel = [[UILabel alloc] init];
+	useCurrentLocationLabel.text = @"Use Current Location";
+	useCurrentLocationLabel.alpha = .8;
+	useCurrentLocationLabel.backgroundColor = [UIColor clearColor];
+	useCurrentLocationLabel.adjustsFontSizeToFitWidth = YES;
+	useCurrentLocationLabel.minimumFontSize = 8;
+	useCurrentLocationSwitch = [[UISwitch alloc] init];
+	useCurrentLocationSwitch.alpha = .8;
+	useCurrentLocationSwitch.on = YES;
+	useCurrentLocationSwitch.on = [Session sharedInstance].useCurrentLocation;		
+	[useCurrentLocationSwitch addTarget:self action:@selector(useCurrentLocationSwitchFlipped:) forControlEvents:UIControlEventValueChanged];
+	
+	chooseLocationButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	[chooseLocationButton setTitle:@"Choose Location" forState:UIControlStateNormal];
+	[chooseLocationButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+	chooseLocationButton.enabled = !useCurrentLocationSwitch.on;
+	[chooseLocationButton addTarget:self action:@selector(chooseLocationButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
+	
 	[self layoutUIElements];
+	[self.view addSubview:chooseLocationButton];
+	[self.view addSubview:useCurrentLocationLabel];
+	[self.view addSubview:useCurrentLocationSwitch];
+	[self.view addSubview:chooseLocationButton];
 	[self.view addSubview:myPhotosSwitch];
 	[self.view addSubview:myPhotosLabel];
 	[self.view addSubview:numberPhotosSlider];
 	[self.view addSubview:numberPhotosLabel];
 	[self.view addSubview:distanceSlider];
 	[self.view addSubview:distanceLabel];
+	[self.view addSubview:distanceKMLabel];
+	[self.view addSubview:distanceMilesLabel];
 	[self.view addSubview:searchTextField];
 	[self.view addSubview:minusButton];	
 	self.view.hidden = NO;
 }
 
+- (void)chooseLocationButtonTouched:(id)sender
+{
+	//open the map to choose a location then set Session.currentLocation
+}
+
+- (void)useCurrentLocationSwitchFlipped:(id)sender
+{
+	[Session sharedInstance].useCurrentLocation = useCurrentLocationSwitch.on;
+	chooseLocationButton.enabled = !useCurrentLocationSwitch.on;
+}
+
 - (void)distanceValueUpdated:(id)sender
 {
 	[Session sharedInstance].distanceThreshold = distanceSlider.value;
+	[self updateDistanceLabels];
 }
 
 - (void)numberPhotosValueUpdated:(id)sender
@@ -234,6 +312,7 @@ UILabel *useCurrentLocationLabel;
 	[numberPhotosLabel release];
 	[myPhotosLabel release];
 	[useCurrentLocationLabel release];
+	[chooseLocationButton release];
 }
 
 - (void)dealloc 
@@ -249,6 +328,7 @@ UILabel *useCurrentLocationLabel;
 	[numberPhotosLabel release];
 	[myPhotosLabel release];
 	[useCurrentLocationLabel release];
+	[chooseLocationButton release];
 }
 
 

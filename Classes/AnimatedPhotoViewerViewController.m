@@ -547,11 +547,20 @@ ControlOverlayViewController *covc;
 	
 	CLLocationCoordinate2D leftcoord = [CalculationUtil pointOnCircle:1.0 angleInDegrees:leftBound originx:here.coordinate.longitude originy:here.coordinate.latitude];
 	CLLocationCoordinate2D rightcoord = [CalculationUtil pointOnCircle:1.0 angleInDegrees:rightBound originx:here.coordinate.longitude originy:here.coordinate.latitude];
+	CLLocationCoordinate2D middlecoord = [CalculationUtil pointOnCircle:1.0 angleInDegrees:dir.trueHeading originx:here.coordinate.longitude originy:here.coordinate.latitude];
+	
 	NSLog(@"leftcoord: lat: %f lon: %f", leftcoord.latitude, leftcoord.longitude);
 	NSLog(@"rightcoord: lat: %f lon: %f", rightcoord.latitude, rightcoord.longitude);	
+	NSLog(@"middlecoord: lat: %f lon: %f", middlecoord.latitude, middlecoord.longitude);
 	
 	CLLocation *rightBoundingPoint = [[CLLocation alloc] initWithLatitude:rightcoord.latitude longitude:rightcoord.longitude];
 	CLLocation *leftBoundingPoint = [[CLLocation alloc] initWithLatitude:leftcoord.latitude longitude:leftcoord.longitude];
+	CLLocation *middleBoundingPoint = [[CLLocation alloc] initWithLatitude:middlecoord.latitude longitude:middlecoord.longitude];
+	
+	//set the session objects
+	[Session sharedInstance].leftBoundingCorner = leftBoundingPoint;
+	[Session sharedInstance].rightBoundingCorner = rightBoundingPoint;
+	[Session sharedInstance].headingCornerAtDistance = middleBoundingPoint;
 	
 	NSArray *vertices = [NSArray arrayWithObjects:here, leftBoundingPoint, rightBoundingPoint, nil];
 	

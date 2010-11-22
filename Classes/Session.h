@@ -25,6 +25,10 @@
 	NSInteger numberOfPhotos;
 	NSInteger distanceThreshold;
 	NSString *query;
+	BOOL useCurrentLocation;
+	CLLocation *rightBoundingCorner;
+	CLLocation *leftBoundingCorner;
+	CLLocation *headingCornerAtDistance;
 }
 
 @property (nonatomic, assign) UIInterfaceOrientation currentOrientation;
@@ -40,9 +44,14 @@
 @property (nonatomic, assign) NSInteger numberOfPhotos;
 @property (nonatomic, assign) NSInteger distanceThreshold;
 @property (nonatomic, retain) NSString *query;
+@property (nonatomic, assign) BOOL useCurrentLocation;
+@property (nonatomic, retain) CLLocation *rightBoundingCorner;
+@property (nonatomic, retain) CLLocation *leftBoundingCorner;
+@property (nonatomic, retain) CLLocation *headingCornerAtDistance;
 
 + (Session*)sharedInstance;
 + (void)inspectDictionary:(NSDictionary*)dict;
 - (void)writeUserDefaults;
++ (NSString*)trimString:(NSString*)str;
 
 @end
