@@ -113,8 +113,8 @@ UILabel *distanceKMLabel;
 
 - (void)updateDistanceLabels
 {
-	distanceKMLabel.text = [NSString stringWithFormat:@"%f", distanceSlider.value * .62];
-	distanceMilesLabel.text = [NSString stringWithFormat:@"%f", distanceSlider.value];
+	distanceKMLabel.text = [NSString stringWithFormat:@"%.1f km", distanceSlider.value * 1/.60934];
+	distanceMilesLabel.text = [NSString stringWithFormat:@"%.0f miles", distanceSlider.value];
 }
 
 - (void)viewDidLoad 
