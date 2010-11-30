@@ -62,6 +62,7 @@ NSString *queryType;
 //search flickr using the current values in Session
 - (void)searchFlickr
 {
+	queryType = @"query";
 	NSMutableArray *keys = [[NSMutableArray alloc] init];
 	NSMutableArray *objects = [[NSMutableArray alloc] init];
 
@@ -94,6 +95,14 @@ NSString *queryType;
 	[objects addObject:[NSNumber numberWithDouble:[Session sharedInstance].currentLocation.coordinate.latitude]];
 	[keys addObject:@"lon"];
 	[objects addObject:[NSNumber numberWithDouble:[Session sharedInstance].currentLocation.coordinate.longitude]];
+	
+	//add units
+	[keys addObject:@"radius_units"];
+	[objects addObject:@"mi"];
+	
+	//add geo information and square icon url to the search results
+	[keys addObject:@"extras"];
+	[objects addObject:@"geo,url_sq"];
 	
 	//add the geo bounding box (triangle)
 	/*[keys addObject:@"bbox"];
@@ -155,19 +164,55 @@ NSString *queryType;
 		NSLog(@"set flickrFullname to %@", [Session sharedInstance].flickrFullname);
 		NSLog(@"set flickrNsid to %@", [Session sharedInstance].flickrNsid);
 	}
+	else if([queryType isEqualToString:@"query"])
+	{
+		/*
+		 <photos page="2" pages="89" perpage="10" total="881">
+		 <photo id="2636" owner="47058503995@N01" 
+			secret="a123456" server="2" title="test_04"
+			ispublic="1" isfriend="0" isfamily="0" />
+		 <photo id="2635" owner="47058503995@N01"
+			secret="b123456" server="2" title="test_03"
+			ispublic="0" isfriend="1" isfamily="1" />
+		 <photo id="2633" owner="47058503995@N01"
+			secret="c123456" server="2" title="test_01"
+			ispublic="1" isfriend="0" isfamily="0" />
+		 <photo id="2610" owner="12037949754@N01"
+			secret="d123456" server="2" title="00_tall"
+			ispublic="1" isfriend="0" isfamily="0" />
+		 </photos>
+		 //get back a dict that looks like this
+		 //kick off a thread to cache returned photos
+		 
+		 */
+	}
 }
 
 - (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest didFailWithError:(NSError *)inError
 {
+	NSLog(@"flickr request of type %@ failed with error %@", queryType, [inError localizedDescription]);
 	if([queryType isEqualToString:@"getAuthToken"])
 	{
-		NSLog(@"flickr request of type %@ failed with error %@", queryType, [inError localizedDescription]);
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error Authenticating" 
+														message:[NSString stringWithFormat:@"Could not authenticate with Flickr: %@", [inError localizedDescription]]
+													   delegate:self cancelButtonTitle:@"Ok" 
+											  otherButtonTitles:nil];
+		[alert show];
+	}
+	else if([queryType isEqualToString:@"query"])
+	{
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Query Error" 
+														message:[NSString stringWithFormat:@"There was an error querying Flickr: %@", [inError localizedDescription]] 
+													   delegate:self 
+											  cancelButtonTitle:@"Ok" 
+											  otherButtonTitles:nil];
+		[alert show];
 	}
 }
 
 - (void)flickrAPIRequest:(OFFlickrAPIRequest *)inRequest imageUploadSentBytes:(NSUInteger)inSentBytes totalBytes:(NSUInteger)inTotalBytes
 {
-	
+	NSLog(@"sending bytes to flickr");
 }
 
 @end

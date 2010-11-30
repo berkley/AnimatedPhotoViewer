@@ -1,7 +1,7 @@
 TAnimatedPhotoViewer
 v7
 r0
-t312695719.934728
+t312784468.926619
 cCheck dependencies
 cProcessInfoPlistFile /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/Info.plist AnimatedPhotoViewer-Info.plist
 cCompileXIB /Users/berkley/project/iphone/AnimatedPhotoViewer/MainWindow.xib
@@ -46,7 +46,6 @@ cCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoVie
 cCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/NSString+BSJSONAdditions.o /Users/berkley/project/iphone/AnimatedPhotoViewer/BSJSONAdditions/NSString+BSJSONAdditions.m normal i386 objective-c com.apple.compilers.gcc.4_2
 cCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/UIApplication_TLCommon.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Categories/UIApplication_TLCommon.m normal i386 objective-c com.apple.compilers.gcc.4_2
 cCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/UIColor_Expanded.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Categories/UIColor_Expanded.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/PhotoGridElementContainer.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/PhotoGridElementContainer.m normal i386 objective-c com.apple.compilers.gcc.4_2
 cCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/Flickr.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Flickr.m normal i386 objective-c com.apple.compilers.gcc.4_2
 cCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/ControlOverlayViewController.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/ControlOverlayViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
 cLd /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer normal i386
@@ -454,16 +453,15 @@ i"SM3DAR.h"
 i"ElevationGrid.h"
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/AnimatedPhotoViewerViewController.m
-c000000004CEAD9D500000000000051BE
-t1290459605
-s20926
+c000000004CF47EC100000000000051E5
+t1291091649
+s20965
 i"AnimatedPhotoViewerViewController.h"
 i"PhotoGridElement.h"
 i"Constants.h"
 i"CalculationUtil.h"
 i"Session.h"
 i"GridView.h"
-i"PhotoGridElementContainer.h"
 i"math.h"
 i"Flickr.h"
 i"ControlOverlayViewController.h"
@@ -501,9 +499,9 @@ i<UIKit/UIKit.h>
 i"AnimatedPhotoViewerViewController.h"
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/ControlOverlayViewController.m
-c000000004CF324270000000000002C97
-t1291002919
-s11415
+c000000004CF478490000000000002D01
+t1291089993
+s11521
 i"ControlOverlayViewController.h"
 i"CalculationUtil.h"
 
@@ -566,18 +564,17 @@ s767
 i"PhotoGridElementContainer.h"
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/Session.h
-c000000004CEAD94A00000000000007C5
-t1290459466
-s1989
+c000000004CF47D2F000000000000072A
+t1291091247
+s1834
 i<Foundation/Foundation.h>
 i<CoreMotion/CMMotionManager.h>
 i<CoreLocation/CoreLocation.h>
-i"PhotoGridElementContainer.h"
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/Session.m
-c000000004CEAD9D500000000000011CF
-t1290459605
-s4559
+c000000004CF47D400000000000001183
+t1291091264
+s4483
 i"Session.h"
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/Flickr.h
@@ -588,9 +585,9 @@ i<Foundation/Foundation.h>
 i"ObjectiveFlickr.h"
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/Flickr.m
-c000000004CEADDCD00000000000015D7
-t1290460621
-s5591
+c000000004CF47D070000000000001C97
+t1291091207
+s7319
 i"Flickr.h"
 i"Session.h"
 
@@ -695,41 +692,41 @@ t1290302760
 s19841
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/AnimatedPhotoViewer.LinkFileList
-c000000004CE875280000000000000C12
-t1290302760
-s3090
+c000000004CF47D070000000000000B60
+t1291091207
+s2912
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/AnimatedPhotoViewerAppDelegate.o
-t1290459605
-s57964
+t1291091247
+s57712
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/AnimatedPhotoViewerViewController.o
-t1290459605
-s107680
+t1291091649
+s108028
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/BSJSONEncoder.o
 t1290454436
 s9492
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/CalculationUtil.o
-t1290459605
-s22264
+t1291091247
+s21856
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/Constants.o
 t2
 s0
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/ControlOverlayViewController.o
-t1291002919
-s86000
+t1291091248
+s86276
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/ElevationGrid.o
 t1290454436
 s73532
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/Flickr.o
-t1290460621
-s32628
+t1291091248
+s68440
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/GridView.o
 t1290454436
@@ -752,7 +749,7 @@ t1290454436
 s9908
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/PhotoGridElement.o
-t1290459605
+t1291091247
 s52728
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/PhotoGridElementContainer.o
@@ -760,8 +757,8 @@ t1290454436
 s44860
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/Session.o
-t1290459605
-s37548
+t1291091264
+s35700
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/UIApplication_TLCommon.o
 t1290454436
@@ -776,11 +773,11 @@ t1290454436
 s6372
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app
-t1291002919
+t1291091649
 s1054
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app.dSYM
-t1291002919
+t1291091649
 s102
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/3dar.plist
@@ -792,8 +789,8 @@ t1290454433
 s4822
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer
-t1291002919
-s520932
+t1291091649
+s517852
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewerViewController.nib
 t1290302760
@@ -1001,11 +998,11 @@ s1431
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies312695719#312695719#0(0"0(0#1#0"8609987104#0"0#
+lSLF07#2@18"Check dependencies312784468#312784468#0(0"0(0#1#0"8615568480#0"0#
 
 CCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/AnimatedPhotoViewerAppDelegate.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/AnimatedPhotoViewerAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s312152405.251856
-e312152405.431959
+s312784047.753315
+e312784047.965381
 r1
 xCompileC
 xbuild/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/AnimatedPhotoViewerAppDelegate.o
@@ -1014,11 +1011,11 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@98"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/AnimatedPhotoViewerAppDelegate.m312152405#312152405#0(0"0(0#0#90"/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/AnimatedPhotoViewerAppDelegate.m8630123776#2498"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/AnimatedPhotoViewerAppDelegate.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/AnimatedPhotoViewerAppDelegate.o0#
+lSLF07#2@98"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/AnimatedPhotoViewerAppDelegate.m312784047#312784047#0(0"0(0#0#90"/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/AnimatedPhotoViewerAppDelegate.m8631712448#2498"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/AnimatedPhotoViewerAppDelegate.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/AnimatedPhotoViewerAppDelegate.o0#
 
 CCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/AnimatedPhotoViewerViewController.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/AnimatedPhotoViewerViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s312152405.253066
-e312152405.625779
+s312784449.644425
+e312784449.803777
 r1
 xCompileC
 xbuild/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/AnimatedPhotoViewerViewController.o
@@ -1027,7 +1024,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@101"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/AnimatedPhotoViewerViewController.m312152405#312152405#0(0"0(0#0#93"/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/AnimatedPhotoViewerViewController.m8630296800#2504"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/AnimatedPhotoViewerViewController.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/AnimatedPhotoViewerViewController.o0#
+lSLF07#2@101"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/AnimatedPhotoViewerViewController.m312784449#312784449#0(0"0(0#0#93"/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/AnimatedPhotoViewerViewController.m8616314400#2504"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/AnimatedPhotoViewerViewController.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/AnimatedPhotoViewerViewController.o0#
 
 CCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/BSJSONEncoder.o /Users/berkley/project/iphone/AnimatedPhotoViewer/BSJSONAdditions/BSJSONEncoder.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s312147236.539302
@@ -1043,8 +1040,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@89"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/BSJSONAdditions/BSJSONEncoder.m312147236#312147236#0(0"0(0#0#81"/Users/berkley/project/iphone/AnimatedPhotoViewer/BSJSONAdditions/BSJSONEncoder.m8598654240#2472"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/BSJSONAdditions/BSJSONEncoder.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/BSJSONEncoder.o0#
 
 CCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/CalculationUtil.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/CalculationUtil.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s312152405.345168
-e312152405.480401
+s312784047.756000
+e312784047.898051
 r1
 xCompileC
 xbuild/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/CalculationUtil.o
@@ -1053,14 +1050,14 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@83"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/CalculationUtil.m312152405#312152405#0(0"0(0#0#75"/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/CalculationUtil.m8631024704#2468"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/CalculationUtil.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/CalculationUtil.o0#
+lSLF07#2@83"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/CalculationUtil.m312784047#312784047#0(0"0(0#0#75"/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/CalculationUtil.m8629681728#2468"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/CalculationUtil.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/CalculationUtil.o0#
 
 CCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/Constants.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/Constants.m normal i386 objective-c com.apple.compilers.gcc.4_2
 r0
 
 CCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/ControlOverlayViewController.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/ControlOverlayViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s312695719.561966
-e312695719.772311
+s312784047.965518
+e312784048.134915
 r1
 xCompileC
 xbuild/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/ControlOverlayViewController.o
@@ -1069,7 +1066,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@96"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/ControlOverlayViewController.m312695719#312695719#0(0"0(0#0#88"/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/ControlOverlayViewController.m8608898400#2494"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/ControlOverlayViewController.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/ControlOverlayViewController.o0#
+lSLF07#2@96"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/ControlOverlayViewController.m312784047#312784048#0(0"0(0#0#88"/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/ControlOverlayViewController.m8635133824#2494"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/ControlOverlayViewController.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/ControlOverlayViewController.o0#
 
 CCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/ElevationGrid.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/ElevationGrid.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s312147236.440184
@@ -1085,8 +1082,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@81"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/ElevationGrid.m312147236#312147236#0(0"0(0#0#73"/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/ElevationGrid.m8605722784#2464"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/ElevationGrid.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/ElevationGrid.o0#
 
 CCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/Flickr.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Flickr.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s312153421.646901
-e312153421.805158
+s312784047.907901
+e312784048.068929
 r1
 xCompileC
 xbuild/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/Flickr.o
@@ -1095,7 +1092,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@66"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Flickr.m312153421#312153421#0(0"0(0#0#58"/Users/berkley/project/iphone/AnimatedPhotoViewer/Flickr.m8628486912#2442"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Flickr.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/Flickr.o0#
+lSLF07#2@66"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Flickr.m312784047#312784048#0(0"0(0#0#58"/Users/berkley/project/iphone/AnimatedPhotoViewer/Flickr.m8634106176#2442"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Flickr.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/Flickr.o0#
 
 CCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/GridView.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/GridView.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s312147236.459803
@@ -1163,8 +1160,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@100"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/BSJSONAdditions/NSString+BSJSONAdditions.m312147236#312147236#0(0"0(0#0#92"/Users/berkley/project/iphone/AnimatedPhotoViewer/BSJSONAdditions/NSString+BSJSONAdditions.m8607241536#2494"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/BSJSONAdditions/NSString+BSJSONAdditions.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/NSString+BSJSONAdditions.o0#
 
 CCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/PhotoGridElement.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/PhotoGridElement.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s312152405.343917
-e312152405.512987
+s312784047.754870
+e312784047.906216
 r1
 xCompileC
 xbuild/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/PhotoGridElement.o
@@ -1173,7 +1170,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@84"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/PhotoGridElement.m312152405#312152405#0(0"0(0#0#76"/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/PhotoGridElement.m8640919168#2470"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/PhotoGridElement.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/PhotoGridElement.o0#
+lSLF07#2@84"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/PhotoGridElement.m312784047#312784047#0(0"0(0#0#76"/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/PhotoGridElement.m8631206592#2470"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/PhotoGridElement.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/PhotoGridElement.o0#
 
 CCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/PhotoGridElementContainer.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/PhotoGridElementContainer.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s312147236.722955
@@ -1189,8 +1186,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@93"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/PhotoGridElementContainer.m312147236#312147236#0(0"0(0#0#85"/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/PhotoGridElementContainer.m8607367264#2488"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/PhotoGridElementContainer.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/PhotoGridElementContainer.o0#
 
 CCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/Session.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/Session.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s312152405.432106
-e312152405.574255
+s312784064.356392
+e312784064.437125
 r1
 xCompileC
 xbuild/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/Session.o
@@ -1199,7 +1196,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@75"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/Session.m312152405#312152405#0(0"0(0#0#67"/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/Session.m8641790560#2452"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/Session.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/Session.o0#
+lSLF07#2@75"Compile /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/Session.m312784064#312784064#0(0"0(0#0#67"/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/Session.m8628893152#2452"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/objectiveflickr/LFWebAPIKit -I/Users/berkley/project/iphone/objectiveflickr/Source -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -include /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-bzyhqtvkwupmncfcjzrjweudawux/AnimatedPhotoViewer_Prefix.pch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/Session.m -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/Session.o0#
 
 CCompileC build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/UIApplication_TLCommon.o /Users/berkley/project/iphone/AnimatedPhotoViewer/Categories/UIApplication_TLCommon.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s312147236.638994
@@ -1473,23 +1470,23 @@ xphotos.txt
 lSLF07#2@15"Copy photos.txt311657638#311657638#0(0"0(0#0#60"/Users/berkley/project/iphone/AnimatedPhotoViewer/photos.txt8669073632#549"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/berkley/project/iphone/AnimatedPhotoViewer/photos.txt /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app0#
 
 CGenerateDSYMFile /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app.dSYM /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer
-s312695719.851910
-e312695719.932473
+s312784449.880561
+e312784449.961418
 r1
 xGenerateDSYMFile
 x/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app.dSYM
 x/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer
-lSLF07#2@145"GenerateDSYMFile build/Debug-iphonesimulator/AnimatedPhotoViewer.app.dSYM build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer312695719#312695719#0(0"0(0#0#121"/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer8604567776#488"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/usr/bin/dsymutil /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app.dSYM0#
+lSLF07#2@145"GenerateDSYMFile build/Debug-iphonesimulator/AnimatedPhotoViewer.app.dSYM build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer312784449#312784449#0(0"0(0#0#121"/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer8616856704#488"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/usr/bin/dsymutil /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app.dSYM0#
 
 CLd /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer normal i386
-s312695719.772396
-e312695719.851813
+s312784449.803865
+e312784449.880458
 r1
 xLd
 x/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer
 xnormal
 xi386
-lSLF07#2@126"Link /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer312695719#312695719#0(0"0(0#0#0"8605174368#1403"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -L/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -L/Users/berkley/project/iphone/AnimatedPhotoViewer/3DAR -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -filelist /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/AnimatedPhotoViewer.LinkFileList -mmacosx-version-min=10.6 -lstdc++ -lxml2 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework CoreLocation -framework MapKit -framework OpenGLES -framework QuartzCore -framework SystemConfiguration -framework CoreMotion -l3DAR_v4_0_6 /Users/berkley/project/iphone/objectiveflickr/build/Debug-iphonesimulator/libObjectiveFlickr.a -framework CFNetwork -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer0#
+lSLF07#2@126"Link /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer312784449#312784449#0(0"0(0#0#0"8607747488#1403"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -L/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -L/Users/berkley/project/iphone/AnimatedPhotoViewer/3DAR -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -filelist /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/Objects-normal/i386/AnimatedPhotoViewer.LinkFileList -mmacosx-version-min=10.6 -lstdc++ -lxml2 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework CoreLocation -framework MapKit -framework OpenGLES -framework QuartzCore -framework SystemConfiguration -framework CoreMotion -l3DAR_v4_0_6 /Users/berkley/project/iphone/objectiveflickr/build/Debug-iphonesimulator/libObjectiveFlickr.a -framework CFNetwork -o /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/AnimatedPhotoViewer0#
 
 CProcessInfoPlistFile /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app/Info.plist AnimatedPhotoViewer-Info.plist
 s311919535.651468
@@ -1579,10 +1576,10 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@41"Precompile AnimatedPhotoViewer_Prefix.pch310528143#310528144#0(0"0(0#0#80"/Users/berkley/project/iphone/AnimatedPhotoViewer/AnimatedPhotoViewer_Prefix.pch8624218880#2144"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-generated-files.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-own-target-headers.hmap -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-all-target-headers.hmap -iquote /Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/AnimatedPhotoViewer-project-headers.hmap -F/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/include -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources/i386 -I/Users/berkley/project/iphone/AnimatedPhotoViewer/build/AnimatedPhotoViewer.build/Debug-iphonesimulator/AnimatedPhotoViewer.build/DerivedSources -c /Users/berkley/project/iphone/AnimatedPhotoViewer/AnimatedPhotoViewer_Prefix.pch -o /var/folders/TB/TB-2LMRrEROO6qvLm2HnvU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/AnimatedPhotoViewer_Prefix-egklfrsrkxopntguovpqxvsoepkh/AnimatedPhotoViewer_Prefix.pch.gch0#
 
 CTouch /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app
-s312695719.932559
-e312695719.934696
+s312784449.961508
+e312784449.964016
 r1
 xTouch
 x/Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app
-lSLF07#2@107"Touch /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app312695719#312695719#0(0"0(0#0#0"8598701760#336"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app0#
+lSLF07#2@107"Touch /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app312784449#312784449#0(0"0(0#0#0"8608980480#336"    cd /Users/berkley/project/iphone/AnimatedPhotoViewer    setenv PATH "/Developer/XCode-3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/XCode-3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/berkley/project/iphone/AnimatedPhotoViewer/build/Debug-iphonesimulator/AnimatedPhotoViewer.app0#
 

@@ -115,6 +115,7 @@ UILabel *distanceKMLabel;
 {
 	distanceKMLabel.text = [NSString stringWithFormat:@"%.1f km", distanceSlider.value * 1/.60934];
 	distanceMilesLabel.text = [NSString stringWithFormat:@"%.0f miles", distanceSlider.value];
+	[Session sharedInstance].distanceThreshold = [[NSNumber numberWithFloat:distanceSlider.value] intValue];
 }
 
 - (void)viewDidLoad 

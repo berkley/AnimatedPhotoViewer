@@ -21,7 +21,7 @@ static NSString *distanceThresholdKey = @"geoflickr.distanceThreshold";
 static NSString *queryKey = @"geoflickr.queryKey";
 static NSString *useCurrentLocationKey = @"geoflickr.useCurrentLocation";
 
-@synthesize motionManager, currentOrientation, currentHeading, currentLocation, photoContainer;
+@synthesize motionManager, currentOrientation, currentHeading, currentLocation;
 @synthesize leftBoundingCorner, rightBoundingCorner, headingCornerAtDistance;
 @synthesize flickrAuthKey, flickrUsername, flickrFullname, flickrNsid;
 @synthesize searchMyPhotosOnly, numberOfPhotos, distanceThreshold, query, useCurrentLocation;
@@ -32,7 +32,6 @@ static NSString *useCurrentLocationKey = @"geoflickr.useCurrentLocation";
 	if(self = [super init])
 	{
 		motionManager = [[CMMotionManager alloc] init];
-		photoContainer = [[PhotoGridElementContainer alloc]init];
 		flickrAuthKey = nil;
 		flickrUsername = nil;
 		flickrFullname = nil;

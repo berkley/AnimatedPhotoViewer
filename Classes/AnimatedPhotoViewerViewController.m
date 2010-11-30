@@ -13,7 +13,6 @@
 #import "CalculationUtil.h"
 #import "Session.h"
 #import "GridView.h"
-#import "PhotoGridElementContainer.h"
 #import "math.h"
 #import "Flickr.h"
 #import "ControlOverlayViewController.h"
@@ -199,30 +198,11 @@ ControlOverlayViewController *covc;
 	[self.view addSubview:plusButton];	
 }
 
-- (void)initViews
+- (void)createOrUpdatePhotoArray
 {
-	self.photoViewLoaded = NO;
 	NSArray *photoArr = [self getPhotoArray];
 	
 	photoGridCols = [self createGridWithPhotos:photoArr];
-	if(photoContainerView != nil)
-	{
-		[photoContainerView release];
-	}
-	photoContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [CalculationUtil getScreenWidth], [CalculationUtil getScreenHeight])];
-	[photoContainerView setBackgroundColor:[UIColor blackColor]];
-	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-	UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-	
-	//add swipe recognizer
-	swipeRecognizer.delegate = self;
-	[photoContainerView addGestureRecognizer:swipeRecognizer];
-	[swipeRecognizer release];
-	
-	//add tap recognizer
-	tapRecognizer.delegate = self;
-	[photoContainerView addGestureRecognizer:tapRecognizer];
-	[tapRecognizer release];
 	
 	//NSLog(@"photoGridCols count: %i", [photoGridCols count]);
 	for(int i=0; i<[photoGridCols count]; i++)
@@ -242,6 +222,31 @@ ControlOverlayViewController *covc;
 		}
 	}
 	[self.view addSubview:photoContainerView];
+}
+
+- (void)initViews
+{
+	self.photoViewLoaded = NO;
+	
+	if(photoContainerView != nil)
+	{
+		[photoContainerView release];
+	}
+	photoContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [CalculationUtil getScreenWidth], [CalculationUtil getScreenHeight])];
+	[photoContainerView setBackgroundColor:[UIColor blackColor]];
+	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+	UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+	
+	//add swipe recognizer
+	swipeRecognizer.delegate = self;
+	[photoContainerView addGestureRecognizer:swipeRecognizer];
+	[swipeRecognizer release];
+	
+	//add tap recognizer
+	tapRecognizer.delegate = self;
+	[photoContainerView addGestureRecognizer:tapRecognizer];
+	[tapRecognizer release];
+	
 	exploded = NO;
 	photoViewLoaded = YES;
 	[self setAccellerometerDelegate];
@@ -253,7 +258,6 @@ ControlOverlayViewController *covc;
 	else {
 		NSLog(@"optionPaneIs NOT Displayed");
 	}
-
 
 	if(optionsPaneIsDisplayed)
 	{
@@ -270,6 +274,8 @@ ControlOverlayViewController *covc;
 	{
 		[self addPlusButton];
 	}
+	
+	[self createOrUpdatePhotoArray];
 }
 
 - (void)init3dar
