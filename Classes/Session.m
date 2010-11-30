@@ -40,6 +40,7 @@ static NSString *useCurrentLocationKey = @"geoflickr.useCurrentLocation";
 		numberOfPhotos = 80;
 		distanceThreshold = 1;
 		query = nil;
+		currentLocation = nil;
 		
 		//get the saved flickr values from UserDefaults
 		NSString *fak = [[NSUserDefaults standardUserDefaults] stringForKey:flickrAuthKeyKey];

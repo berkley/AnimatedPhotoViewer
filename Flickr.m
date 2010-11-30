@@ -62,7 +62,10 @@ NSString *queryType;
 //search flickr using the current values in Session
 - (void)searchFlickr
 {
-	queryType = @"query";
+	if([Session sharedInstance].currentLocation == nil)
+	{ //don't run the query if we don't have a current location yet.
+		return;
+	}
 	NSMutableArray *keys = [[NSMutableArray alloc] init];
 	NSMutableArray *objects = [[NSMutableArray alloc] init];
 
@@ -88,13 +91,13 @@ NSString *queryType;
 	
 	//add geo radius params
 	[keys addObject:@"radius"];
-	[objects addObject:[NSNumber numberWithInt:[Session sharedInstance].distanceThreshold]];
+	[objects addObject:[[NSNumber numberWithInt:[Session sharedInstance].distanceThreshold] stringValue]];
 	
 	//add current location
 	[keys addObject:@"lat"];
-	[objects addObject:[NSNumber numberWithDouble:[Session sharedInstance].currentLocation.coordinate.latitude]];
+	[objects addObject:[[NSNumber numberWithDouble:[Session sharedInstance].currentLocation.coordinate.latitude] stringValue]];
 	[keys addObject:@"lon"];
-	[objects addObject:[NSNumber numberWithDouble:[Session sharedInstance].currentLocation.coordinate.longitude]];
+	[objects addObject:[[NSNumber numberWithDouble:[Session sharedInstance].currentLocation.coordinate.longitude] stringValue]];
 	
 	//add units
 	[keys addObject:@"radius_units"];
@@ -102,7 +105,7 @@ NSString *queryType;
 	
 	//add geo information and square icon url to the search results
 	[keys addObject:@"extras"];
-	[objects addObject:@"geo,url_sq"];
+	[objects addObject:@"geo,url_sq,url_m"];
 	
 	//add the geo bounding box (triangle)
 	/*[keys addObject:@"bbox"];
@@ -131,9 +134,12 @@ NSString *queryType;
 
 	NSString *boundingCoords = [NSString stringWithFormat:@"%f,%f,%f,%f", minLon, minLat, maxLon, maxLat];
 	[objects addObject:boundingCoords];*/
-
+	 
+	NSDictionary *dict = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+	NSLog(@"Query Params:");
+	[Session inspectDictionary:dict];
 											  
-	[self makeFlickrAPICallWithName:@"flickr.photos.search" params:[NSDictionary dictionaryWithObjects:objects forKeys:keys] queryType:@"search"];
+	[self makeFlickrAPICallWithName:@"flickr.photos.search" params:dict queryType:@"query"];
 }
 
 //sets Session.flickrAuthKey if successful
@@ -185,6 +191,7 @@ NSString *queryType;
 		 //kick off a thread to cache returned photos
 		 
 		 */
+		[Session inspectDictionary:inResponseDictionary];
 	}
 }
 

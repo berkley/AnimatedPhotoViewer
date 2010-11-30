@@ -103,6 +103,8 @@ ControlOverlayViewController *covc;
 //get the photos and lat/lons from the photos.txt file
 - (NSArray*) getPhotoArray
 {
+	[[Flickr sharedInstance] searchFlickr];
+	
 	NSError *error;
 	NSString *filename = @"photos.txt";
 	NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -113,6 +115,7 @@ ControlOverlayViewController *covc;
 	[fileManager copyItemAtPath:defaultDBPath toPath:dataPath error:&error];
 	NSString *photos = [NSString stringWithContentsOfFile:dataPath encoding:NSUTF8StringEncoding error:&error];
 	NSArray *photoArr = [photos componentsSeparatedByString:@"\n"];
+	
 	return photoArr;
 }
 
