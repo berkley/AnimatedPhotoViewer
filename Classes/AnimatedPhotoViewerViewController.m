@@ -258,6 +258,8 @@ ControlOverlayViewController *covc;
 	else {
 		NSLog(@"optionPaneIs NOT Displayed");
 	}
+	
+	[self createOrUpdatePhotoArray];
 
 	if(optionsPaneIsDisplayed)
 	{
@@ -274,8 +276,6 @@ ControlOverlayViewController *covc;
 	{
 		[self addPlusButton];
 	}
-	
-	[self createOrUpdatePhotoArray];
 }
 
 - (void)init3dar
@@ -349,6 +349,8 @@ ControlOverlayViewController *covc;
 	covc = nil;
 	[self addPlusButton];
 	[covc.view removeFromSuperview];
+	[self resetPhotoViews];
+	[self initViews];
 }
 
 - (void)plusButtonTouched:(id)sender

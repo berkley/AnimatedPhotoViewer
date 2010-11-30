@@ -15,7 +15,7 @@
 	};
 	28D7ACF60DDB3853001CB0EB /* AnimatedPhotoViewerViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1238, 1051}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1265, 639}}";
 			sepNavSelRange = "{739, 0}";
 			sepNavVisRange = "{0, 747}";
 		};
@@ -87,8 +87,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 312782477;
-			PBXWorkspaceStateSaveDate = 312782477;
+			PBXPerProjectTemplateStateSaveDate = 312785559;
+			PBXWorkspaceStateSaveDate = 312785559;
 		};
 		perUserProjectItems = {
 			7E0298E21296307E000290F9 = 7E0298E21296307E000290F9 /* PBXTextBookmark */;
@@ -137,19 +137,19 @@
 			7ED15DD712948147004B73D2 = 7ED15DD712948147004B73D2 /* PBXTextBookmark */;
 			7ED15E1712948C5E004B73D2 = 7ED15E1712948C5E004B73D2 /* PlistBookmark */;
 			7ED15FB11294ED20004B73D2 = 7ED15FB11294ED20004B73D2 /* PBXTextBookmark */;
-			7EEBF61212A4B487001E8990 /* PBXTextBookmark */ = 7EEBF61212A4B487001E8990 /* PBXTextBookmark */;
-			7EEBF61312A4B487001E8990 /* PBXTextBookmark */ = 7EEBF61312A4B487001E8990 /* PBXTextBookmark */;
-			7EEBF61412A4B487001E8990 /* PBXTextBookmark */ = 7EEBF61412A4B487001E8990 /* PBXTextBookmark */;
-			7EEBF61512A4B487001E8990 /* PBXTextBookmark */ = 7EEBF61512A4B487001E8990 /* PBXTextBookmark */;
-			7EEBF61612A4B487001E8990 /* PBXTextBookmark */ = 7EEBF61612A4B487001E8990 /* PBXTextBookmark */;
-			7EEBF61712A4B487001E8990 /* PBXTextBookmark */ = 7EEBF61712A4B487001E8990 /* PBXTextBookmark */;
-			7EEBF62012A4B642001E8990 /* PBXTextBookmark */ = 7EEBF62012A4B642001E8990 /* PBXTextBookmark */;
-			7EEBF62112A4B642001E8990 /* PBXTextBookmark */ = 7EEBF62112A4B642001E8990 /* PBXTextBookmark */;
-			7EEBF62212A4B642001E8990 /* PBXTextBookmark */ = 7EEBF62212A4B642001E8990 /* PBXTextBookmark */;
-			7EEBF62312A4B642001E8990 /* PBXTextBookmark */ = 7EEBF62312A4B642001E8990 /* PBXTextBookmark */;
-			7EEBF62412A4B642001E8990 /* PBXTextBookmark */ = 7EEBF62412A4B642001E8990 /* PBXTextBookmark */;
-			7EEBF62512A4B642001E8990 /* PBXTextBookmark */ = 7EEBF62512A4B642001E8990 /* PBXTextBookmark */;
-			7EEBF62612A4B642001E8990 /* PBXTextBookmark */ = 7EEBF62612A4B642001E8990 /* PBXTextBookmark */;
+			7EEBF61212A4B487001E8990 = 7EEBF61212A4B487001E8990 /* PBXTextBookmark */;
+			7EEBF61312A4B487001E8990 = 7EEBF61312A4B487001E8990 /* PBXTextBookmark */;
+			7EEBF61412A4B487001E8990 = 7EEBF61412A4B487001E8990 /* PBXTextBookmark */;
+			7EEBF61512A4B487001E8990 = 7EEBF61512A4B487001E8990 /* PBXTextBookmark */;
+			7EEBF61612A4B487001E8990 = 7EEBF61612A4B487001E8990 /* PBXTextBookmark */;
+			7EEBF61712A4B487001E8990 = 7EEBF61712A4B487001E8990 /* PBXTextBookmark */;
+			7EEBF62012A4B642001E8990 = 7EEBF62012A4B642001E8990 /* PBXTextBookmark */;
+			7EEBF62112A4B642001E8990 = 7EEBF62112A4B642001E8990 /* PBXTextBookmark */;
+			7EEBF62212A4B642001E8990 = 7EEBF62212A4B642001E8990 /* PBXTextBookmark */;
+			7EEBF62312A4B642001E8990 = 7EEBF62312A4B642001E8990 /* PBXTextBookmark */;
+			7EEBF62412A4B642001E8990 = 7EEBF62412A4B642001E8990 /* PBXTextBookmark */;
+			7EEBF62512A4B642001E8990 = 7EEBF62512A4B642001E8990 /* PBXTextBookmark */;
+			7EEBF62612A4B642001E8990 = 7EEBF62612A4B642001E8990 /* PBXTextBookmark */;
 			7EFA9D04129B0AF900F7E117 = 7EFA9D04129B0AF900F7E117 /* PBXTextBookmark */;
 			7EFA9D13129B137400F7E117 = 7EFA9D13129B137400F7E117 /* PBXTextBookmark */;
 			7EFA9D14129B137400F7E117 = 7EFA9D14129B137400F7E117 /* PBXTextBookmark */;
@@ -318,11 +318,6 @@
 		name = PhotoGridElementContainer.h;
 		path = /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/PhotoGridElementContainer.h;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1265, 695}}";
-			sepNavSelRange = "{550, 0}";
-			sepNavVisRange = "{0, 834}";
-		};
 	};
 	7E0BF6271283A6B400AFCF75 /* PhotoGridElementContainer.m */ = {
 		isa = PBXFileReference;
@@ -331,11 +326,6 @@
 		name = PhotoGridElementContainer.m;
 		path = /Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/PhotoGridElementContainer.m;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1265, 695}}";
-			sepNavSelRange = "{213, 25}";
-			sepNavVisRange = "{0, 767}";
-		};
 	};
 	7E0BF641128433CF00AFCF75 /* PlistBookmark */ = {
 		isa = PlistBookmark;
