@@ -56,12 +56,15 @@
 		7E2181E7128223ED00C5EE84 /* UIColor_Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2181E5128223ED00C5EE84 /* UIColor_Expanded.m */; };
 		7E2182171282475E00C5EE84 /* lib3DAR_v4_0_6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E2182161282475E00C5EE84 /* lib3DAR_v4_0_6.a */; };
 		7E4907EB12939B020098E0D3 /* Flickr.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4907EA12939B020098E0D3 /* Flickr.m */; };
+		7E8E4C8212A71E6300D7B5B2 /* FlickrPhotoDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8E4C8112A71E6300D7B5B2 /* FlickrPhotoDownloader.m */; };
 		7ED15DCF1294806B004B73D2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED15DCE1294806B004B73D2 /* CFNetwork.framework */; };
 		7ED15DD212948078004B73D2 /* libObjectiveFlickr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED15DAC12947D8B004B73D2 /* libObjectiveFlickr.a */; };
 		7ED15F111294D792004B73D2 /* ControlOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED15F0F1294D792004B73D2 /* ControlOverlayViewController.m */; };
 		7ED15F1E1294DB76004B73D2 /* MinusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED15F1B1294DB76004B73D2 /* MinusButton.png */; };
 		7ED15F1F1294DB76004B73D2 /* PlusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED15F1C1294DB76004B73D2 /* PlusButton.png */; };
 		7ED15F201294DB76004B73D2 /* ControlPanelBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED15F1D1294DB76004B73D2 /* ControlPanelBar.png */; };
+		7EF4CC8012A5DCFA001EE897 /* PhotoCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF4CC7F12A5DCFA001EE897 /* PhotoCache.m */; };
+		7EF4CC8C12A5E17D001EE897 /* FlickrPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF4CC8B12A5E17D001EE897 /* FlickrPhoto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +160,8 @@
 		7E2182161282475E00C5EE84 /* lib3DAR_v4_0_6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = lib3DAR_v4_0_6.a; sourceTree = "<group>"; };
 		7E4907E912939B020098E0D3 /* Flickr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flickr.h; sourceTree = "<group>"; };
 		7E4907EA12939B020098E0D3 /* Flickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flickr.m; sourceTree = "<group>"; };
+		7E8E4C8012A71E6300D7B5B2 /* FlickrPhotoDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhotoDownloader.h; sourceTree = "<group>"; };
+		7E8E4C8112A71E6300D7B5B2 /* FlickrPhotoDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotoDownloader.m; sourceTree = "<group>"; };
 		7ED15DA012947D8B004B73D2 /* ObjectiveFlickr.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveFlickr.xcodeproj; path = ../objectiveflickr/ObjectiveFlickr.xcodeproj; sourceTree = SOURCE_ROOT; };
 		7ED15DCE1294806B004B73D2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7ED15F0E1294D792004B73D2 /* ControlOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlOverlayViewController.h; sourceTree = "<group>"; };
@@ -164,6 +169,10 @@
 		7ED15F1B1294DB76004B73D2 /* MinusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MinusButton.png; path = Graphics/MinusButton.png; sourceTree = "<group>"; };
 		7ED15F1C1294DB76004B73D2 /* PlusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PlusButton.png; path = Graphics/PlusButton.png; sourceTree = "<group>"; };
 		7ED15F1D1294DB76004B73D2 /* ControlPanelBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ControlPanelBar.png; path = Graphics/ControlPanelBar.png; sourceTree = "<group>"; };
+		7EF4CC7E12A5DCFA001EE897 /* PhotoCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoCache.h; path = Classes/PhotoCache.h; sourceTree = "<group>"; };
+		7EF4CC7F12A5DCFA001EE897 /* PhotoCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoCache.m; path = Classes/PhotoCache.m; sourceTree = "<group>"; };
+		7EF4CC8A12A5E17D001EE897 /* FlickrPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhoto.h; sourceTree = "<group>"; };
+		7EF4CC8B12A5E17D001EE897 /* FlickrPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhoto.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* AnimatedPhotoViewer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AnimatedPhotoViewer-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -363,6 +372,12 @@
 			children = (
 				7E4907E912939B020098E0D3 /* Flickr.h */,
 				7E4907EA12939B020098E0D3 /* Flickr.m */,
+				7EF4CC8A12A5E17D001EE897 /* FlickrPhoto.h */,
+				7EF4CC8B12A5E17D001EE897 /* FlickrPhoto.m */,
+				7E8E4C8012A71E6300D7B5B2 /* FlickrPhotoDownloader.h */,
+				7E8E4C8112A71E6300D7B5B2 /* FlickrPhotoDownloader.m */,
+				7EF4CC7E12A5DCFA001EE897 /* PhotoCache.h */,
+				7EF4CC7F12A5DCFA001EE897 /* PhotoCache.m */,
 			);
 			name = Flickr;
 			sourceTree = "<group>";
@@ -515,6 +530,9 @@
 				7E2181E7128223ED00C5EE84 /* UIColor_Expanded.m in Sources */,
 				7E4907EB12939B020098E0D3 /* Flickr.m in Sources */,
 				7ED15F111294D792004B73D2 /* ControlOverlayViewController.m in Sources */,
+				7EF4CC8012A5DCFA001EE897 /* PhotoCache.m in Sources */,
+				7EF4CC8C12A5E17D001EE897 /* FlickrPhoto.m in Sources */,
+				7E8E4C8212A71E6300D7B5B2 /* FlickrPhotoDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,7 +606,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "430DE2F1-0AB7-4DDA-9AE4-4DBD35265EF7";
 				SDKROOT = iphoneos4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -598,7 +615,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chad Berkley (J247YF275X)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

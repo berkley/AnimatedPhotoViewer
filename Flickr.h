@@ -29,5 +29,6 @@
 + (Flickr*)sharedInstance;
 - (void)openAuthUrl;
 - (void)getAuthToken:(NSString*)frob;
+- (void)searchFlickr;
 
 @end

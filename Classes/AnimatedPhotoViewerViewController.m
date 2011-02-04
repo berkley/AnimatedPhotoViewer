@@ -26,7 +26,6 @@ NSArray *photoGridCols;
 UIView *photoContainerView;
 SM3DAR_Controller *sm3dar;
 NSMutableDictionary *poiDict;
-NSTimer *motionTimer;
 CLLocationManager *locationManager;
 BOOL optionsPaneIsDisplayed = NO;
 ControlOverlayViewController *covc;
@@ -283,7 +282,7 @@ ControlOverlayViewController *covc;
 
 - (void)init3dar
 {
-	sm3dar = [SM3DAR_Controller sharedController];
+	/*sm3dar = [SM3DAR_Controller sharedController];
 	sm3dar.delegate = self;
 	sm3dar.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];
 	[self.view addSubview:sm3dar.view];
@@ -294,7 +293,7 @@ ControlOverlayViewController *covc;
 	[swipeRecognizer release];
 	//[sm3dar startCamera];
 	[sm3dar suspend];
-	sm3dar.view.hidden = YES;
+	sm3dar.view.hidden = YES;*/
 }
 
 /*- (void)motionTimerFired:(NSTimer*)timer
@@ -304,10 +303,16 @@ ControlOverlayViewController *covc;
 	NSLog(@"yaw: %f pitch: %f roll: %f", motion.acceleration.y, motion.acceleration.x, motion.acceleration.z);
 }*/
 
+- (void)newPhotoSaved:(id)photoId
+{
+	NSLog(@"!!!!!!!!!!!!!!!!!!photo done writing %@", photoId);
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newPhotoSaved:) name:PHOTOWRITTEN object:nil];
 	NSLog(@"View did load");	
 	if([Session sharedInstance].flickrAuthKey == nil)
 	{  //need to authenticate
@@ -423,13 +428,14 @@ ControlOverlayViewController *covc;
 	if(photoViewLoaded)
 	{
 		NSLog(@"loading 3dar");
-		[self changePhotoViews];
-		photoContainerView.hidden = YES;
-		[sm3dar resume];
-		[sm3dar startCamera];
-		sm3dar.view.hidden = NO;
-		photoViewLoaded = NO;
-		[self addPhotosTo3darGrid];
+		//[self changePhotoViews];
+		//photoContainerView.hidden = YES;
+		//[sm3dar resume];
+		//[sm3dar startCamera];
+		//sm3dar.view.hidden = NO;
+		NSLog(@"3DAR is disabled.  enable in APVVC.switchSubviews");
+		//photoViewLoaded = NO;
+		//[self addPhotosTo3darGrid];
 	}
 	else 
 	{
@@ -640,7 +646,7 @@ ControlOverlayViewController *covc;
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 	NSLog(@"!!!!!!!!!!!!!!!!View Did Unload!!!!!!!!!!!!!!!!!!!!!!!!");
-	[motionTimer invalidate];
+	//[motionTimer invalidate];
 }
 
 - (void)dealloc {

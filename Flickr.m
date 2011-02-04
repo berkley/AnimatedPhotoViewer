@@ -8,6 +8,8 @@
 
 #import "Flickr.h"
 #import "Session.h"
+#import "PhotoCache.h"
+#import "FlickrPhoto.h"
 
 @implementation Flickr
 
@@ -106,34 +108,6 @@ NSString *queryType;
 	//add geo information and square icon url to the search results
 	[keys addObject:@"extras"];
 	[objects addObject:@"geo,url_sq,url_m"];
-	
-	//add the geo bounding box (triangle)
-	/*[keys addObject:@"bbox"];
-	double minLon, minLat, maxLon, maxLat;
-	if([Session sharedInstance].currentLocation.coordinate.longitude > [Session sharedInstance].headingCornerAtDistance.coordinate.longitude)
-	{
-		maxLon = [Session sharedInstance].currentLocation.coordinate.longitude;
-		minLon = [Session sharedInstance].headingCornerAtDistance.coordinate.longitude;
-	}
-	else 
-	{
-		minLon = [Session sharedInstance].currentLocation.coordinate.longitude;
-		maxLon = [Session sharedInstance].headingCornerAtDistance.coordinate.longitude;
-	}
-	
-	if([Session sharedInstance].currentLocation.coordinate.latitude > [Session sharedInstance].headingCornerAtDistance.coordinate.latitude)
-	{
-		maxLat = [Session sharedInstance].currentLocation.coordinate.latitude;
-		minLat = [Session sharedInstance].headingCornerAtDistance.coordinate.latitude;
-	}
-	else 
-	{
-		minLat = [Session sharedInstance].currentLocation.coordinate.latitude;
-		maxLat = [Session sharedInstance].headingCornerAtDistance.coordinate.latitude;
-	}
-
-	NSString *boundingCoords = [NSString stringWithFormat:@"%f,%f,%f,%f", minLon, minLat, maxLon, maxLat];
-	[objects addObject:boundingCoords];*/
 	 
 	NSDictionary *dict = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
 	NSLog(@"Query Params:");
@@ -191,7 +165,20 @@ NSString *queryType;
 		 //kick off a thread to cache returned photos
 		 
 		 */
-		[Session inspectDictionary:inResponseDictionary];
+		//[Session inspectDictionary:inResponseDictionary];
+		NSDictionary *photosDict = [inResponseDictionary objectForKey:@"photos"];
+		NSArray *photos = [photosDict objectForKey:@"photo"];
+		for(int i=0; i<[photos count]; i++)
+		{
+			NSDictionary *photoDict = [photos objectAtIndex:i];
+			//NSLog(@"photo %i has id %@ and url %@", i, [photoDict objectForKey:@"id"], [photoDict objectForKey:@"url_sq"]);
+			//[Session inspectDictionary:photoDict];
+			//[NSThread detachNewThreadSelector:@selector(cachePhoto:) toTarget:self withObject:photoDict];
+			
+			NSLog(@"caching photo: %@", [photoDict objectForKey:@"id"]);
+			FlickrPhoto *photo = [[FlickrPhoto alloc] initWithDict:photoDict];
+			[[PhotoCache sharedInstance] cachePhoto:photo];
+		}
 	}
 }
 

@@ -572,9 +572,9 @@ i<CoreMotion/CMMotionManager.h>
 i<CoreLocation/CoreLocation.h>
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/Classes/Session.m
-c000000004CF47D400000000000001183
-t1291091264
-s4483
+c000000004CF48949000000000000119C
+t1291094345
+s4508
 i"Session.h"
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/Flickr.h
@@ -585,9 +585,9 @@ i<Foundation/Foundation.h>
 i"ObjectiveFlickr.h"
 
 N/Users/berkley/project/iphone/AnimatedPhotoViewer/Flickr.m
-c000000004CF487220000000000001D38
-t1291093794
-s7480
+c000000004CF48B780000000000001DC2
+t1291094904
+s7618
 i"Flickr.h"
 i"Session.h"
 
