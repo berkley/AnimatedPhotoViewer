@@ -15,5 +15,6 @@
 
 + (PhotoCache*)sharedInstance;
 - (void)cachePhoto:(FlickrPhoto*)photo;
+- (NSDictionary*)getFlickrPhotosInCache;
 
 @end

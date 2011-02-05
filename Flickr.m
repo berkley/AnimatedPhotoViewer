@@ -66,8 +66,10 @@ NSString *queryType;
 {
 	if([Session sharedInstance].currentLocation == nil)
 	{ //don't run the query if we don't have a current location yet.
+		NSLog(@"Not running flickr query because we don't have a location");
 		return;
 	}
+	NSLog(@"Running Flickr query");
 	NSMutableArray *keys = [[NSMutableArray alloc] init];
 	NSMutableArray *objects = [[NSMutableArray alloc] init];
 
@@ -89,17 +91,22 @@ NSString *queryType;
 	{
 		[keys addObject:@"text"];
 		[objects addObject:query];
+			NSLog(@"Query Param: %@", query);
 	}
 	
 	//add geo radius params
 	[keys addObject:@"radius"];
 	[objects addObject:[[NSNumber numberWithInt:[Session sharedInstance].distanceThreshold] stringValue]];
+	NSLog(@"radius: %@", [[NSNumber numberWithInt:[Session sharedInstance].distanceThreshold] stringValue]);
 	
 	//add current location
 	[keys addObject:@"lat"];
 	[objects addObject:[[NSNumber numberWithDouble:[Session sharedInstance].currentLocation.coordinate.latitude] stringValue]];
 	[keys addObject:@"lon"];
 	[objects addObject:[[NSNumber numberWithDouble:[Session sharedInstance].currentLocation.coordinate.longitude] stringValue]];
+	NSLog(@"Current location: lat:%@ lon:%@", 
+		  [[NSNumber numberWithDouble:[Session sharedInstance].currentLocation.coordinate.latitude] stringValue],
+		  [[NSNumber numberWithDouble:[Session sharedInstance].currentLocation.coordinate.longitude] stringValue]);
 	
 	//add units
 	[keys addObject:@"radius_units"];
@@ -110,7 +117,6 @@ NSString *queryType;
 	[objects addObject:@"geo,url_sq,url_m"];
 	 
 	NSDictionary *dict = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
-	NSLog(@"Query Params:");
 	[Session inspectDictionary:dict];
 											  
 	[self makeFlickrAPICallWithName:@"flickr.photos.search" params:dict queryType:@"query"];

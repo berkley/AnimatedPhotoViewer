@@ -16,6 +16,7 @@
 #import "math.h"
 #import "Flickr.h"
 #import "ControlOverlayViewController.h"
+#import "PhotoCache.h"
 
 @implementation AnimatedPhotoViewerViewController
 
@@ -29,6 +30,7 @@ NSMutableDictionary *poiDict;
 CLLocationManager *locationManager;
 BOOL optionsPaneIsDisplayed = NO;
 ControlOverlayViewController *covc;
+UIView *fullView;
 
 //add the 3dar grid
 - (void) addGridAtX:(CGFloat)x Y:(CGFloat)y Z:(CGFloat)z
@@ -102,6 +104,7 @@ ControlOverlayViewController *covc;
 //get the photos and lat/lons from the photos.txt file
 - (NSArray*) getPhotoArray
 {
+	NSLog(@"Searching Flickr");
 	[[Flickr sharedInstance] searchFlickr];
 	
 	NSError *error;
@@ -226,6 +229,21 @@ ControlOverlayViewController *covc;
 	[self.view addSubview:photoContainerView];
 }
 
+- (void)createPhotoScrollView
+{
+	fullView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5400, [CalculationUtil getScreenHeight])];
+	UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [CalculationUtil getScreenWidth], [CalculationUtil getScreenHeight])];
+	[scrollView addSubview:fullView];
+	[self.view addSubview:scrollView];
+	scrollView.scrollEnabled = YES;
+	scrollView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
+	scrollView.showsVerticalScrollIndicator = YES;
+	scrollView.showsHorizontalScrollIndicator = YES;
+	scrollView.contentSize = CGSizeMake(fullView.frame.size.width, fullView.frame.size.height);
+	scrollView.clipsToBounds = YES;
+	
+}
+
 - (void)initViews
 {
 	self.photoViewLoaded = NO;
@@ -261,7 +279,9 @@ ControlOverlayViewController *covc;
 		NSLog(@"optionPaneIs NOT Displayed");
 	}
 	
-	[self createOrUpdatePhotoArray];
+	//[self createOrUpdatePhotoArray];
+	[[Flickr sharedInstance] searchFlickr];
+	[self createPhotoScrollView];
 
 	if(optionsPaneIsDisplayed)
 	{
@@ -303,9 +323,58 @@ ControlOverlayViewController *covc;
 	NSLog(@"yaw: %f pitch: %f roll: %f", motion.acceleration.y, motion.acceleration.x, motion.acceleration.z);
 }*/
 
-- (void)newPhotoSaved:(id)photoId
+- (void)newPhotoSaved:(NSNotification*)notification
 {
-	NSLog(@"!!!!!!!!!!!!!!!!!!photo done writing %@", photoId);
+	NSDictionary *dict = notification.userInfo;
+	NSString *photoid = [dict objectForKey:@"photoid"];
+	NSLog(@"!!!!!!!!!!!!!!!!!!photo done writing %@", photoid);
+	
+	NSDictionary *cachedPhotos = [[PhotoCache sharedInstance] getFlickrPhotosInCache];
+	FlickrPhoto *photo = [cachedPhotos objectForKey:photoid];
+	UIImageView *photoView = [photo getImageView];
+	NSInteger screenHeight = [CalculationUtil getScreenHeight];
+	//CGFloat x = rand() * 5400;
+	//CGFloat y = rand() * screenHeight;
+	int x = arc4random() % 5400;
+	int y = arc4random() % screenHeight;
+	photoView.frame = CGRectMake(x, y, 75, 75);
+	NSLog(@"photo placed at %i, %i", x, y);
+	//photoView.frame = CGRectMake(20, 100, 75, 75);
+	[photoView setBackgroundColor:[UIColor greenColor]];
+	[fullView addSubview:photoView];
+	//[photoView release];
+	
+	/*NSDictionary *cachedPhotos = [[PhotoCache sharedInstance] getFlickrPhotosInCache];
+	NSArray *keys = [cachedPhotos allKeys];
+	for(int i=0; i<[keys count]; i++)
+	{
+		NSString *key = [keys objectAtIndex:i];
+		//get the photo file
+		FlickrPhoto *photo = [cachedPhotos objectForKey:key];
+		
+		UIImageView *photoView = [photo getImageView];
+		CGFloat screenHeight = [CalculationUtil getScreenHeight];
+		photoView.frame = CGRectMake(rand() * screenHeight, rand() * 5400, 75, 75);
+		[fullView addSubview:photoView];
+		[photoView release];
+		//translate lon/lat into fullView space
+	}*/
+}
+
+- (void)plusButtonTouched:(id)sender
+{
+	covc = [[ControlOverlayViewController alloc] init];
+	covc.animatedPhotoViewerViewController = self;
+	[self removePlusButton];
+	[covc setRectOffScreen];
+	[self.view addSubview:covc.view];
+	
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationBeginsFromCurrentState:YES];
+	[UIView setAnimationDuration:ANIMATIONDURATION];
+	[covc setRectOnScreen];
+	[UIView commitAnimations];
+	optionsPaneIsDisplayed = YES;
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -347,6 +416,7 @@ ControlOverlayViewController *covc;
 	self.view.backgroundColor = [UIColor blackColor];
 	
 	[self initViews];
+	//[self plusButtonTouched:self];
 }
  
 //callback to get rid of covc
@@ -359,22 +429,6 @@ ControlOverlayViewController *covc;
 	[covc.view removeFromSuperview];
 	[self resetPhotoViews];
 	[self initViews];
-}
-
-- (void)plusButtonTouched:(id)sender
-{
-	covc = [[ControlOverlayViewController alloc] init];
-	covc.animatedPhotoViewerViewController = self;
-	[self removePlusButton];
-	[covc setRectOffScreen];
-	[self.view addSubview:covc.view];
-
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationBeginsFromCurrentState:YES];
-	[UIView setAnimationDuration:ANIMATIONDURATION];
-	[covc setRectOnScreen];
-	[UIView commitAnimations];
-	optionsPaneIsDisplayed = YES;
 }
 
 //handle alert view feedback

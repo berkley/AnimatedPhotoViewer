@@ -10,6 +10,7 @@
 #import "AnimatedPhotoViewerViewController.h"
 #import "CalculationUtil.h"
 #import "Flickr.h"
+#import "PhotoCache.h"
 
 @implementation AnimatedPhotoViewerAppDelegate
 
@@ -25,6 +26,7 @@
 	[[UIApplication sharedApplication] setStatusBarHidden:YES];
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
+	[PhotoCache sharedInstance];
 
 	return YES;
 }

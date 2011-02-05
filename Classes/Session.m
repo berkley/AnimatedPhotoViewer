@@ -25,6 +25,7 @@ static NSString *useCurrentLocationKey = @"geoflickr.useCurrentLocation";
 @synthesize leftBoundingCorner, rightBoundingCorner, headingCornerAtDistance;
 @synthesize flickrAuthKey, flickrUsername, flickrFullname, flickrNsid;
 @synthesize searchMyPhotosOnly, numberOfPhotos, distanceThreshold, query, useCurrentLocation;
+@synthesize cachePath;
 
 //init the class
 - (id)init

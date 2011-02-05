@@ -56,5 +56,7 @@
 @property (nonatomic, retain) NSString* title;
 
 - (id)initWithDict:(NSDictionary*)dict;
+- (NSString*)getPath;
+- (UIImageView*)getImageView;
 
 @end

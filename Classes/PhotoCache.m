@@ -8,14 +8,14 @@
 
 #import "PhotoCache.h"
 #import "FlickrPhotoDownloader.h"
+#import "Session.h"
 
-static PhotoCache *sharedInstance = nil;
+@implementation PhotoCache
 
 NSString *cachePath;
 NSMutableDictionary *cachedFilesDict;
 NSOperationQueue *operationQueue;
-
-@implementation PhotoCache
+static PhotoCache *sharedInstance = nil;
 
 //check to make sure we're under our limit.  If not,
 //get rid of the cruft
@@ -37,6 +37,9 @@ NSOperationQueue *operationQueue;
 		cachePath = [documentsDirectory stringByAppendingPathComponent:@"photoCache"];
 		[cachePath retain];
 		success = [fileManager fileExistsAtPath:cachePath];
+		operationQueue = [[NSOperationQueue alloc] init];
+		cachedFilesDict = [[NSMutableDictionary alloc] init];
+		[Session sharedInstance].cachePath = cachePath;
 		if(success) 
 		{
 			return self;        
@@ -50,8 +53,6 @@ NSOperationQueue *operationQueue;
 		}
 		
 		NSLog(@"cache path is: %@", cachePath);
-		
-		operationQueue = [[NSOperationQueue alloc] init];
 	}
 	return self;
 }
@@ -71,6 +72,7 @@ NSOperationQueue *operationQueue;
 //cache a single photo
 - (void)cachePhoto:(FlickrPhoto*)photo
 {
+	NSLog(@"caching photo with id %i", photo.photoId);
 	//download the photo to cachePath
 	NSString *idStr = [NSString stringWithFormat:@"%i", photo.photoId];
 	NSLog(@"cache location: %@", cachePath);
@@ -78,6 +80,7 @@ NSOperationQueue *operationQueue;
 
 	//register it in cachedFilesDict
 	[cachedFilesDict setObject:photo forKey:idStr];
+
 	NSLog(@"cached photo %@ to location %@", idStr, cacheLocation);
 
 	FlickrPhotoDownloader *downloader = [[FlickrPhotoDownloader alloc] initWithPhoto:photo writeLocation:cacheLocation];
@@ -87,6 +90,11 @@ NSOperationQueue *operationQueue;
 	NSLog(@"currently %i ops in the queue", count);
 	
 	//kick off purgeCache in a new thread to check for overage
+}
+
+- (NSDictionary*)getFlickrPhotosInCache
+{
+	return cachedFilesDict;
 }
 
 @end

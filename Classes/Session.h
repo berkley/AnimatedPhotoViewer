@@ -27,6 +27,7 @@
 	CLLocation *rightBoundingCorner;
 	CLLocation *leftBoundingCorner;
 	CLLocation *headingCornerAtDistance;
+	NSString *cachePath;
 }
 
 @property (nonatomic, assign) UIInterfaceOrientation currentOrientation;
@@ -45,6 +46,7 @@
 @property (nonatomic, retain) CLLocation *rightBoundingCorner;
 @property (nonatomic, retain) CLLocation *leftBoundingCorner;
 @property (nonatomic, retain) CLLocation *headingCornerAtDistance;
+@property (nonatomic, retain) NSString *cachePath;
 
 + (Session*)sharedInstance;
 + (void)inspectDictionary:(NSDictionary*)dict;

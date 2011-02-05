@@ -29,7 +29,9 @@
 	NSLog(@"writing photo data to cache for image %@", [NSString stringWithFormat:@"%i", self.photo.photoId]);
 	NSData *photoData = [NSData dataWithContentsOfURL:self.photo.squareIconUrl];
 	[photoData writeToFile:self.cacheLocation atomically:YES];
-	[[NSNotificationCenter defaultCenter] postNotificationName:PHOTOWRITTEN object:[NSString stringWithFormat:@"%i", self.photo.photoId]];
+	NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
+	[userInfo setObject:[NSString stringWithFormat:@"%i", self.photo.photoId] forKey:@"photoid"];
+	[[NSNotificationCenter defaultCenter] postNotificationName:PHOTOWRITTEN object:self userInfo:userInfo];
 	//[photoData release];
 }
 
